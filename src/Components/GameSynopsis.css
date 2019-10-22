@@ -1,5 +1,29 @@
-* {
-    background-color : #0C0032;
+.synopsis_parent {
+    display : flex;
+    flex-direction: column;
+    margin-left : 5%;
+    margin-right : 5%;
+    margin-bottom : 10%
+}
+
+.title_synopsis {
+    display : flex;
+    font-size : 40px;
+    color : #45BAC0;
+    align-items : flex-start;
+}
+
+.text_synopsis {
+    font-size : 35px;
+    color: #DDDDDD;
+    font-family: Roboto;
+    align-items : center;
+    
+}
+
+.supportButtonParent {
+    display : flex;
+    justify-content : flex-end;
 }
 
 .supportButton {
@@ -9,18 +33,10 @@
     padding : 20px;
     border-radius:  55px;
     font-size: 22px;
+    max-width : 212px;
     margin-top : 3%;
-    margin-left : 80%;
+        
 }
 
-.title_synopsis {
-    font-size : 40px;
-    color : #45BAC0;
-    margin-top : 3%;
-}
 
-.text_synopsis {
-    font-size : 35px;
-    margin-top : 3%;
-    color: #DDDDDD;
-}
+
