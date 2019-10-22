@@ -4,6 +4,8 @@ import GameSynopsis from './Components/GameSynopsis'
 
 import Header from './Components/Header'
 import Ecran from './Components/Ecran'
+import Kickstarter from './Components/Kickstarter'
+import AboutTeam from './Components/AboutTeam'
 
 const App = () => {
   return (
@@ -11,6 +13,8 @@ const App = () => {
       <Header />
       <GameSynopsis/>
       <Ecran />
+      <Kickstarter />
+      <AboutTeam />
     </div>
   );
 }
