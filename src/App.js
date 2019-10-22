@@ -9,6 +9,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <GameSynopsis/>
       <Ecran />
     </div>
   );

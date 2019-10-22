@@ -4,11 +4,13 @@
 
 .supportButton {
     background-color : #E100FF;
+    text-align: center;
     color : #F9F9F9;
     padding : 20px;
-    border-radius:  45%;
+    border-radius:  55px;
     font-size: 22px;
     margin-top : 3%;
+    margin-left : 80%;
 }
 
 .title_synopsis {
