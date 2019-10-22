@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import logo from './LogoFinalV2.png'
+import Logo from './LogoFinalV2.png'
 
 class Header extends Component {
   render() {
     return (
       <div >
-        <img src={logo} />
+        <img id='logoTeam' src={Logo} alt= "Logo de l'équipe" />
       </div>
     );
   }

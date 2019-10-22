@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import Logo from './Components/LogoFinalV2.png'
+import Header from './Components/Header'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-
+      <Header />
     </div>
   );
 }
