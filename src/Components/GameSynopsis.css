@@ -1,0 +1,24 @@
+* {
+    background-color : #0C0032;
+}
+
+.supportButton {
+    background-color : #E100FF;
+    color : #F9F9F9;
+    padding : 20px;
+    border-radius:  45%;
+    font-size: 22px;
+    margin-top : 3%;
+}
+
+.title_synopsis {
+    font-size : 40px;
+    color : #45BAC0;
+    margin-top : 3%;
+}
+
+.text_synopsis {
+    font-size : 35px;
+    margin-top : 3%;
+    color: #DDDDDD;
+}
