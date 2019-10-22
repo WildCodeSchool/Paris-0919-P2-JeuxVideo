@@ -2,14 +2,55 @@
     margin : 0px;
     padding : 0px;
     box-sizing: border-box;
+    background-color : #45BAC0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding-top : 80px;
+    padding-bottom : 80px;
+    
+}
+
+.contactTitle {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    color: #0C0032;
+    background-color : #45BAC0;
+    margin-bottom : 60px;
+
+}
+
+.contactForm {
+    background-color : #45BAC0;
+    display : flex;
+    flex-direction: column;
+    
+        
+}
+
+.inputField {
+    display : flex;       
+    font-size : 30px;
+    color: #F9F9F9 ;
+    margin-top: 30px;
+    padding : 10px;
+    width : 700px    
+}
+
+.formButton {
+    
+    background-color : #E100FF;
+    text-align: center;
+    color : #F9F9F9;
+    padding : 20px;
+    border-radius:  55px;
+    font-size: 22px;
+    max-width : 212px;
+    margin-top : 3%;
+    margin-left : 70%
     
 
 }
 
-.inputField {
-    display : flex;
-    color: white;
-    margin-top : 20px;
-}
+
+

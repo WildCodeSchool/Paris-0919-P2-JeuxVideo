@@ -4,9 +4,9 @@ import './ContactForm.css'
 class ContactForm extends React.Component {
 
     state = {
-        email : 'Mail',
-        inquiry : 'Motif',
-        message : 'Texte...'
+        email : "Ton email",
+        inquiry : "J'ai une question à propos du jeu",
+        message : "Message"
 
     }
 
@@ -36,7 +36,7 @@ class ContactForm extends React.Component {
     render() {
         return (
             <div className = 'contactParent'>
-                <h2>Contact</h2>
+                <h2 className ="contactTitle">Contact</h2>
                 <form className='contactForm'>
                     <input className='inputField'
                         id='email'
@@ -57,6 +57,9 @@ class ContactForm extends React.Component {
                         value={this.state.message}
                         onChange={this.handleChange}
                     />
+
+                    <button className = 'formButton'>Envoyer</button>
+
                 </form>
 
             </div>
