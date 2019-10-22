@@ -1,4 +1,9 @@
+@font-face {
+  font-family: 'Minecraft';
+  src: url('Minecraft.ttf');
+}
 * {
   margin: 0;
   padding:0;
+  background-color: #0C0032;
 }
