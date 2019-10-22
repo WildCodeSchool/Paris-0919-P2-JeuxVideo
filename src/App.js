@@ -3,13 +3,13 @@ import './App.css';
 import GameSynopsis from './Components/GameSynopsis'
 
 import Header from './Components/Header'
+import Ecran from './Components/Ecran'
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <GameSynopsis />
-
+      <Ecran />
     </div>
   );
 }
