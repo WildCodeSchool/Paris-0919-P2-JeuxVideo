@@ -1,17 +1,12 @@
-@font-face {
-  font-family: '04b30';
-  src:url('../04B_30__.TTF');
-}
-
-h2 {
-  font-family: Minecraft, 'Press Start 2P', cursive;
+#commandes h2 {
+  font-family: 'Press Start 2P', cursive;
   color: #45BAC0;
   font-size: 40px;
   margin-left: 62px;
   margin-bottom: 100px;
 }
 
-p {
+#commandes p {
   font-family: Roboto;
   color: white;
   font-size: 30px;
@@ -19,7 +14,7 @@ p {
   margin-bottom: 118px;
 }
 #ecranJeu {
-  height: 600px;
+  height: 700px;
   width: 80%;
   background-color: white;
   margin-left: 188px;
