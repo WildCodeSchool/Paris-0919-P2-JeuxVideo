@@ -35,7 +35,8 @@ class ContactForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className = 'contactParent'>
+                <h2>Contact</h2>
                 <form className='contactForm'>
                     <input className='inputField'
                         id='email'
