@@ -5,6 +5,7 @@ import Header from './Components/Header'
 import Ecran from './Components/Ecran'
 import Kickstarter from './Components/Kickstarter'
 import AboutTeam from './Components/AboutTeam'
+import Footer from './Components/Footer'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Ecran />
       <Kickstarter />
       <AboutTeam />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,31 @@
+.footerTest {
+    margin : 0;
+    box-sizing: border-box;
+    background-color :#E100FF;
+    padding-top : 20px;
+    padding-bottom : 20px;
+    display : flex;
+    justify-content: center;
+}
+
+.listeFooter {
+    background-color : blue;
+}
+
+.elmtSns {
+    display: inline-block;
+    
+}
+
+.mailStudio {
+    font-size : 30px;
+    background-color :red;
+}
+
+
+
+.snsImg {
+    height : 30px;
+    width : 30px;
+    
+}
