@@ -100,36 +100,40 @@ class ContactForm extends React.Component {
     render() {
         return (
             <div className = 'contactParent'>
-                <h2 className ="contactTitle">Contact</h2>
-                <form className='contactForm'>
-                    <input className='inputFieldMail'
-                        id='email'
-                        type='text'
-                        value= {this.state.email}
-                        onClick = {this.handleClickMail}
-                        onChange={this.handleChangeMail}
-                        onMouseOut = {this.handleNoMail}
-                    />
-                    <input className='inputFieldInquiry'
-                        id='reason'
-                        type='text'
-                        value={this.state.inquiry}
-                        readOnly 
-                        
+                <div className = 'test'>
+                    <h2 className ="contactTitle">Contact</h2>               
+                    <form className='contactForm'>
+                        <input className='inputFieldMail'
+                            id='email'
+                            type='text'
+                            value= {this.state.email}
+                            onClick = {this.handleClickMail}
+                            onChange={this.handleChangeMail}
+                            onMouseOut = {this.handleNoMail}
+                        />
+                        <input className='inputFieldInquiry'
+                            id='reason'
+                            type='text'
+                            value={this.state.inquiry}
+                            readOnly 
+                            
 
-                    />
-                    <input className='inputFieldMessage'
-                        id='message'
-                        type='text'
-                        value={this.state.message}
-                        onClick = {this.handleClickMessage}
-                        onChange={this.handleChangeMessage}
-                        onMouseOut = {this.handleNoMessage}
-                    />
+                        />
+                        <input className='inputFieldMessage'
+                            id='message'
+                            type='text'
+                            value={this.state.message}
+                            onClick = {this.handleClickMessage}
+                            onChange={this.handleChangeMessage}
+                            onMouseOut = {this.handleNoMessage}
+                        />
 
-                    <button className = 'formButton' onClick={this.handleClickButton}>Envoyer</button>
+                        <button className = 'formButton' onClick={this.handleClickButton}>Envoyer</button>
+                    </form>
+                </div>
+                
 
-                </form>
+                
 
             </div>
         )

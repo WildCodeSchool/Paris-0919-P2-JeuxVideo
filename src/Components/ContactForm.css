@@ -24,8 +24,17 @@
     background-color : #45BAC0;
     display : flex;
     flex-direction: column;
+    align-items: center;
+    
     
         
+}
+
+.test {
+    display : flex;
+    flex-direction: column;
+    align-items : center;
+    background-color : #45BAC0;
 }
 
 .inputFieldMail {
@@ -37,6 +46,7 @@
     width : 700px;
     border: 2px solid #F9F9F9;    
 }
+
 
 .inputFieldInquiry {
     display : flex;       
@@ -60,6 +70,7 @@
     
 }
 
+
 .formButton {
     
     background-color : #E100FF;
@@ -70,10 +81,22 @@
     font-size: 22px;
     max-width : 212px;
     margin-top : 3%;
-    margin-left : 70%
+    box-sizing: border-box;
+    margin-left : 70%;
+    
     
 
 }
 
+@media (max-width: 800px) {
+    .inputFieldMail , .inputFieldInquiry , .inputFieldMessage  {
+        width : 80%;
+        font-size : 5vw;
+    }
 
+    .formButton {
+        font-size : 3vw;
+        margin-left : 0;
+    }
 
+}
