@@ -12,7 +12,6 @@ class ContactForm extends React.Component {
 
     /*Email area */
 
-    
     handleChangeMail = this.handleChangeMail.bind(this);
     handleClickMail = this.handleClickMail.bind(this);
     handleNoMail = this.handleNoMail.bind(this);
@@ -46,7 +45,6 @@ class ContactForm extends React.Component {
     }
 
    
-
     /*Message area */
     handleChangeMessage = this.handleChangeMessage.bind(this);
     handleClickMessage = this.handleClickMessage.bind(this);
@@ -82,7 +80,22 @@ class ContactForm extends React.Component {
         }
     }
 
-    
+    /* Button */
+
+    handleClickButton = this.handleClickButton.bind(this);
+
+    // user cant send form if either mail or message are at default state + red indicator
+    handleClickButton(event) {
+        if (this.state.email === 'Ton email')  {
+            document.getElementById('email').style.border = '3px solid red';
+            event.preventDefault();
+        };
+
+        if (this.state.message === 'Message')  {
+            document.getElementById('message').style.border = '3px solid red';
+            event.preventDefault();
+        };
+    }
 
     render() {
         return (
@@ -114,7 +127,7 @@ class ContactForm extends React.Component {
                         onMouseOut = {this.handleNoMessage}
                     />
 
-                    <button className = 'formButton'>Envoyer</button>
+                    <button className = 'formButton' onClick={this.handleClickButton}>Envoyer</button>
 
                 </form>
 
