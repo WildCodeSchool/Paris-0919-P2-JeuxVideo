@@ -2,30 +2,34 @@
     margin : 0;
     box-sizing: border-box;
     background-color :#E100FF;
-    padding-top : 20px;
-    padding-bottom : 20px;
-    display : flex;
-    justify-content: center;
+    display: flex ;
+    justify-content: space-between;
+    padding : 20px 50px;
+    
+    
 }
 
 .listeFooter {
-    background-color : blue;
+    height : 30px;
 }
 
 .elmtSns {
     display: inline-block;
-    
+    background-color :#E100FF;
+    padding-right: 15px;
 }
 
 .mailStudio {
     font-size : 30px;
-    background-color :red;
+    color: black;
+    background-color :#E100FF;
+    
 }
-
-
 
 .snsImg {
     height : 30px;
     width : 30px;
+    background-color :#E100FF;
     
 }
+
