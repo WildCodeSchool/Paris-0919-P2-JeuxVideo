@@ -35,6 +35,7 @@
     flex-direction: column;
     align-items : center;
     background-color : #45BAC0;
+    
 }
 
 .inputFieldMail {
@@ -65,8 +66,11 @@
     color: gray ;
     margin-top: 30px;
     padding : 10px;
+    height : 200px;   
     width : 700px;
-    border: 2px solid #F9F9F9;  
+    border: 2px solid #F9F9F9; 
+    flex-wrap: wrap;
+    
     
 }
 
@@ -90,7 +94,7 @@
 
 @media (max-width: 800px) {
     .inputFieldMail , .inputFieldInquiry , .inputFieldMessage  {
-        width : 80%;
+        width : 90%;
         font-size : 5vw;
     }
 

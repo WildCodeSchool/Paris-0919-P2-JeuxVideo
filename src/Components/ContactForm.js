@@ -119,7 +119,7 @@ class ContactForm extends React.Component {
                             
 
                         />
-                        <input className='inputFieldMessage'
+                        <textarea className='inputFieldMessage'
                             id='message'
                             type='text'
                             value={this.state.message}
