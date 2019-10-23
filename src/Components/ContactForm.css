@@ -37,7 +37,17 @@
     width : 700px    
 }
 
-.inputField {
+.inputFieldInquiry {
+    display : flex;       
+    font-size : 30px;
+    color : #F9F9F9;
+    margin-top: 30px;
+    padding : 10px;
+    width : 700px;
+    
+}
+
+.inputFieldMessage {
     display : flex;       
     font-size : 30px;
     color: gray ;

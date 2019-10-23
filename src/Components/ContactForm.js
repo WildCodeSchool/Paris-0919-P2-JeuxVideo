@@ -12,8 +12,10 @@ class ContactForm extends React.Component {
 
     /*Email area */
 
+    
     handleChangeMail = this.handleChangeMail.bind(this);
     handleClickMail = this.handleClickMail.bind(this);
+    handleNoMail = this.handleNoMail.bind(this);
 
     // when email field clicked => default message disappears
     handleClickMail(event) {
@@ -32,11 +34,23 @@ class ContactForm extends React.Component {
         document.getElementById('email').style.color = "#F9F9F9";
     }
 
+    // when user doesn't input any infos, default infos is displayed
+    handleNoMail(event) {
+        if (event.target.value === '') {
+            this.setState({
+                email : 'Ton email'
+            })
+
+            document.getElementById('email').style.color = "grey";
+        }
+    }
+
    
 
     /*Message area */
     handleChangeMessage = this.handleChangeMessage.bind(this);
     handleClickMessage = this.handleClickMessage.bind(this);
+    handleNoMessage = this.handleNoMessage.bind(this);
     
 
     // same as email but with text message
@@ -47,7 +61,7 @@ class ContactForm extends React.Component {
         })            
     }
 
-    // same as email but with text message
+    
     handleChangeMessage(event) {
 
         this.setState({
@@ -55,6 +69,17 @@ class ContactForm extends React.Component {
         })
 
         document.getElementById('message').style.color = "#F9F9F9";
+    }
+
+
+    handleNoMessage(event) {
+        if (event.target.value === '') {
+            this.setState({
+                message : 'Message'
+            })
+
+            document.getElementById('message').style.color = "grey";
+        }
     }
 
     
@@ -70,20 +95,23 @@ class ContactForm extends React.Component {
                         value= {this.state.email}
                         onClick = {this.handleClickMail}
                         onChange={this.handleChangeMail}
+                        onMouseOut = {this.handleNoMail}
                     />
-                    <input className='inputField'
+                    <input className='inputFieldInquiry'
                         id='reason'
                         type='text'
                         value={this.state.inquiry}
+                        readOnly 
                         
 
                     />
-                    <input className='inputField'
+                    <input className='inputFieldMessage'
                         id='message'
                         type='text'
                         value={this.state.message}
                         onClick = {this.handleClickMessage}
                         onChange={this.handleChangeMessage}
+                        onMouseOut = {this.handleNoMessage}
                     />
 
                     <button className = 'formButton'>Envoyer</button>
