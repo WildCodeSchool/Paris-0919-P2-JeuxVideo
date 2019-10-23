@@ -27,24 +27,25 @@ h1 {
 
 @media screen and (max-width: 425px) {
   #logoTeam {
-    height: 60px;
-    width: 60px;
+    height: 150px;
+    width: 150px;
     margin-top: 15px;
     margin-left: 15px;
   }
   #logoJeu {
-    height: 115px;
-    width: 115px;
-    margin-left: -5px;
+    height: 280px;
+    width: 250px;
+    margin-left: -5%;
     align-self: unset;
-    margin-top: 35%;
+    margin-top: 60%;
   }
   h1 {
-    font-size: 20px;
-    margin-top: -320px;
-    margin-left: -140px;
+    font-size: 40px;
+    margin-left: -67%;
+    margin-top: 250px;
     letter-spacing: 0;
-    width: 180px;
+    width: 320px;
     text-align: center;
+    line-height: 60px;
   }
 }
