@@ -28,13 +28,23 @@
         
 }
 
-.inputField {
+.inputFieldMail {
     display : flex;       
     font-size : 30px;
-    color: #F9F9F9 ;
+    color: gray ;
     margin-top: 30px;
     padding : 10px;
     width : 700px    
+}
+
+.inputField {
+    display : flex;       
+    font-size : 30px;
+    color: gray ;
+    margin-top: 30px;
+    padding : 10px;
+    width : 700px;
+    
 }
 
 .formButton {

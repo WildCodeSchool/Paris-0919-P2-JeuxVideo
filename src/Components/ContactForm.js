@@ -12,23 +12,49 @@ class ContactForm extends React.Component {
 
     /*Email area */
 
-    handleChange2 = this.handleChange2.bind(this);
+    handleChangeMail = this.handleChangeMail.bind(this);
+    handleClickMail = this.handleClickMail.bind(this);
 
-    handleChange2(event) {
+    // when email field clicked => default message disappears
+    handleClickMail(event) {
+        this.setState({
+            email : ''
+        })            
+    }
+
+    // email field takes the value inputed in it + color change 
+    handleChangeMail(event) {
+        
         this.setState({
             email : event.target.value
         })
+
+        document.getElementById('email').style.color = "#F9F9F9";
     }
 
-    /*Message area */
-    handleChange = this.handleChange.bind(this);
+   
 
-    //cmmz here
-    handleChange(event) {
+    /*Message area */
+    handleChangeMessage = this.handleChangeMessage.bind(this);
+    handleClickMessage = this.handleClickMessage.bind(this);
+    
+
+    // same as email but with text message
+    handleClickMessage(event) {
+        
         this.setState({
-            message : event.target.value,
-            
+            message : ''
+        })            
+    }
+
+    // same as email but with text message
+    handleChangeMessage(event) {
+
+        this.setState({
+            message : event.target.value,           
         })
+
+        document.getElementById('message').style.color = "#F9F9F9";
     }
 
     
@@ -38,11 +64,12 @@ class ContactForm extends React.Component {
             <div className = 'contactParent'>
                 <h2 className ="contactTitle">Contact</h2>
                 <form className='contactForm'>
-                    <input className='inputField'
+                    <input className='inputFieldMail'
                         id='email'
                         type='text'
                         value= {this.state.email}
-                        onChange={this.handleChange2}
+                        onClick = {this.handleClickMail}
+                        onChange={this.handleChangeMail}
                     />
                     <input className='inputField'
                         id='reason'
@@ -55,7 +82,8 @@ class ContactForm extends React.Component {
                         id='message'
                         type='text'
                         value={this.state.message}
-                        onChange={this.handleChange}
+                        onClick = {this.handleClickMessage}
+                        onChange={this.handleChangeMessage}
                     />
 
                     <button className = 'formButton'>Envoyer</button>
