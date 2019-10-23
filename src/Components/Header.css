@@ -22,5 +22,29 @@ h1 {
   color: #45BAC0;
   align-self: center;
   margin-top: 300px;
-  margin-left: -350px;
+  margin-left: -450px;
+}
+
+@media screen and (max-width: 425px) {
+  #logoTeam {
+    height: 60px;
+    width: 60px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  #logoJeu {
+    height: 115px;
+    width: 115px;
+    margin-left: -5px;
+    align-self: unset;
+    margin-top: 35%;
+  }
+  h1 {
+    font-size: 20px;
+    margin-top: -320px;
+    margin-left: -140px;
+    letter-spacing: 0;
+    width: 180px;
+    text-align: center;
+  }
 }
