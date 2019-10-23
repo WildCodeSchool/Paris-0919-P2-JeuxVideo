@@ -5,7 +5,7 @@ class ContactForm extends React.Component {
 
     state = {
         email : "Ton email",
-        inquiry : "J'ai une question à propos du jeu",
+        inquiry : "J'ai une question à propos de...",
         message : "Message"
 
     }
@@ -41,6 +41,40 @@ class ContactForm extends React.Component {
             })
 
             document.getElementById('email').style.color = "grey";
+        }
+    }
+
+    /*Inquiry area */
+
+    handleChangeInquiry = this.handleChangeInquiry.bind(this);
+    handleClickInquiry = this.handleClickInquiry.bind(this);
+    handleNoInquiry = this.handleNoInquiry.bind(this);
+
+    
+    handleClickInquiry(event) {
+        this.setState({
+            inquiry : ''
+        })            
+    }
+
+    
+    handleChangeInquiry(event) {
+        
+        this.setState({
+            inquiry : event.target.value
+        })
+
+        document.getElementById('inquiry').style.color = "#F9F9F9";
+    }
+
+    
+    handleNoInquiry(event) {
+        if (event.target.value === '') {
+            this.setState({
+                inquiry : "J'ai une question à propos de..."
+            })
+
+            document.getElementById('inquiry').style.color = "grey";
         }
     }
 
@@ -112,10 +146,13 @@ class ContactForm extends React.Component {
                             onMouseOut = {this.handleNoMail}
                         />
                         <input className='inputFieldInquiry'
-                            id='reason'
+                            id='inquiry'
                             type='text'
                             value={this.state.inquiry}
-                            readOnly 
+                            onClick = {this.handleClickInquiry}
+                            onChange={this.handleChangeInquiry}
+                            onMouseOut = {this.handleNoInquiry}
+                            
                             
 
                         />

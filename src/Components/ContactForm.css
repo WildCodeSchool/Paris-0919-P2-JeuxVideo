@@ -52,7 +52,7 @@
 .inputFieldInquiry {
     display : flex;       
     font-size : 30px;
-    color : #F9F9F9;
+    color: gray ;
     margin-top: 30px;
     padding : 10px;
     width : 700px;
@@ -95,7 +95,7 @@
 @media (max-width: 800px) {
     .inputFieldMail , .inputFieldInquiry , .inputFieldMessage  {
         width : 90%;
-        font-size : 5vw;
+        font-size : 25px;
     }
 
     .formButton {
