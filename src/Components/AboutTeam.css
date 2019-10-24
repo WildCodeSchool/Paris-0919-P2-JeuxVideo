@@ -27,3 +27,26 @@
   background-color: #45BAC0;
   margin: auto;
 }
+
+@media screen and (max-width: 425px) {
+  #team {
+    height: 380px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+  #team h2 {
+    margin-top: 20px;
+    font-size: 23px;
+    line-height: 45px;
+    width: 80%;
+    margin-left: 10%;
+    height: 0px;
+  }
+  #team p {
+    font-size: 18px;
+    height: 50%;
+    width: 74%;
+    margin-left: 15%;
+    margin-top: 50px;
+  }
+}

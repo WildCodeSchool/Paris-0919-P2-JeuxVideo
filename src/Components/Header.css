@@ -1,5 +1,5 @@
 #header {
-  height: 900px;
+  height: 800px;
   display: flex;
 }
 #logoTeam {
@@ -13,6 +13,7 @@
   width: 15%;
   margin-left: 600px;
   align-self: center;
+  margin-top: 150px;
 }
 h1 {
   font-family: 'Press Start 2P', cursive;
@@ -21,6 +22,35 @@ h1 {
   font-weight: 0;
   color: #45BAC0;
   align-self: center;
-  margin-top: 300px;
-  margin-left: -350px;
+  margin-top: 500px;
+  margin-left: -500px;
+}
+
+@media screen and (max-width: 425px) {
+  #header {
+    height: 755px;
+  }
+  #logoTeam {
+    height: 150px;
+    width: 150px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  #logoJeu {
+    height: 250px;
+    width: 50%;
+    margin-left: -12%;
+    align-self: unset;
+    margin-top: 60%;
+  }
+  h1 {
+    font-size: 40px;
+    margin-left: -62%;
+    margin-top: 300px;
+    letter-spacing: 0;
+    width: 75%;
+    text-align: center;
+    line-height: 45px;
+    background: none;
+  }
 }

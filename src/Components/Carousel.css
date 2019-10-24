@@ -1,0 +1,151 @@
+#fighter h2 {
+  color: #45BAC0;
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  font-size: 40px;
+}
+
+#slider {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 100%);
+  scroll-behavior: smooth;
+  margin-bottom: 200px;
+  margin-left: 2%;
+}
+
+#slider section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 22%);
+  position: relative;
+  margin: 20px 0;
+  transition: 250ms transform;
+}
+
+#slider section a {
+  position: absolute;
+  color: #45BAC0;
+  text-decoration: none;
+  font-size: 4em;
+  width: 80px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+  background: none;
+  align-self: center;
+}
+
+.fas {
+  background: none;
+}
+
+.images {
+  background: none;
+  width: 320px;
+  height: 320px;
+}
+
+.avatars {
+  transition: 250ms all;
+  margin-left: 32%;
+}
+
+.images {
+  transition: 250ms all;
+  border-radius: 50%;
+}
+
+.images:hover {
+  margin: 40px 0 0 0;
+  transform: scale(1.2);
+}
+
+.avatars p {
+  color: #45BAC0;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: -15%;
+  width: 400px;
+}
+
+#leftOne {
+  left: -1%;
+}
+
+#rightOne {
+  right: 2%;
+}
+
+#leftTwo {
+  left: -1.4%;
+}
+
+#rightTwo {
+  right: 1%;
+}
+
+#four p {
+  width: 441px;
+}
+
+@media screen and (max-width: 425px) {
+  #fighter h2 {
+    margin-top: 150px;
+    margin-left: 10%;
+    margin-bottom: 100px;
+    font-size: 23px;
+    line-height: 45px;
+    width: 80%;
+  }
+  #slider {
+    grid-template-columns: repeat(4, 100%);
+    scroll-behavior: smooth;
+    margin-bottom: 100px;
+    margin-left: 2%;
+  }
+  #slider section {
+    overflow: hidden;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    position: relative;
+    margin: 20px 0;
+    transition: 250ms transform;
+  }
+  #slider section a {
+    font-size: 4em;
+    width: 50px;
+    padding: 20px;
+  }
+  .avatars p {
+    display: none;
+  }
+  .images {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 80px;
+  }
+  #slider section a {
+    font-size: 3em;
+    width: 80px;
+  }
+  #leftOne {
+    left: -7%;
+    top: 125px;
+  }
+  #rightOne {
+    left: 75%;
+    top: 125px;
+  }
+  #leftTwo {
+    left: -7%;
+    top: 125px;
+  }
+  #rightTwo {
+    left: 75%;
+    top: 125px;
+  }
+}

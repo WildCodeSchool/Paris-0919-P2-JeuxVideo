@@ -1,0 +1,67 @@
+.synopsis_parent {
+    margin : 0px;
+    padding : 0px;
+    box-sizing:border-box;
+    display : flex;
+    flex-direction: column;
+    margin-left : 5%;
+    margin-right : 5%;
+    margin-bottom : 10%
+}
+
+.title_synopsis {
+    display : flex;
+    font-size : 40px;
+    font-family: 'Press Start 2P', cursive;
+    color : #45BAC0;
+    align-items : flex-start;
+    margin-bottom : 60px;;
+    
+}
+
+.text_synopsis {
+    font-size : 35px;
+    color: #DDDDDD;
+    font-family: Roboto;
+    align-items : center;
+    margin-top: 20px;
+    
+}
+
+.supportButtonParent {
+    display : flex;
+    justify-content : flex-end;
+}
+
+.supportButton {
+    background-color : #E100FF;
+    text-align: center;
+    color : #F9F9F9;
+    padding : 20px;
+    border-radius:  55px;
+    font-size: 22px;
+    max-width : 212px;
+    margin-top : 3%;
+        
+}
+
+
+@media screen and (max-width: 425px) {
+    
+    .title_synopsis {
+      
+      font-size: 23px;
+    }
+
+    .text_synopsis {
+      font-size: 18px;
+      
+    }
+
+    .supportButton {
+        width: 30%;
+        font-size: 15px;
+        margin-top: 50px;
+        padding: 10px;
+      }
+}

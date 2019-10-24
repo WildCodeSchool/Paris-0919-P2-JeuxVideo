@@ -1,0 +1,49 @@
+.footerTest {
+    margin : 0;
+    box-sizing: border-box;
+    background-color :#E100FF;
+    display: flex ;
+    justify-content: space-between;
+    padding : 20px 50px;
+    
+    
+}
+
+.listeFooter {
+    height : 30px;
+    background-color :#E100FF;
+}
+
+.elmtSns {
+    display: inline-block;
+    background-color :#E100FF;
+    padding-right: 15px;
+}
+
+.mailStudio {
+    font-size : 30px;
+    color: black;
+    background-color :#E100FF;
+    
+}
+
+.snsImg {
+    height : 30px;
+    width : 30px;
+    background-color :#E100FF;
+    
+}
+
+@media screen and (max-width: 425px) {
+.mailStudio {
+    font-size: 18px;
+    
+}
+
+.snsImg {
+    height : 18px;
+    width : 18px;
+
+}
+
+}
