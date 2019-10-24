@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Import librairies
+import React from 'react'
+import Axios from 'axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css'
+
+export default class App extends React.Component {
+
+  // Initialize states
+  state = {
+    textureDatas:'',
+    itemsDatas: '',
+    soundsDatas: '',
+    charactersDatas: ''
+  }
+
+  // Use Axios to consume APIs
+  componentDidMount() {
+
+    // Texture API
+    Axios.get('./database/textures.json')
+      // Change JSON into JS object
+      .then(response => response.data)
+      // Give the texture object to the state
+      .then(data => {
+        this.setState({ textureDatas: data })
+      })
+
+    // Item API
+    Axios.get('./database/items.json')
+    // Change JSON into JS object
+    .then(response => response.data)
+    // Give the texture object to the state
+    .then(data => {
+      this.setState({ itemsDatas: data })
+    })
+
+    // Sound API
+    Axios.get('./database/characters.json')
+    // Change JSON into JS object
+    .then(response => response.data)
+    // Give the texture object to the state
+    .then(data => {
+      this.setState({ soundsDatas: data })
+    })
+
+    // Characters API
+    Axios.get('./database/sounds.json')
+    // Change JSON into JS object
+    .then(response => response.data)
+    // Give the texture object to the state
+    .then(data => {
+      this.setState({ charactersDatas: data })
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+      </div>
+    );
+  }
 }
-
-export default App;
