@@ -1,22 +1,57 @@
-#commandes h2 {
+#titleDesktop {
   font-family: 'Press Start 2P', cursive;
   color: #45BAC0;
   font-size: 40px;
-  margin-left: 62px;
+  text-align: center;
   margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+#titleMobile {
+  display: none;
 }
 
 #commandes p {
   font-family: Roboto;
   color: white;
   font-size: 30px;
-  margin-left: 92px;
+  text-align: center;
   margin-bottom: 118px;
 }
-#ecranJeu {
+#commandes #ecranJeu {
   height: 700px;
   width: 80%;
   background-color: white;
   margin-left: 188px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 425px) {
+  #commandes {
+    height: 755px;
+  }
+  #titleDesktop {
+    display: none;
+  }
+  #titleMobile {
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    color: #45BAC0;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+    margin-left: 3%;
+    line-height: 45px;
+  }
+  #commandes p {
+    display: none;
+  }
+  #commandes #ecranJeu {
+    height: 400px;
+    width: 90%;
+    margin-top: 100px;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 50px;
+  }
 }

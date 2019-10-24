@@ -1,7 +1,7 @@
 #kickstarter {
   background-color: #45BAC0;
   height: 600px;
-  margin-top: 296px;
+  margin-top: 250px;
   margin-bottom: 200px;
   display: flex;
   flex-direction: column;
@@ -40,4 +40,32 @@
   position: relative;
   left: 60%;
   bottom: 50px;
+}
+
+@media screen and (max-width: 425px) {
+  #kickstarter {
+    height: 380px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  #kickstarter h2 {
+    font-size: 23px;
+    width: 70%;
+    line-height: 45px;
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-bottom: 30px;
+  }
+  #kickstarter p {
+    font-size: 18px;
+    width: 85%;
+    text-align: center;
+    margin-left: 10%;
+  }
+  #kickstarter button {
+    width: 30%;
+    font-size: 15px;
+    margin-top: 80px;
+    padding: 10px;
+  }
 }
