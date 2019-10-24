@@ -14,11 +14,8 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <GameSynopsis/>
       <Ecran />     
-      <Kickstarter />
-      <AboutTeam />
-     <GameSynopsis/>
-      <Ecran />
       <Kickstarter />
       <AboutTeam />
       <Carousel />

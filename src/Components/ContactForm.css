@@ -8,7 +8,6 @@
     align-items: center;
     padding-top : 80px;
     padding-bottom : 80px;
-    
 }
 
 .contactTitle {
@@ -17,7 +16,6 @@
     color: #0C0032;
     background-color : #45BAC0;
     margin-bottom : 60px;
-
 }
 
 .contactForm {
@@ -25,9 +23,6 @@
     display : flex;
     flex-direction: column;
     align-items: center;
-    
-    
-        
 }
 
 .test {
@@ -35,7 +30,6 @@
     flex-direction: column;
     align-items : center;
     background-color : #45BAC0;
-    
 }
 
 .inputFieldMail {
@@ -48,7 +42,6 @@
     border: 2px solid #F9F9F9;    
 }
 
-
 .inputFieldInquiry {
     display : flex;       
     font-size : 30px;
@@ -57,7 +50,6 @@
     padding : 10px;
     width : 700px;
     border: 2px solid #F9F9F9;  
-    
 }
 
 .inputFieldMessage {
@@ -70,10 +62,7 @@
     width : 700px;
     border: 2px solid #F9F9F9; 
     flex-wrap: wrap;
-    
-    
 }
-
 
 .formButton {
     
@@ -87,20 +76,21 @@
     margin-top : 3%;
     box-sizing: border-box;
     margin-left : 70%;
-    
-    
-
 }
 
 @media (max-width: 800px) {
-    .inputFieldMail , .inputFieldInquiry , .inputFieldMessage  {
-        width : 90%;
-        font-size : 25px;
-    }
+  .inputFieldMail , .inputFieldInquiry , .inputFieldMessage  {
+    width : 90%;
+    font-size : 20px;
+  }
 
-    .formButton {
-        font-size : 3vw;
-        margin-left : 0;
-    }
+  .contactTitle {
+    font-size: 30px;
+  }
+
+  .formButton {
+    font-size : 3vw;
+    margin-left : 0;
+  }
 
 }

@@ -44,7 +44,7 @@
 
 @media screen and (max-width: 425px) {
   #kickstarter {
-    height: 380px;
+    height: 450px;
     margin-top: 50px;
     margin-bottom: 50px;
   }
@@ -57,14 +57,14 @@
     margin-bottom: 30px;
   }
   #kickstarter p {
-    font-size: 18px;
+    font-size: 20px;
     width: 85%;
     text-align: center;
     margin-left: 10%;
   }
   #kickstarter button {
     width: 30%;
-    font-size: 15px;
+    font-size: 17px;
     margin-top: 80px;
     padding: 10px;
   }
