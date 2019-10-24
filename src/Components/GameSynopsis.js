@@ -14,7 +14,7 @@ class GameSynopsis extends React.Component {
                   Armé de votre fidèle keyBoardBlade(), parcourez le royaume de King.DOM pour le sauver des Bugs.
                 </div>
                 <div className="supportButtonParent">
-                    <button class='supportButton'>Soutenir le jeu</button>
+                    <button className='supportButton'>Soutenir le jeu</button>
                 </div>
                 
             </div>

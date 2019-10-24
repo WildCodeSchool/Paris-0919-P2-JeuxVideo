@@ -46,4 +46,22 @@
 }
 
 
+@media screen and (max-width: 425px) {
+    
+    .title_synopsis {
+      
+      font-size: 23px;
+    }
 
+    .text_synopsis {
+      font-size: 18px;
+      
+    }
+
+    .supportButton {
+        width: 30%;
+        font-size: 15px;
+        margin-top: 50px;
+        padding: 10px;
+      }
+}
