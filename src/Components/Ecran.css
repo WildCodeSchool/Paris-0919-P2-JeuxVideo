@@ -21,7 +21,11 @@
 #commandes #ecranJeu {
   height: 700px;
   width: 80%;
-  background-color: white;
+  background-color: black;
+  background-image: url('chargement.gif');
+  background-repeat: no-repeat;
+  background-size: 700px 700px;
+  background-position: center;
   margin-left: 188px;
   margin-bottom: 50px;
 }

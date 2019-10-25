@@ -11,7 +11,7 @@ class Ecran extends Component {
         <p>ZSQD/Flèches directionnelles: Bouger le personnage <br /><br />
           Barre Espace: Valider<br /><br />
           Touches Ctrl + S: Sauvegarder</p>
-        <div id="ecranJeu">NOPE</div>
+        <div id="ecranJeu"></div>
       </div>
     );
   }
