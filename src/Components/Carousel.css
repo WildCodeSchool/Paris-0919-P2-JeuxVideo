@@ -135,6 +135,13 @@
   .avatars p {
     display: none;
   }
+  .avatars .names {
+    display: block;
+    margin-top: -70px;
+    font-size: 20px;
+    margin-left: -15%;
+    width: 160px;
+  }
   .images {
     width: 130px;
     height: 130px;
@@ -159,5 +166,15 @@
   #rightTwo {
     left: 75%;
     top: 125px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #fighter h2 {
+    font-size: 22px;
+    margin-bottom: 50px;
+  }
+  #slider {
+    margin-bottom: 50px;
   }
 }

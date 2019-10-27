@@ -83,14 +83,27 @@
     width : 90%;
     font-size : 20px;
   }
-
   .contactTitle {
     font-size: 30px;
   }
-
   .formButton {
-    font-size : 3vw;
+    font-size : 4vw;
+    margin-top: 25px;
     margin-left : 0;
+    width: 50%;
   }
-
+}
+@media screen and (max-width: 425px) {
+  .contactParent {
+    padding-bottom : 50px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .contactTitle {
+    font-size: 25px;
+  }
+  .formButton {
+    font-size : 4vw;
+    margin-top: 50px;
+  }
 }

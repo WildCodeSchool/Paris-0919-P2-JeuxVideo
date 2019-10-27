@@ -10,13 +10,13 @@ class Footer extends React.Component {
         return (
             <div >
                 <footer className='footerTest' >
-                    <p className='mailStudio'>ragegitstudio@ragegit.com</p>
+                  <p className='mailStudio'>ragegitstudio@ragegit.com</p>
 
-                    <ul className='listeFooter'>
-                        <li className='elmtSns'><i className="fab fa-instagram snsImg"></i></li>
-                        <li className='elmtSns'><i className="fab fa-facebook-f snsImg"></i></li>
-                        <li className='elmtSns'><i className="fab fa-twitter snsImg"></i></li>
-                    </ul>
+                  <ul className='listeFooter'>
+                    <li className='elmtSns'><i className="fab fa-instagram snsImg"></i></li>
+                    <li className='elmtSns'><i className="fab fa-facebook-f snsImg"></i></li>
+                    <li className='elmtSns'><i className="fab fa-twitter snsImg"></i></li>
+                  </ul>
 
                 </footer>
             </div>

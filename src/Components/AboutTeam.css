@@ -50,3 +50,16 @@
     margin-top: 50px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  #team h2 {
+    font-size: 22px;
+  }
+  #team p {
+    font-size: 20px;
+    height: 50%;
+    width: 72%;
+    margin-left: 12%;
+    margin-top: 20px;
+  }
+}

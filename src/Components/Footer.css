@@ -22,7 +22,6 @@
     font-size : 30px;
     color: black;
     background-color :#E100FF;
-    
 }
 
 .snsImg {
@@ -36,12 +35,35 @@
 }
 
 @media screen and (max-width: 425px) {
+  .footerTest {
+    justify-content: unset;
+  }
   .mailStudio {
     font-size: 18px;
+    margin-left: -12%;
   }
-
   .snsImg {
-    height : 18px;
-    width : 18px;
+    font-size: 30px;
+  }
+  .listeFooter {
+    position: relative;
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footerTest {
+    justify-content: unset;
+    height: 80px;
+  }
+  .mailStudio {
+    font-size: 15px;
+    margin-left: -15%;
+    margin-top: 5px;
+  }
+  .listeFooter {
+    height : 60px;
+    position: relative;
+    left: 20%;
   }
 }

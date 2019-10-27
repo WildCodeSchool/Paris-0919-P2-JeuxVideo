@@ -69,3 +69,15 @@
     padding: 10px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  #kickstarter {
+    height: 450px;
+  }
+  #kickstarter h2 {
+    font-size: 22px;
+  }
+  #kickstarter p {
+    font-size: 20px;
+  }
+}
