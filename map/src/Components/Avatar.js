@@ -4,9 +4,12 @@ import './Avatar.css'
 
 class Avatar extends React.Component {
     state = {
+        top: 350,
+        left: 650,
         animation: 'none',
         position: 'top 288px right 416px'
     }
+    
 
 
     // Start the onKeyDown fonction
@@ -14,26 +17,32 @@ class Avatar extends React.Component {
 
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
-    }
+        
+        }
 
     // Move the character according to the pressed key
     onKeyDown = (e) => {
         switch (e.keyCode) {
             case 90:
             case 38:
-                this.setState({animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px'})
+                if (this.state.top > -10){
+                const top = this.state.top - 10
+                this.setState({animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px', top: top})}
                 break
             case 83:
             case 40:
-                this.setState({animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px' })
+                const down = this.state.top + 10
+                this.setState({animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px', top : down })
                 break
             case 81:
             case 37:
-                this.setState({animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
+                const left = this.state.left - 10
+                this.setState({animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px', left: left })
                 break
             case 68:
             case 39:
-                this.setState({animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px' })
+                const right = this.state.left + 10
+                this.setState({animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px', left: right })
                 break
             default:
                 break
@@ -49,9 +58,10 @@ class Avatar extends React.Component {
 
     // Rendering the Character
     render() {
+        console.log(this.state.top)
         return (
             <div>
-                <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position}}></div>
+                <div className="Avatar" style={{animation: this.state.animation, backgroundPosition: this.state.position, top: this.state.top, left: this.state.left }}></div>
             </div>
         )
     }
