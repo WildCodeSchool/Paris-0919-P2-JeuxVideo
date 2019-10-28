@@ -14,10 +14,8 @@ class Avatar extends React.Component {
 
     // Start the onKeyDown fonction
     componentDidMount() {
-
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
-        
         }
 
     // Move the character according to the pressed key
@@ -31,18 +29,21 @@ class Avatar extends React.Component {
                 break
             case 83:
             case 40:
+                if (this.state.top < 630){
                 const down = this.state.top + 10
-                this.setState({animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px', top : down })
+                this.setState({animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px', top : down })}
                 break
             case 81:
             case 37:
+                if (this.state.left > 0) {
                 const left = this.state.left - 10
-                this.setState({animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px', left: left })
+                this.setState({animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px', left: left })}
                 break
             case 68:
             case 39:
+                if (this.state.left < 1250){
                 const right = this.state.left + 10
-                this.setState({animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px', left: right })
+                this.setState({animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px', left: right })}
                 break
             default:
                 break
