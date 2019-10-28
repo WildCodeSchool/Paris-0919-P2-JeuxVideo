@@ -7,12 +7,12 @@
     margin-top: 5%;
     margin-left : 5%;
     margin-right : 5%;
-    margin-bottom : 10%
+    margin-bottom : 15%
 }
 
 .title_synopsis {
     display : flex;
-    font-size : 40px;
+    font-size : 4vh;
     font-family: 'Press Start 2P', cursive;
     color : #45BAC0;
     align-items : flex-start;
@@ -20,7 +20,7 @@
 }
 
 .text_synopsis {
-    font-size : 35px;
+    font-size : 3vh;
     color: #DDDDDD;
     font-family: Roboto;
     align-items : center;
@@ -38,7 +38,7 @@
     color : #F9F9F9;
     padding : 20px;
     border-radius:  55px;
-    font-size: 22px;
+    font-size: 2.4vh;
     max-width : 212px;
     margin-top : 3%;
 }
@@ -46,19 +46,15 @@
 
 @media screen and (max-width: 425px) {  
   .title_synopsis {
-      
-    font-size: 30px;
     margin-left: 12%;
   }
 
   .text_synopsis {
-    font-size: 20px;
     text-align: center;
   }
 
   .supportButton {
-    width: 30%;
-    font-size: 15px;
+    width: 40%;
     margin-top: 50px;
     padding: 10px;
     margin-bottom: 100px;
@@ -66,18 +62,10 @@
 }
 
 @media screen and (max-width: 375px) {
+  .synopsis_parent {
+    margin-bottom: 5%;
+  }
   .title_synopsis {
-    font-size: 25px;
-    margin-left: 14%;
-  }
-  .text_synopsis {
-    font-size: 20px;
-  }
-  .supportButton {
-    width: 40%;
-    font-size: 15px;
-    margin-top: 50px;
-    padding: 10px;
-    margin-bottom: 100px;
+    margin-left: 18%;
   }
 }

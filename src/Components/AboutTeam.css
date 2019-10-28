@@ -14,13 +14,13 @@
   margin-top: 100px;
   margin-bottom: 100px;
   text-align: center;
-  font-size: 40px;
+  font-size: 4vh
 }
 
 #team p {
   color: black;
   font-family: Roboto;
-  font-size: 28px;
+  font-size: 3.5vh;
   height: 50%;
   width: 40%;
   text-align: center;
@@ -35,31 +35,27 @@
     margin-bottom: 50px;
   }
   #team h2 {
-    margin-top: 20px;
-    font-size: 23px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     line-height: 45px;
-    width: 80%;
-    margin-left: 10%;
     height: 0px;
+    font-size: 2.4vh;
   }
   #team p {
-    font-size: 20px;
+    font-size: 2.5vh;
     height: 50%;
     width: 74%;
-    margin-left: 15%;
-    margin-top: 50px;
   }
 }
 
 @media screen and (max-width: 375px) {
   #team h2 {
-    font-size: 22px;
+    font-size: 2.8vh;
   }
   #team p {
-    font-size: 20px;
+    font-size: 3vh;
     height: 50%;
     width: 72%;
-    margin-left: 12%;
-    margin-top: 20px;
+    margin-top: 50px;
   }
 }

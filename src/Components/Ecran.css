@@ -1,7 +1,7 @@
 #titleDesktop {
   font-family: 'Press Start 2P', cursive;
   color: #45BAC0;
-  font-size: 40px;
+  font-size: 4vh;
   text-align: center;
   margin-bottom: 100px;
   margin-top: 100px;
@@ -14,7 +14,7 @@
 #commandes p {
   font-family: Roboto;
   color: white;
-  font-size: 30px;
+  font-size: 3vh;
   text-align: center;
   margin-bottom: 118px;
 }
@@ -43,8 +43,7 @@
     color: #45BAC0;
     text-align: center;
     margin-bottom: 30px;
-    font-size: 30px;
-    margin-left: 3%;
+    font-size: 3.2vh;
     line-height: 45px;
   }
   #commandes p {
@@ -62,13 +61,13 @@
 
 @media screen and (max-width: 375px) {
   #commandes {
-    height: 540px;
+    height: 500px;
   }
   #titleMobile {
-    font-size: 25px;
+    font-size: 3.5vh;
   }
   #commandes #ecranJeu {
-    margin-top: 50px;
+    margin-top: 80px;
     height: 300px;
   }
 }

@@ -12,7 +12,7 @@
 
 .contactTitle {
     font-family: 'Press Start 2P', cursive;
-    font-size: 40px;
+    font-size: 4vh;
     color: #0C0032;
     background-color : #45BAC0;
     margin-bottom : 60px;
@@ -34,7 +34,7 @@
 
 .inputFieldMail {
     display : flex;       
-    font-size : 30px;
+    font-size : 3vh;
     color: gray ;
     margin-top: 30px;
     padding : 10px;
@@ -44,7 +44,7 @@
 
 .inputFieldInquiry {
     display : flex;       
-    font-size : 30px;
+    font-size : 3vh;
     color: gray ;
     margin-top: 30px;
     padding : 10px;
@@ -54,7 +54,7 @@
 
 .inputFieldMessage {
     display : flex;       
-    font-size : 30px;
+    font-size : 3vh;
     color: gray ;
     margin-top: 30px;
     padding : 10px;
@@ -65,14 +65,13 @@
 }
 
 .formButton {
-    
     background-color : #E100FF;
     text-align: center;
     color : #F9F9F9;
     padding : 20px;
     border-radius:  55px;
-    font-size: 22px;
-    max-width : 212px;
+    font-size: 2.5vh;
+    width : 25%;
     margin-top : 3%;
     box-sizing: border-box;
     margin-left : 70%;
@@ -81,10 +80,6 @@
 @media (max-width: 800px) {
   .inputFieldMail , .inputFieldInquiry , .inputFieldMessage  {
     width : 90%;
-    font-size : 20px;
-  }
-  .contactTitle {
-    font-size: 30px;
   }
   .formButton {
     font-size : 4vw;
@@ -97,13 +92,26 @@
   .contactParent {
     padding-bottom : 50px;
   }
+  .contactTitle {
+    font-size: 3.5vh;
+  }
+  .inputFieldInquiry {
+    font-size: 2.5vh;
+  }
+  .formButton {
+    font-size: 2.5vh;
+  }
 }
 @media screen and (max-width: 375px) {
+  .contactParent {
+    margin-left: 1px;
+    width: 100%;
+  }
   .contactTitle {
-    font-size: 25px;
+    margin-bottom : 40px;
   }
   .formButton {
     font-size : 4vw;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 }
