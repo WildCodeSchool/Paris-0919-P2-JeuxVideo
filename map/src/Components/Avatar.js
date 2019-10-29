@@ -25,7 +25,8 @@ class Avatar extends React.Component {
             case 38:
                 if (this.state.top > -10){
                 const top = this.state.top - 10
-                this.setState({animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px', top: top})}
+                if (top !== "undefined"){
+                this.setState({animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px', top: top})}}
                 break
             case 83:
             case 40:
@@ -59,7 +60,6 @@ class Avatar extends React.Component {
 
     // Rendering the Character
     render() {
-        console.log(this.state.top)
         return (
             <div>
                 <div className="Avatar" style={{animation: this.state.animation, backgroundPosition: this.state.position, top: this.state.top, left: this.state.left }}></div>
