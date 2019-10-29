@@ -1,0 +1,67 @@
+[
+    {
+        "id" : 1,
+        "name" : "avatar",
+        "Type" : "human",
+        "Quote" : "",
+        "Age" : "14",
+        "image" :"",
+        "battle-sprite" : "./assets/avatar_animated.gif"
+        
+    },
+    {
+        "id" : 2,
+        "name": "Garry Coder",
+        "Type": "PNJ",
+        "Quote": "You are a coder, Garry",
+        "Age": "20"
+    },
+    {
+        "id" : 3,
+        "name": "Ness Coffee",
+        "Type": "PNJ",
+        "Quote": "Psst, hey kids, wanna buy some coffee ?",
+        "Age": "9"
+    },
+    {
+        "id" : 4,
+        "name": "ToolsMaster",
+        "Type": "PNJ",
+        "Quote": "I have a lot of stuff to trade !",
+        "Age": "38"
+    },
+    {
+        "id" : 5,
+        "name": "Professor Shell",
+        "Type": "PNJ",
+        "Quote": "Hello fellow kids, welcome to this world, let me introduce myself, i'm the professor Shell, and i'll be your guide during the whole game.",
+        "Age": "67"
+    },
+    {
+        "id" : 6,
+        "name": "Abdoumen",
+        "Type": "PNJ",
+        "Quote": "Chicken ? Where's my CHICKENS!!! Hey you kido, did you saw my CHICKENS ? Can you help me ? Found them and i'll give you rewards",
+        "Age": "42"
+    },
+    {
+        "id" : 7,
+        "name": "Goat'Lanta",
+        "Type": "Bêêêêêh",
+        "Quote": "... Bêêêêh ... 'hum, this dude is weird, maybe i should leave ??'",
+        "Age": "Bêêêêêêêh ..."
+    },
+    {
+        "id" : 8,
+        "name": "Meta",
+        "Type": "ennemy",
+        "Quote": "Blaararhrahraharg !!!!!",
+        "Age": "",
+        "image" :"",
+        "battle-sprite" : {
+            "alive" : "./assets/meta1_animate.gif",
+            "dead" : "./assets/meta_dead.png" }
+
+
+    }
+]
