@@ -4,10 +4,17 @@ import './Map.css'
 
 class Map1 extends React.Component{
     state = {
-        top: 1,
-        left: 1,
+        top: 6,
+        left: 5,
         animation: 'none',
-        position: 'top 288px right 416px'
+        position: 'top 288px right 416px',
+        map: [[0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,1,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,1,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0]]
     }
     
     // tout ce qui concerne le déplacement et les anims
@@ -22,30 +29,38 @@ class Map1 extends React.Component{
         switch (e.keyCode) {
             case 90:
             case 38:
-                const top = this.state.top -1
-                this.setState({animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px', top: top})
+                if (this.state.top > 1){
+                if (this.state.map[this.state.top-2][this.state.left-1] !== 1){
+                const top = this.state.top-1
+                this.setState({animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px', top: top})}}
                 break
             case 83:
             case 40:
+                if (this.state.top <7){
+                if (this.state.map[this.state.top][this.state.left-1] !== 1){
                 const down = this.state.top + 1
-                this.setState({animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px', top : down })
+                this.setState({animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px', top : down })}}
                 break
             case 81:
             case 37:
+                if (this.state.left > 1){
+                if (this.state.map[this.state.top-1][this.state.left-2] !== 1){
                 const left = this.state.left - 1
-                this.setState({animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px', left: left })
+                this.setState({animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px', left: left })}}
                 break
             case 68:
             case 39:
+                if (this.state.left < 13){
+                if (this.state.map[this.state.top-1][this.state.left] !== 1){
                 const right = this.state.left + 1
-                this.setState({animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px', left: right })
+                this.setState({animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px', left: right })}}
                 break
             default:
                 break
         }
     }
 
-    
+
 
     // Deleting the animation on keyUp
     onKeyUp = (e) => {
@@ -56,11 +71,11 @@ class Map1 extends React.Component{
 
 
     render(){
-        console.log(this.state.top)
-        console.log(this.state.left)
+        console.log(this.state.map[4][4])
         return(
             <div className="map_background">
-                <div className = 'obstacle' value= "1"></div>
+                <div className = 'obstacle'></div>
+                <div className = 'obstacle2'></div>
                 <div className="Avatar" style={{animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex:0 }}></div>       
 
             </div>

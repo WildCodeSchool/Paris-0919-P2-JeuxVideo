@@ -13,6 +13,12 @@
     background: red;
     z-index: 1;
 }
+.obstacle2 {
+    grid-column: 10/11;
+    grid-row: 3/4;
+    background: red;
+    z-index: 1;
+}
 
 /* // tout ce qui concerne l'avatar */
 
