@@ -2,17 +2,17 @@ import React from 'react'
 
 import './Map.css'
 
-class Map1 extends React.Component{
+class Map2 extends React.Component{
     state = {
         top: 6,
         left: 5,
         animation: 'none',
         position: 'top 288px right 416px',
         map: [[0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,1,1,1,1,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,1,0,0,0],
         [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,1,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0,0,0,0]]
     }
@@ -23,7 +23,6 @@ class Map1 extends React.Component{
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
         }
-
 
     // Move the character according to the pressed key
     onKeyDown = (e) => {
@@ -48,9 +47,6 @@ class Map1 extends React.Component{
                 if (this.state.map[this.state.top-1][this.state.left-2] !== 1){
                 const left = this.state.left - 1
                 this.setState({animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px', left: left })}}
-                if (this.state.left === 1){
-                    this.props.newMap(2) 
-                }
                 break
             case 68:
             case 39:
@@ -64,7 +60,6 @@ class Map1 extends React.Component{
         }
     }
 
-
     // Deleting the animation on keyUp
     onKeyUp = (e) => {
         if (e.keyCode) {
@@ -73,11 +68,11 @@ class Map1 extends React.Component{
     }
 
 
+
     render(){
         return(
             <div className="map_background">
-                <div className = 'obstacle'></div>
-                <div className = 'obstacle2'></div>
+                <div className = 'obstacle3'></div>
                 <div className="Avatar" style={{animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex:0 }}></div>       
 
             </div>
@@ -85,4 +80,4 @@ class Map1 extends React.Component{
     }
 }
 
-export default Map1
+export default Map2
