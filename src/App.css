@@ -1,0 +1,72 @@
+
+
+h2 {
+  text-align: center;
+  font-family: 'Press Start 2P';
+}
+
+h3 {
+
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Press Start 2P';
+}
+
+p {
+  font-family: 'Press Start 2P';
+  text-align: center;
+}
+
+
+.game-area{
+  
+  border: 2px solid black;
+  width: 1300px;
+  height: 700px;
+  z-index: 1;
+  top: 50px;
+  margin-left: 14%;
+  overflow: hidden;
+  background-image: url('./components/futurestyle.jpg');
+}
+
+.enemystatus-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  font-family: 'Press Start 2P';
+  height: 280px;
+}
+
+.playerstatus-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.meta-area {
+  display: flex;
+  flex-direction: column;
+  height: 310px;
+}
+
+
+.Meta {
+  width: 200px;
+  height: 200px;
+}
+
+.avatar-area {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+
+}

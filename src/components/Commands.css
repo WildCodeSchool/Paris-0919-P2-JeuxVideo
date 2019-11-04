@@ -1,0 +1,20 @@
+.commands-area {
+    width: 25%;
+    height: 220px;
+    background-color: gray;
+    opacity: 0.8;
+    overflow: hidden;
+    border: 2px solid black;
+    list-style: none;
+    font-family: 'Press Start 2P';
+    margin-right: 600px;
+    margin-top: 10px;
+}
+.commands-area ul {
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
+.commands-area ul li {
+    margin-top: 20px;
+}
