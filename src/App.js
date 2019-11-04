@@ -10,22 +10,49 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    HP: 150
+    HP: 150,
+    Dialog: "",
+
   }
   newHPClickedChild = neoClickedHP => {
     this.setState({
       HP: neoClickedHP
     })
-
   };
 
-// Ici, notre méthode pour actualiser la boite de dialogue.
+//   newDialog = () => {
+//     if (this.state.HP === 0)
+//     { const neoDialog = "Ennemi Débuggé"
+//     this.setState({
+//       Dialog: neoDialog
+//     })
+//   }
+// }
+
+
+
+  // // componentDidUpdate() {
+  //   if (this.state.HP === 0) {
+  //     const newDialog = "Ennemi Débuggé"
+  //     this.setState({
+  //       Dialog: newDialog
+  //     })
+  //   }
+  // // }
+
+  // // Ici, notre méthode pour actualiser la boite de dialogue.
   // handleDamage = () => {
-  //   if(this.state.HP === 0){
-  //    document.querySelector('text')
-  //     console.log("lol")
+  //   if (this.state.HP === 0) {
+  //     const newDialog = "Ennemi Débuggé"   
+  //     this.setState({
+  //       Dialog: newDialog
+  //     })
+  //     //  document.querySelector('text')
+  //     // console.log("lol")
   //   }
   // }
+
+
 
   render() {
     return (
@@ -37,9 +64,9 @@ class App extends React.Component {
               newHPClicked={this.newHPClickedChild}
             />
             <div className="meta-area">
-              <Enemy name={'Meta'} HP={this.state.HP} /*onChange={this.handleDamage()}*/ />
-              
-                
+              <Enemy name={'Meta'} HP={this.state.HP} onChange={this.componentDidUpdate} />
+
+
               <img className='Meta' src={Meta} alt='Meta'></img>
 
             </div>
@@ -52,7 +79,8 @@ class App extends React.Component {
             <div className='dialog-area'>
 
 
-            <Dialog />
+              <Dialog 
+              />
 
             </div>
 
