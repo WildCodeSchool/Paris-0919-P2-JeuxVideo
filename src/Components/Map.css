@@ -4,9 +4,8 @@
     background: green;
     z-index: 0;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    margin: auto;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(7, 1fr);
 }
 .obstacle {
     grid-column: 5/6;
@@ -14,25 +13,18 @@
     background: red;
     z-index: 1;
 }
-.obstacle-2 {
+.obstacle2 {
     grid-column: 10/11;
     grid-row: 3/4;
     background: red;
     z-index: 1;
 }
-.obstacle-3 {
-    grid-column: 7/8;
+.obstacle3 {
+    grid-column: 5/8;
     grid-row: 2/3;
     background: red;
     z-index: 1;
 }
-.npc-1 {
-    grid-column: 11/12;
-    grid-row: 1/2;
-    background: yellow;
-    z-index: 1;
-}
-
 
 /* // tout ce qui concerne l'avatar */
 
@@ -40,22 +32,9 @@
     height: 72px;
     width: 52px;
     background-image: url('./img/Tileset.png');
-    top: 0;
-    left: 0;
+    top: 300px;
+    left: 630px;
     z-index: 2;
-    display: block;
-    margin: auto;
-}
-
-/* Quote Container */
-.quoteContainer {
-    display: none;
-    position: absolute;
-    bottom: 30px;
-    margin: auto;
-    width: 1152px;
-    height: 100px;
-    background: rgba(0, 0, 0, 0.555);
 }
 
 
