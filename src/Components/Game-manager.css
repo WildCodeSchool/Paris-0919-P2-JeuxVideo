@@ -1,8 +1,8 @@
 .Game-area{
     margin: auto;
     margin-top: 3%;
-    width: 1300px;
-    height: 700px;
+    width: 1152px;
+    height: 576px;
     border: 2px solid black;
     overflow: hidden;
 }
