@@ -26,7 +26,7 @@ class GameManager extends React.Component {
             case 2:
                 return (
                     <div className="Game-area">
-                        <Map2 newMap={this.newDisplay}></Map2>
+                        <Map2 newMap={this.newDisplay()}></Map2>
                     </div>
                 )
                 break
