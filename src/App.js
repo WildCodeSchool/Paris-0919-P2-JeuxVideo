@@ -19,8 +19,15 @@ class App extends React.Component {
 
   };
 
+// Ici, notre méthode pour actualiser la boite de dialogue.
+  // handleDamage = () => {
+  //   if(this.state.HP === 0){
+  //    document.querySelector('text')
+  //     console.log("lol")
+  //   }
+  // }
+
   render() {
-    console.log(this.state.HP)
     return (
       <div className="App">
         <div className='game-area'>
@@ -30,8 +37,9 @@ class App extends React.Component {
               newHPClicked={this.newHPClickedChild}
             />
             <div className="meta-area">
-              <Enemy name={'Meta'}/>
-                {this.state.HP}
+              <Enemy name={'Meta'} HP={this.state.HP} /*onChange={this.handleDamage()}*/ />
+              
+                
               <img className='Meta' src={Meta} alt='Meta'></img>
 
             </div>
@@ -43,7 +51,8 @@ class App extends React.Component {
             </div>
             <div className='dialog-area'>
 
-              <Dialog />
+
+            <Dialog />
 
             </div>
 

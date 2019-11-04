@@ -17,7 +17,7 @@ render() {
         <>
         <div className="enemy-area">
             <h2>{this.props.name}</h2>
-            
+            <p>HP: {this.props.HP}</p>
         </div>
         </>
     )
