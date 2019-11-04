@@ -8,31 +8,36 @@ class GameManager extends React.Component {
     state = {
         currentMap: 1
     }
-    newDisplay = (newMap) => {
-        this.setState = ({
-            currentMap: newMap
-        })
-    }
 
-    render() {
-        switch (this.state.currentMap) {
-            case 1:
-                return (
-                    <div className="Game-area">
-                        <Map1 newMap={this.newDisplay()}></Map1>
-                    </div>
-                )
-                break
-            case 2:
-                return (
-                    <div className="Game-area">
-                        <Map2 newMap={this.newDisplay}></Map2>
-                    </div>
-                )
-                break
-        }
 
-    }
+newDisplay = (changeMap) => {
+    console.log('newDisplay', changeMap);
+    
+    this.setState({currentMap: changeMap})
+    console.log(this.state);
+    
 }
+
+render() {
+    switch (this.state.currentMap) {
+        case 1:
+            return (
+                <div className="Game-area">
+                    <Map1 newMap={this.newDisplay}></Map1>
+                </div>
+            )
+        case 2:
+            return (
+                <div className="Game-area">
+                    <Map2 newMap={this.newDisplay}></Map2>
+                </div>
+            )
+        default:
+            console.log("oups")
+    }
+
+}
+}
+
 
 export default GameManager
