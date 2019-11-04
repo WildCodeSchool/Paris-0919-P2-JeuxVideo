@@ -48,9 +48,9 @@ class Map1 extends React.Component{
                 if (this.state.map[this.state.top-1][this.state.left-2] !== 1){
                 const left = this.state.left - 1
                 this.setState({animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px', left: left })}}
-                if (this.state.left === 1){
-                    this.props.newMap(2) 
-                }
+                // if (this.state.left === 1){
+                //     this.props.newMap(2) 
+                // }
                 break
             case 68:
             case 39:
