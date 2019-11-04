@@ -3,8 +3,8 @@ import './Map.css'
 
 class Map1 extends React.Component {
     state = {
-        top: 6,
-        left: 5,
+        top: this.props.top,
+        left: this.props.left,
         animation: 'none',
         position: 'top 288px right 416px',
         map: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -55,9 +55,9 @@ class Map1 extends React.Component {
                     }
                 }
                 if (this.state.left < 1) {
+                    this.props.newTop(this.state.top)
+                    this.props.newLeft(13)
                     this.props.newMap(2)
-                    this.props.top(this.state.top)
-                    this.props.left(13)
                 }
                 break
             case 68:
