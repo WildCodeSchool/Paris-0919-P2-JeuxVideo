@@ -5,7 +5,7 @@ import './Map.css'
 class Map2 extends React.Component{
     state = {
         top: 6,
-        left: 5,
+        left: 13,
         animation: 'none',
         position: 'top 288px right 416px',
         map: [[0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -54,6 +54,9 @@ class Map2 extends React.Component{
                 if (this.state.map[this.state.top-1][this.state.left] !== 1){
                 const right = this.state.left + 1
                 this.setState({animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px', left: right })}}
+                if (this.state.left === 13) {
+                    this.props.newMap(1)
+                }
                 break
             default:
                 break
