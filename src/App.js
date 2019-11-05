@@ -10,22 +10,26 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    HP: 150
+    HP: 150,
+    dialog: 'A wild meta appears',
+    isDead: false
   }
   newHPClickedChild = neoClickedHP => {
     this.setState({
-      HP: neoClickedHP
+      HP: neoClickedHP,
     })
 
   };
-
 // Ici, notre méthode pour actualiser la boite de dialogue.
-  // handleDamage = () => {
-  //   if(this.state.HP === 0){
-  //    document.querySelector('text')
-  //     console.log("lol")
-  //   }
-  // }
+handleDamage = () => {
+if(this.state.HP < 0){
+ this.setState({
+   HP: 0,
+   dialog: 'Ennemy defeated',
+   isDead: true
+ })
+} 
+}
 
   render() {
     return (
@@ -37,10 +41,10 @@ class App extends React.Component {
               newHPClicked={this.newHPClickedChild}
             />
             <div className="meta-area">
-              <Enemy name={'Meta'} HP={this.state.HP} /*onChange={this.handleDamage()}*/ />
+              <Enemy name={'Meta'} HP={this.state.HP} onChange={this.handleDamage()} />
               
                 
-              <img className='Meta' src={Meta} alt='Meta'></img>
+              <img className='Meta' src= {this.state.isDead? Enemy : Meta}alt='Meta'></img>
 
             </div>
           </div>
@@ -52,7 +56,8 @@ class App extends React.Component {
             <div className='dialog-area'>
 
 
-            <Dialog />
+            <Dialog dialog={this.state.dialog} onChange={this.handleDamage()}/>
+
 
             </div>
 
