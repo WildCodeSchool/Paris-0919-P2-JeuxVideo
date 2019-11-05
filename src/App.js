@@ -20,9 +20,9 @@ class App extends React.Component {
       HP: neoClickedHP,
     })
   };
-// Ici, notre méthode pour actualiser la boite de dialogue.
+// Ici, notre méthode pour actualiser la boite de dialogue et les HP.
 handleDamage = () => {
-if(this.state.HP < 0){
+  if(this.state.HP < 0){
  this.setState({
    HP: 0,
    dialog: 'Ennemy defeated',

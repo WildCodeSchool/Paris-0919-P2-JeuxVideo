@@ -21,5 +21,17 @@
 
 #fight:hover {
     cursor: pointer;
-    
+    color: white
 }
+
+#item:hover {
+    cursor: pointer;
+    color: white
+}
+
+#escape:hover {
+    cursor: pointer;
+    color: white
+}
+
+
