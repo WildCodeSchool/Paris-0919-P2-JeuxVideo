@@ -109,7 +109,7 @@ class Map1 extends React.Component {
             this.setState({ lockMovement: false })
             document.querySelector('.quoteContainer').style.display = 'none'
             document.querySelector('.quoteContainer').innerHTML = ``
-        }, 2500)
+        }, 3500)
     }
 
 
