@@ -1,0 +1,149 @@
+[
+    {
+        "id": "1",
+        "item": "Coffee",
+        "type": "consumables",
+        "properties": "heal",
+        "description": "Most valuable friend for a developper."
+    },
+    {
+        "id": "2",
+        "item": "Patch",
+        "type": "consumables",
+        "properties": "heal",
+        "description": "An item that can cure your smoke addic... nevermind."
+    },
+    {
+        "id": "3",
+        "item": "Monster",
+        "type": "consumables",
+        "properties": "heal",
+        "description": "Harder Better Faster Stronger."
+    },
+    {
+        "id": "4",
+        "item": "Pillar",
+        "type": "consumables",
+        "properties": "heal",
+        "description": "An essential tool that will allow you to sleep everywhere"
+    },
+    {
+        "id": "5",
+        "item": "Battery",
+        "type": "consumables",
+        "properties": "stat",
+        "description": "You'll become much stronger with this drugs, attack + 10. 'Only usable during fight'"
+    },
+    {
+        "id": "6",
+        "item": "Loader",
+        "type": "consumables",
+        "properties": "stat",
+        "description": "It's time to increase your upload speed. speed + 10. 'Only usable during fight'"
+    },
+    {
+        "id": "7",
+        "item": "Git defender",
+        "type": "consumables",
+        "properties": "stat",
+        "description": "You'll need some defense in this dangerous world. def + 10. 'Only usable during fight'"
+    },
+    {
+        "id": "8",
+        "item": "Diskelett",
+        "type": "artefact",
+        "properties": "equipement",
+        "description": "Relic from ancient times, which contains little data."
+    },
+    {
+        "id": "9",
+        "item": "USB Key",
+        "type": "artefact",
+        "properties": "equipement",
+        "description": "Relic from ancient times, which contains more date than Diskelett."
+    },
+    {
+        "id": "10",
+        "item": "HDD",
+        "type": "artefact",
+        "properties": "equipement",
+        "description": "Relic from current times, which contains a lot of data."
+    },
+    {
+        "id": "11",
+        "item": "Rewinder VCR",
+        "type": "artefact",
+        "properties": "equipement",
+        "description": "An old shit, we don't even know if it still works."
+    },
+    {
+        "id": "12",
+        "item": "Optic Fiber",
+        "type": "artefact",
+        "properties": "equipement",
+        "description": "Take it to the next level with Fibre Optics"
+    },
+    {
+        "id": "13",
+        "item": "IntelCore",
+        "type": "artefact",
+        "properties": "equipement",
+        "description": "Become the stronger dude in this fucking world, with this damn core. Fuck it!"
+    },
+    {
+        "id": "14",
+        "item": "Aluminium Helmet",
+        "type": "artefact",
+        "properties": "equipement",
+        "description": "A crazy guy gifted you his Helmet, he sounds very stupid. Use it at your own risks."
+    },
+    {
+        "id": "15",
+        "item": "Let-Scalibur",
+        "type": "Weapon",
+        "properties": "equipement",
+        "description": "A legendary sword, definetely not inspired from the legend."
+    },
+    {
+        "id": "16",
+        "item": "KeyBoard-Blade",
+        "type": "Weapon",
+        "properties": "equipement",
+        "description": "Open the backdoors and king.DOM shall fall."
+    },
+    {
+        "id": "17",
+        "item": "Red-Queen",
+        "type": "Weapon",
+        "properties": "equipement",
+        "description": "Stolen from a pityful hobo with white hai and blue leather jack."
+    },
+    {
+        "id": "18",
+        "item": "Datamune",
+        "type": "Weapon",
+        "properties": "equipement",
+        "description": "Long Katana fulfiled with delicious datas."
+    },
+    {
+        "id": "19",
+        "item": "Cluster-Sword",
+        "type": "Weapon",
+        "properties": "equipement",
+        "description": "Clear out your ennemy's mind with this big sword."
+    },
+    {
+        "id": "20",
+        "item": "Axe'Kathon",
+        "type": "Weapon",
+        "properties": "equipement",
+        "description": "Try to reach the top of the podium with the only axe of the game created in only 24s."
+    },
+    {
+        "id": "21",
+        "item": "Bag.Git",
+        "type": "Weapon",
+        "properties": "equipement",
+        "description": "This weapon has been found in a croissant shaped country."
+    }
+]
