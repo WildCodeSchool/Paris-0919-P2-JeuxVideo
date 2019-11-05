@@ -14,14 +14,20 @@ attackEnemy = event => {
         this.props.newHPClicked(newHP)
 }
 
+colorChange = event => {
+    document.getElementById('fight').style.color='white'
+}
+colorChange2 = event => {
+    document.getElementById('fight').style.color='black'
+}
 render() {
     return (
         <div className="commands-area">
             <h2>Commands</h2>
-            <ul>
-                <li className="fight" onClick={this.attackEnemy}>Attack</li>
-                <li>Items</li>
-                <li>Escape</li>
+            <ul >
+                <li  id='fight' onClick={this.attackEnemy}onMouseEnter={this.colorChange} onMouseLeave={this.colorChange2}>Attack</li>
+                <li onMouseEnter={this.colorChange} onMouseLeave={this.colorChange2}>Items</li>
+                <li  onMouseEnter={this.colorChange} onMouseLeave={this.colorChange2}>Escape</li>
             </ul>
         </div>
     )

@@ -18,3 +18,8 @@
 .commands-area ul li {
     margin-top: 20px;
 }
+
+#fight:hover {
+    cursor: pointer;
+    
+}

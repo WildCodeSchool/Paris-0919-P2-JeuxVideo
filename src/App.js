@@ -2,6 +2,7 @@ import React from 'react';
 import Player from './components/Player'
 import Enemy from './components/Enemy'
 import Meta from './components/meta1_animated.gif'
+import MetaDead from './components/meta_dead.png'
 import Avatar from './components/avatar_animated.gif'
 import Command from './components/Commands'
 import Dialog from './components/Dialog'
@@ -45,7 +46,7 @@ if(this.state.HP < 0){
               <Enemy name={'Meta'} HP={this.state.HP} onChange={this.handleDamage()} />
               
                 
-              <img className='Meta' src= {this.state.isDead? Enemy : Meta}alt='Meta'></img>
+              <img className='Meta' src= {this.state.isDead? MetaDead : Meta}alt='Meta'></img>
 
             </div>
           </div>
