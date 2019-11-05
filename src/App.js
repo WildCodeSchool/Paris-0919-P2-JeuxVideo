@@ -18,7 +18,6 @@ class App extends React.Component {
     this.setState({
       HP: neoClickedHP,
     })
-
   };
 // Ici, notre méthode pour actualiser la boite de dialogue.
 handleDamage = () => {
@@ -30,6 +29,8 @@ if(this.state.HP < 0){
  })
 } 
 }
+
+
 
   render() {
     return (
