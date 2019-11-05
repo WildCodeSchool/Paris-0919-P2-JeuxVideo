@@ -7,8 +7,8 @@ import Map2 from "./Map2"
 class GameManager extends React.Component {
     state = {
         currentMap: 1,
-        top: 6,
-        left: 5
+        top: 3,
+        left: 6
     }
 
     // change la map

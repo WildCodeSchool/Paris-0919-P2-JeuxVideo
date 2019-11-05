@@ -26,6 +26,24 @@
     z-index: 1;
 }
 
+.npc-1 {
+    grid-column: 8/9;
+    grid-row: 1/2;
+    background: yellow;
+    z-index: 1;
+}
+
+/* Quote Container */
+.quoteContainer {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    margin: auto;
+    width: 1152px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.555);
+}
+
 /* // tout ce qui concerne l'avatar */
 
 .Avatar {
