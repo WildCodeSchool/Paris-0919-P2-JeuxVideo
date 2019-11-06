@@ -8,56 +8,27 @@ export default class App extends React.Component {
 
   // Initialize states
   state = {
-    textureDatas:'',
-    itemsDatas: '',
-    soundsDatas: '',
-    charactersDatas: ''
+    textureDatas:''
   }
 
   // Use Axios to consume APIs
   componentDidMount() {
 
     // Texture API
-    Axios.get('./database/textures.json')
+    Axios.get('./Database/map.json')
       // Change JSON into JS object
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
-        this.setState({ textureDatas: data })
+        this.setState({ textureDatas: data[0] })
       })
-
-    // Item API
-    Axios.get('./database/items.json')
-    // Change JSON into JS object
-    .then(response => response.data)
-    // Give the texture object to the state
-    .then(data => {
-      this.setState({ itemsDatas: data })
-    })
-
-    // Sound API
-    Axios.get('./database/characters.json')
-    // Change JSON into JS object
-    .then(response => response.data)
-    // Give the texture object to the state
-    .then(data => {
-      this.setState({ soundsDatas: data })
-    })
-
-    // Characters API
-    Axios.get('./database/sounds.json')
-    // Change JSON into JS object
-    .then(response => response.data)
-    // Give the texture object to the state
-    .then(data => {
-      this.setState({ charactersDatas: data })
-    })
   }
 
   render() {
+
     return (
       <div className="App">
-        <GameManager/>
+        <GameManager designMap1={this.state.textureDatas} />
       </div>
     );
   }

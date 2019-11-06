@@ -12,13 +12,13 @@ class Map1 extends React.Component {
         animation: 'none',
         position: 'top 288px right 416px',
         map: [
-            [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
+            [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1],
+            [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]
         ],
         npc: {
             name: "James Alodan",
@@ -41,8 +41,8 @@ class Map1 extends React.Component {
                     this.setState({ position: 'top 72px right 416px', animation: 'upSideMove 1s infinite steps(1, start)' })
                 }
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
-                        const top = this.state.top - 1
-                        this.setState({ top: top })
+                    const top = this.state.top - 1
+                    this.setState({ top: top })
                 }
                 break
             case 83:
@@ -51,8 +51,8 @@ class Map1 extends React.Component {
                     this.setState({ position: 'top 288px right 416px', animation: 'downSideMove 1s infinite steps(1, start)' })
                 }
                 else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
-                        const down = this.state.top + 1
-                        this.setState({ position: 'top 288px right 416px', top: down })
+                    const down = this.state.top + 1
+                    this.setState({ position: 'top 288px right 416px', top: down })
                 }
                 break
             case 81:
@@ -61,8 +61,8 @@ class Map1 extends React.Component {
                     this.setState({ position: 'top 216px right 416px', animation: 'leftSideMove 1s infinite steps(1, start)' })
                 }
                 else if (this.state.left >= 0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
-                        const left = this.state.left - 1
-                        this.setState({ position: 'top 216px right 416px', left: left })
+                    const left = this.state.left - 1
+                    this.setState({ position: 'top 216px right 416px', left: left })
                 }
                 if (this.state.left < 1) {
                     this.props.newTop(this.state.top)
@@ -77,7 +77,7 @@ class Map1 extends React.Component {
                 }
                 else if (this.state.left < 13 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left] === 0) {
                     const right = this.state.left + 1
-                    this.setState({position: 'top 144px right 416px', left: right })
+                    this.setState({ position: 'top 144px right 416px', left: right })
                 }
                 break
             case 88:
@@ -112,11 +112,14 @@ class Map1 extends React.Component {
     }
 
     render() {
+        console.log(this.props.designMap1)
         return (
-            <div className="map_background">
-                <div className='obstacle'></div>
-                <div className='obstacle2'></div>
-                <div className="npc-1"></div>
+            <div className="map_background" style={{
+                backgroundImage: `url(${this.props.designMap1.url})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+            }}>
                 <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
 

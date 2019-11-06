@@ -1,7 +1,6 @@
 .map_background{
     width: 100%;
     height: 100%;
-    background: green;
     z-index: 0;
     display: grid;
     grid-template-columns: repeat(13, 1fr);
@@ -53,7 +52,6 @@
     top: 300px;
     left: 630px;
     z-index: 2;
-    transition-duration: 1s;
     display: block;
     margin: auto;
 }

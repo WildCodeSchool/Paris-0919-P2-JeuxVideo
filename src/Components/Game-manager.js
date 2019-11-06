@@ -28,9 +28,10 @@ class GameManager extends React.Component {
     render() {
         switch (this.state.currentMap) {
             case 1:
+                console.log(this.props.designMap1)
                 return (
                     <div className="Game-area">
-                        <Map1 newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} ></Map1>
+                        <Map1 designMap1={this.props.designMap1} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} ></Map1>
                     </div>
                 )
             case 2:
