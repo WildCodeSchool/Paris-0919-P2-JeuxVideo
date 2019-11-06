@@ -34,7 +34,8 @@
         "id" : 5,
         "name": "Professor Shell",
         "Type": "PNJ",
-        "Quote": "Hello fellow kids, welcome to this world, let me introduce myself, i'm the professor Shell, and i'll be your guide during the whole game.",
+        "Quote": "Hello nerdz kido, it's dangerous to code alone, Allow me to give you this tools. 'KeyBoardBlade obtenaid'.",
+        "Quote2": "Don't git ignore my advices.",
         "Age": "67"
     },
     {
@@ -55,7 +56,7 @@
         "id" : 8,
         "name": "Meta",
         "Type": "ennemy",
-        "Quote": "Blaararhrahraharg !!!!!",
+        "Quote": "<div><p> Hê//ø Wør/d ! </p></div>",
         "Age": "",
         "image" :"",
         "battle-sprite" : {
@@ -63,5 +64,13 @@
             "dead" : "./assets/meta_dead.png" }
 
 
+    },
+    {
+        "id" : 9,
+        "name" : "Nuage",
+        "Type" : "PNJ",
+        "Quote" : "<h1>It's rAiNiNg ToDaY, HaVe YoU aN uMbReLlA fOr Me ? No ? Ok.</h1>",
+        "Age" : "",
+        "image" : ""
     }
 ]
