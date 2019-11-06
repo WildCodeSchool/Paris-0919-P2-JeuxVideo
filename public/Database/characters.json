@@ -36,7 +36,8 @@
         "Type": "PNJ",
         "Quote": "Hello nerdz kido, it's dangerous to code alone, Allow me to give you this tools. 'KeyBoardBlade obtenaid'.",
         "Quote2": "Don't git ignore my advices.",
-        "Age": "67"
+        "Age": "67",
+        "image" :"./assets.profshell.png"
     },
     {
         "id" : 6,
