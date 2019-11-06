@@ -54,6 +54,8 @@
     left: 630px;
     z-index: 2;
     transition-duration: 1s;
+    display: block;
+    margin: auto;
 }
 
 
