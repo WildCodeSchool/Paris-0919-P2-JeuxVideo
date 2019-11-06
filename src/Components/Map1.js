@@ -18,7 +18,8 @@ class Map1 extends React.Component {
             [1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
             [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1],
-            [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]
+            [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]// ligne factice 
         ],
         npc: {
             name: "James Alodan",
@@ -50,9 +51,14 @@ class Map1 extends React.Component {
                 if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
                     this.setState({ position: 'top 288px right 416px', animation: 'downSideMove 1s infinite steps(1, start)' })
                 }
-                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
+                else if (this.state.top < 9 && this.state.map[this.state.top][this.state.left - 1] === 0 ){
                     const down = this.state.top + 1
                     this.setState({ position: 'top 288px right 416px', top: down })
+                }
+                if (this.state.top > 7) {
+                    this.props.newTop(1)
+                    this.props.newLeft(this.state.left)
+                    this.props.newMap(2)
                 }
                 break
             case 81:
@@ -63,11 +69,6 @@ class Map1 extends React.Component {
                 else if (this.state.left >= 0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
                     const left = this.state.left - 1
                     this.setState({ position: 'top 216px right 416px', left: left })
-                }
-                if (this.state.left < 1) {
-                    this.props.newTop(this.state.top)
-                    this.props.newLeft(13)
-                    this.props.newMap(2)
                 }
                 break
             case 68:
@@ -112,7 +113,7 @@ class Map1 extends React.Component {
     }
 
     render() {
-        console.log(this.props.designMap1)
+        console.log(this.state.top)
         return (
             <div className="map_background" style={{
                 backgroundImage: `url(${this.props.designMap1.url})`,
