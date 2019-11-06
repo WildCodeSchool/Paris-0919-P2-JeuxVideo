@@ -41,8 +41,8 @@ class Map1 extends React.Component {
                     this.setState({ position: 'top 72px right 416px', animation: 'upSideMove 1s infinite steps(1, start)' })
                 }
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
-                        const top = this.state.top - 1
-                        this.setState({ top: top })
+                    const top = this.state.top - 1
+                    this.setState({ top: top })
                 }
                 break
             case 83:
@@ -51,8 +51,8 @@ class Map1 extends React.Component {
                     this.setState({ position: 'top 288px right 416px', animation: 'downSideMove 1s infinite steps(1, start)' })
                 }
                 else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
-                        const down = this.state.top + 1
-                        this.setState({ position: 'top 288px right 416px', top: down })
+                    const down = this.state.top + 1
+                    this.setState({ position: 'top 288px right 416px', top: down })
                 }
                 break
             case 81:
@@ -61,8 +61,8 @@ class Map1 extends React.Component {
                     this.setState({ position: 'top 216px right 416px', animation: 'leftSideMove 1s infinite steps(1, start)' })
                 }
                 else if (this.state.left >= 0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
-                        const left = this.state.left - 1
-                        this.setState({ position: 'top 216px right 416px', left: left })
+                    const left = this.state.left - 1
+                    this.setState({ position: 'top 216px right 416px', left: left })
                 }
                 if (this.state.left < 1) {
                     this.props.newTop(this.state.top)
@@ -77,7 +77,7 @@ class Map1 extends React.Component {
                 }
                 else if (this.state.left < 13 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left] === 0) {
                     const right = this.state.left + 1
-                    this.setState({position: 'top 144px right 416px', left: right })
+                    this.setState({ position: 'top 144px right 416px', left: right })
                 }
                 break
             case 88:

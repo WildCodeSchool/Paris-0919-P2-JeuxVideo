@@ -6,6 +6,7 @@ import './Map.css'
 
 class Map2 extends React.Component {
     state = {
+        timer: true,
         lockMovement: false,
         top: this.props.top,
         left: this.props.left,
@@ -30,6 +31,8 @@ class Map2 extends React.Component {
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
+        // if (this.state.timer) {
+        //     setTimeout(()=>{this.setState({ timer: false })}, 5)
         switch (e.keyCode) {
             case 90:
             case 38:
@@ -85,6 +88,10 @@ class Map2 extends React.Component {
             default:
                 break
         }
+        // }
+        // else {
+        //     this.setState({ timer: true })
+        // }
     }
 
     // Removing the animation on keyUp

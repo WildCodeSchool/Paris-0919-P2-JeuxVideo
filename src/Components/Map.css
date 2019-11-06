@@ -50,12 +50,10 @@
     height: 72px;
     width: 52px;
     background-image: url('./img/Tileset.png');
-    top: 300px;
-    left: 630px;
     z-index: 2;
-    transition-duration: 1s;
     display: block;
     margin: auto;
+    transition-duration: 1s;
 }
 
 
