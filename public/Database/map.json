@@ -1,18 +1,18 @@
 [
     {
-        "name":"grass",
-        "type":"accessible",
-        "url":"./Textures/grass.png"
+        "name":"map1",
+        "type":"map",
+        "url":"./assets/map1.jpg"
     },
     {
-        "name":"straight-path",
-        "type":"accessible",
-        "url":"./Textures/straight-path.png"
+        "name":"map2",
+        "type":"map",
+        "url":"./assets/map2.jpg"
     },
     {
-        "name":"angled-path",
-        "type":"accessible",
-        "url":"./Textures/angled-path.png"
+        "name":"glitched-tree",
+        "type":"tile",
+        "url":"work-in-process-lol"
     },
     {
         "name":"cliff",
