@@ -1,4 +1,7 @@
+// Import librairies
 import React from 'react'
+
+// Import CSS
 import './Map.css'
 
 class Map1 extends React.Component {
@@ -23,16 +26,13 @@ class Map1 extends React.Component {
         }
     }
 
-    // tout ce qui concerne le déplacement et les anims
-    // Start the onKeyDown fonction
+    // Call the function that changes the player direction, animation and position
     componentDidMount() {
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
     }
 
-
-
-    // Move the character according to the pressed key
+    // Move the character, change its direction & animation
     onKeyDown = (e) => {
         switch (e.keyCode) {
             case 90:
@@ -86,7 +86,6 @@ class Map1 extends React.Component {
                     this.interactWithNPC()
                 }
                 break
-
             default:
                 break
         }
@@ -111,7 +110,6 @@ class Map1 extends React.Component {
             document.querySelector('.quoteContainer').innerHTML = ``
         }, 2500)
     }
-
 
     render() {
         return (
