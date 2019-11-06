@@ -1,0 +1,32 @@
+[
+    {
+        "name":"map1",
+        "type":"map",
+        "url":"./assets/map1.jpg"
+    },
+    {
+        "name":"map2",
+        "type":"map",
+        "url":"./assets/map2.jpg"
+    },
+    {
+        "name":"glitched-tree",
+        "type":"tile",
+        "url":"work-in-process-lol"
+    },
+    {
+        "name":"cliff",
+        "type":"inaccessible",
+        "url":"./Textures/cliff.png"
+    },
+    {
+        "name":"stone-wall",
+        "type":"inaccessible",
+        "url":"./Textures/stone-wall.png"
+    },
+    {
+        "name":"wooden-door",
+        "type":"entrance",
+        "url":"./Textures/wooden-door.png"
+    }
+]
