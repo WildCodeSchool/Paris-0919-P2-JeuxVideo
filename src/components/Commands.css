@@ -7,7 +7,6 @@
     border: 2px solid black;
     list-style: none;
     font-family: 'Press Start 2P';
-    margin-right: 600px;
     margin-top: 10px;
 }
 .commands-area ul {
@@ -18,3 +17,20 @@
 .commands-area ul li {
     margin-top: 20px;
 }
+
+#fight:hover {
+    cursor: pointer;
+    color: white
+}
+
+#item:hover {
+    cursor: pointer;
+    color: white
+}
+
+#escape:hover {
+    cursor: pointer;
+    color: white
+}
+
+

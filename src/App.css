@@ -33,7 +33,7 @@ p {
 .enemystatus-area {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  
   text-align: center;
   font-family: 'Press Start 2P';
   height: 280px;
@@ -51,6 +51,7 @@ p {
   display: flex;
   flex-direction: column;
   height: 310px;
+  margin-left: 600px;
 }
 
 

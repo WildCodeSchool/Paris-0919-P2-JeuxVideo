@@ -3,27 +3,25 @@ import './Commands.css';
 
 class Commands extends React.Component {
     state = {
-       HP: 150
+       isAttacked: false
     }
 
-attackEnemy = event => {
-        const newHP = this.state.HP - 10;
-        this.setState({
-            HP: newHP
-        }) 
-        this.props.newHPClicked(newHP)
+popUp = () =>{
+    this.props.showPopup(true)
 }
 
 render() {
     return (
+        <>
         <div className="commands-area">
             <h2>Commands</h2>
-            <ul>
-                <li className="fight" onClick={this.attackEnemy}>Attack</li>
-                <li>Items</li>
-                <li>Escape</li>
-            </ul>
+            <ul >
+                <li  id='fight'onClick={this.popUp}>Attack</li>
+                <li id='item'>Items</li>
+                <li id='escape'>Git.ignore</li>
+            </ul> 
         </div>
+        </>
     )
 }
 }
