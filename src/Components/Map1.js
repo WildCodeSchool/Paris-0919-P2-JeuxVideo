@@ -13,10 +13,10 @@ class Map1 extends React.Component {
         position: 'top 288px right 416px',
         map: [
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
-            [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0],
             [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1],
             [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]
         ],
@@ -70,16 +70,15 @@ class Map1 extends React.Component {
                 if (this.state.position !== 'top 144px right 416px' && !this.state.lockMovement) {
                     this.setState({ position: 'top 144px right 416px', animation: 'rightSideMove 1s infinite steps(1, start)' })
                 }
-                else if (this.state.left < 13 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left] === 0) {
+                else if (this.state.left < 14 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left] === 0) {
                     const right = this.state.left + 1
                     this.setState({ position: 'top 144px right 416px', left: right })
                 }
-                if (this.state.top > 7) {
-                    this.props.newTop(1)
-                    this.props.newLeft(this.state.left)
+                if (this.state.left > 13) {
+                    this.props.newTop(this.state.top)
+                    this.props.newLeft(1)
                     this.props.newMap(2)
                 }
-                break
                 break
             case 88:
             case 69:
@@ -113,7 +112,7 @@ class Map1 extends React.Component {
     }
 
     render() {
-        console.log(this.state.top)
+        console.log(this.state.left)
         return (
             <div className="map_background" style={{
                 backgroundImage: `url(${this.props.designMap1.url})`,
