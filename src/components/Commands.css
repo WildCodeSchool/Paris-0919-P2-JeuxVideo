@@ -12,6 +12,7 @@
 .commands-area ul {
     margin-top: 50px;
     margin-right: 20px;
+    text-decoration: none;
 }
 
 .commands-area ul li {

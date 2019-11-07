@@ -14,10 +14,12 @@
 .popup-area ul {
     margin-top: 50px;
     margin-right: 20px;
+    text-decoration: none;
 }
 
 .popup-area ul li {
     margin-top: 20px;
+    text-decoration: none;
 }
 
 
