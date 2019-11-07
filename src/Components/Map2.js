@@ -1,11 +1,13 @@
 // Import librairies
 import React from 'react'
+import Axios from 'axios'
 
 // Import CSS
 import './Map.css'
 
 class Map2 extends React.Component {
     state = {
+        textureDatas:'',
         lockMovement: false,
         top: this.props.top,
         left: this.props.left,
@@ -26,7 +28,15 @@ class Map2 extends React.Component {
     componentDidMount() {
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
-    }
+
+    Axios.get('./Database/map.json')
+    // Change JSON into JS object
+    .then(response => response.data)
+    // Give the texture object to the state
+    .then(data => {
+      this.setState({ textureDatas: data[1] })
+    })
+  }
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
@@ -107,8 +117,14 @@ class Map2 extends React.Component {
     }
 
     render() {
+        console.log(this.state.textureDatas)
         return (
-            <div className="map_background">
+            <div className="map_background" style={{
+                backgroundImage: `url(${this.props.designMap2.url})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+            }}>
                 <div className='obstacle3'></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
 
