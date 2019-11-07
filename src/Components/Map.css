@@ -18,17 +18,25 @@
     background: red;
     z-index: 1;
 }
-.obstacle3 {
-    grid-column: 5/8;
-    grid-row: 2/3;
-    background: red;
+
+.profshell {
+    grid-column: 7/8;
+    grid-row: 3/4;
     z-index: 1;
 }
-
-.npc-1 {
+.abdou{
     grid-column: 8/9;
     grid-row: 1/2;
-    background: yellow;
+    z-index: 1;
+}
+.goat{
+    grid-column: 9/10;
+    grid-row: 5/6;
+    z-index: 1;
+}
+.jenny{
+    grid-column: 7/8;
+    grid-row: 6/7;
     z-index: 1;
 }
 

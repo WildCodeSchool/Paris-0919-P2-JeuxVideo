@@ -3,10 +3,12 @@ import React from 'react'
 
 // Import CSS
 import './Map.css'
+import Axios from 'axios'
 
 class Map1 extends React.Component {
     state = {
         lockMovement: false,
+        shell: './Database/assets/profshell.png',
         top: this.props.top,
         left: this.props.left,
         animation: 'none',
@@ -14,7 +16,7 @@ class Map1 extends React.Component {
         map: [
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 2, 0, 0, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
             [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0],
             [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1],
@@ -120,6 +122,7 @@ class Map1 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
+                <div className="profshell" style={{backgroundImage: `url(${this.state.shell})` }}></div>
                 <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
 

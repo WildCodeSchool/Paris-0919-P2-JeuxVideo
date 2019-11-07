@@ -8,6 +8,9 @@ import './Map.css'
 class Map2 extends React.Component {
     state = {
         textureDatas: '',
+        abdou: './Database/assets/abdou.png',
+        jenny:'./Database/assets/jenny.png',
+        goat: './Database/assets/goatmaster.png',
         lockMovement: false,
         top: this.props.top,
         left: this.props.left,
@@ -15,12 +18,12 @@ class Map2 extends React.Component {
         position: 'top 288px right 416px',
         map: [
 
-            [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
+            [1, 1, 1, 1, 1, 0, 1, 2, 1, 1, 0, 1, 1],
             [0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
             [1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
             [1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
-            [1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1],
-            [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+            [1, 0, 1, 1, 1, 0, 0, 0, 2, 0, 0, 1, 1],
+            [0, 0, 1, 1, 1, 1, 2, 0, 0, 0, 1, 1, 1],
             [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1]
         ]
     }
@@ -47,7 +50,7 @@ class Map2 extends React.Component {
                 if (this.state.position !== 'top 72px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px' })
                 }
-                else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] !== 1) {
+                else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
                     const top = this.state.top - 1
                     this.setState({ top: top })
                 }
@@ -57,7 +60,7 @@ class Map2 extends React.Component {
                 if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px' })
                 }
-                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] !== 1) {
+                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
                     const down = this.state.top + 1
                     this.setState({ top: down })
                 }
@@ -72,7 +75,7 @@ class Map2 extends React.Component {
                 if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
                 }
-                else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] !== 1) {
+                else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
                     const left = this.state.left - 1
                     this.setState({ left: left })
                 }
@@ -128,7 +131,9 @@ class Map2 extends React.Component {
                 backgroundRepeat: 'no-repeat'
             }}>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
-
+                <div className="abdou" style={{backgroundImage: `url(${this.state.abdou})`}}></div>
+                <div className="jenny" style={{backgroundImage: `url(${this.state.jenny})`}}></div>
+                <div className="goat" style={{backgroundImage: `url(${this.state.goat})`}}></div>
             </div>
         )
     }
