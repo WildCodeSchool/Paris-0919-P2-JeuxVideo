@@ -62,6 +62,8 @@
     z-index: 2;
     display: block;
     margin: auto;
+    animation-duration: 3s;
+    animation-name: downSideMove;
 }
 
 
