@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "name":"grass",
         "type":"accessible",
         "url":"./Textures/grass.png"
@@ -13,6 +14,21 @@
         "name":"angled-path",
         "type":"accessible",
         "url":"./Textures/angled-path.png"
+=======
+        "name":"map1",
+        "type":"map",
+        "url":"./Database/assets/map1.jpg"
+    },
+    {
+        "name":"map2",
+        "type":"map",
+        "url":"./assets/map2.jpg"
+    },
+    {
+        "name":"glitched-tree",
+        "type":"tile",
+        "url":"work-in-process-lol"
+>>>>>>> origin/animated-movement-test-j
     },
     {
         "name":"cliff",
