@@ -18,8 +18,7 @@ class Map1 extends React.Component {
             [1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
             [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1],
-            [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]// ligne factice 
+            [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]
         ],
         npc: {
             name: "James Alodan",
@@ -55,11 +54,6 @@ class Map1 extends React.Component {
                     const down = this.state.top + 1
                     this.setState({ position: 'top 288px right 416px', top: down })
                 }
-                if (this.state.top > 7) {
-                    this.props.newTop(1)
-                    this.props.newLeft(this.state.left)
-                    this.props.newMap(2)
-                }
                 break
             case 81:
             case 37:
@@ -80,6 +74,12 @@ class Map1 extends React.Component {
                     const right = this.state.left + 1
                     this.setState({ position: 'top 144px right 416px', left: right })
                 }
+                if (this.state.top > 7) {
+                    this.props.newTop(1)
+                    this.props.newLeft(this.state.left)
+                    this.props.newMap(2)
+                }
+                break
                 break
             case 88:
             case 69:
