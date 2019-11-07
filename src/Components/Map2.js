@@ -14,6 +14,7 @@ class Map2 extends React.Component {
         animation: 'none',
         position: 'top 288px right 416px',
         map: [
+
             [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
             [0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
             [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
@@ -70,6 +71,11 @@ class Map2 extends React.Component {
                     const left = this.state.left - 1
                     this.setState({ left: left })
                 }
+                if (this.state.left > 13) {
+                    this.props.newLeft(1)
+                    this.props.newTop(this.state.top)
+                    this.props.newMap(1)
+                }
                 break
             case 68:
             case 39:
@@ -79,11 +85,6 @@ class Map2 extends React.Component {
                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
                     this.setState({ left: right })
-                }
-                if (this.state.left > 13) {
-                    this.props.newLeft(1)
-                    this.props.newTop(this.state.top)
-                    this.props.newMap(1)
                 }
                 break
             case 88:
