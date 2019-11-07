@@ -75,7 +75,7 @@ class Map1 extends React.Component {
                     this.setState({ position: 'top 144px right 416px', left: right })
                 }
                 if (this.state.left > 13) {
-                    this.props.newTop(this.state.top)
+                    this.props.newTop(this.state.top + 1)
                     this.props.newLeft(1)
                     this.props.newMap(2)
                 }

@@ -7,7 +7,7 @@ import './Map.css'
 
 class Map2 extends React.Component {
     state = {
-        textureDatas:'',
+        textureDatas: '',
         lockMovement: false,
         top: this.props.top,
         left: this.props.left,
@@ -17,7 +17,7 @@ class Map2 extends React.Component {
 
             [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
             [0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
-            [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
+            [1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
             [1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
             [1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1],
             [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
@@ -30,14 +30,14 @@ class Map2 extends React.Component {
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
 
-    Axios.get('./Database/map.json')
-    // Change JSON into JS object
-    .then(response => response.data)
-    // Give the texture object to the state
-    .then(data => {
-      this.setState({ textureDatas: data[1] })
-    })
-  }
+        Axios.get('./Database/map.json')
+            // Change JSON into JS object
+            .then(response => response.data)
+            // Give the texture object to the state
+            .then(data => {
+                this.setState({ textureDatas: data[1] })
+            })
+    }
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
@@ -64,6 +64,11 @@ class Map2 extends React.Component {
                 break
             case 81:
             case 37:
+                if (this.state.left === 1) {
+                    this.props.newLeft(13)
+                    this.props.newTop(this.state.top - 1)
+                    this.props.newMap(1)
+                } else{
                 if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
                 }
@@ -71,11 +76,7 @@ class Map2 extends React.Component {
                     const left = this.state.left - 1
                     this.setState({ left: left })
                 }
-                if (this.state.left > 13) {
-                    this.props.newLeft(1)
-                    this.props.newTop(this.state.top)
-                    this.props.newMap(1)
-                }
+}
                 break
             case 68:
             case 39:
