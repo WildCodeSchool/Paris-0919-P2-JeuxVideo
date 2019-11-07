@@ -14,13 +14,13 @@ class Map2 extends React.Component {
         animation: 'none',
         position: 'top 288px right 416px',
         map: [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
+            [0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
+            [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
+            [1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
+            [1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1],
+            [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1]
         ]
     }
 
@@ -125,7 +125,6 @@ class Map2 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-                <div className='obstacle3'></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
 
             </div>
