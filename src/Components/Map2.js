@@ -117,10 +117,10 @@ class Map2 extends React.Component {
     }
 
     render() {
-        console.log(this.state.textureDatas)
+        console.log(this.state.textureDatas.url)
         return (
             <div className="map_background" style={{
-                backgroundImage: `url(${this.props.designMap2.url})`,
+                backgroundImage: `url(${this.state.textureDatas.url})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
