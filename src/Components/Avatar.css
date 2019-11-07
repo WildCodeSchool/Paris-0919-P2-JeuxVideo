@@ -1,0 +1,73 @@
+.Avatar {
+    height: 72px;
+    width: 52px;
+    background-image: url('./img/Tileset.png');
+    top: 300px;
+    left: 630px;
+    position: relative;
+}
+
+
+/* Downside direction */
+@keyframes downSideMove {
+    25% {
+        background-position: top 288px right 416px;
+    }
+    50% {
+        background-position: top 288px right 468px;
+    }
+    75% {
+        background-position: top 288px right 416px;
+    }
+    100% {
+        background-position: top 288px right 364px;
+    }
+}
+
+/* Left side direction */
+@keyframes leftSideMove {
+    25% {
+        background-position: top 216px right 416px;
+    }
+    50% {
+        background-position: top 216px right 468px;
+    }
+    75% {
+        background-position: top 216px right 416px;
+    }
+    100% {
+        background-position: top 216px right 364px;
+    }
+}
+
+/* Right side direction */
+@keyframes rightSideMove {
+    25% {
+        background-position: top 144px right 416px;
+    }
+    50% {
+        background-position: top 144px right 468px;
+    }
+    75% {
+        background-position: top 144px right 416px;
+    }
+    100% {
+        background-position: top 144px right 364px;
+    }
+}
+
+/* Upside direction */
+@keyframes upSideMove {
+    25% {
+        background-position: top 72px right 416px;
+    }
+    50% {
+        background-position: top 72px right 468px;
+    }
+    75% {
+        background-position: top 72px right 416px;
+    }
+    100% {
+        background-position: top 72px right 364px;
+    }
+}
