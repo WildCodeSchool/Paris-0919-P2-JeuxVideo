@@ -40,6 +40,9 @@ class Map1 extends React.Component {
     // active les combats
     componentDidUpdate(){
         if (this.dice === 1){
+            this.props.keepMap(1)
+            this.props.newLeft(this.state.left)
+            this.props.newTop(this.state.top)
             this.props.newMap(10)
         }
     }
@@ -126,7 +129,6 @@ class Map1 extends React.Component {
     }
 
     render() {
-        console.log(this.state.left)
         return (
             <div className="map_background" style={{
                 backgroundImage: `url(${this.props.designMap1.url})`,

@@ -19,6 +19,8 @@ class Battlescreen extends React.Component {
     isDead: false,
     showPopup: false,
     HpPlayer: 200,
+    previousMap: this.props.previousMap,
+    escape:false
   }
 
   newHPClickedChild = neoClickedHP => {
@@ -38,18 +40,29 @@ class Battlescreen extends React.Component {
         HP: 0,
         dialog: 'Ennemy defeated',
         isDead: true,
-        showPopup: true,
-
+        showPopup: true
       })
+      setTimeout( ()=>
+      this.props.newMap(this.state.previousMap), 1000)
     } 
   }
+
+  //pour fuir
+  escape=()=>{
+    this.setState({escape: true})
+  }
+
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.HP !== this.state.HP) {
       setTimeout( () =>
         this.enemyAttack(),        
-        3000
+        2000
       )
+    }
+    if (this.state.escape=== true){
+      this.setState({escape: false})
+      this.props.newMap(this.state.previousMap)
     }
   }
   
@@ -71,7 +84,7 @@ class Battlescreen extends React.Component {
         <div className='game-area'>
 
           <div className='enemystatus-area'>
-            <Commands showPopup={this.handlePop}/>
+            <Commands escape={this.escape} showPopup={this.handlePop}/>
             {this.state.showPopup ? (<Popup newHPClicked={this.newHPClickedChild} />) : (console.log('nothing'))}
             <div className="meta-area">
               <Enemy name={'Meta'} HP={this.state.HP} onChange={this.handleDamage()} />

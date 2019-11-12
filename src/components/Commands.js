@@ -3,11 +3,16 @@ import './Commands.css';
 
 class Commands extends React.Component {
     state = {
-       isAttacked: false
+       isAttacked: false,
+       previousMap: this.props.previousMap
     }
 
 popUp = () =>{
     this.props.showPopup(true)
+}
+
+escape= () =>{
+    this.props.escape(true)
 }
 
 render() {
@@ -18,7 +23,7 @@ render() {
             <ul >
                 <li  id='fight'onClick={this.popUp}>Attack</li>
                 <li id='item'>Items</li>
-                <li id='escape'>Git.ignore</li>
+                <li id='escape' onClick={this.escape}>Git.ignore</li>
             </ul> 
         </div>
         </>
