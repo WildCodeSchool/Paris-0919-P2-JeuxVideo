@@ -11,11 +11,10 @@
 }
 
 .title_synopsis {
-    display : flex;
     font-size : 4vh;
     font-family: 'Press Start 2P', cursive;
     color : #45BAC0;
-    align-items : flex-start;
+    text-align: center;
     margin-bottom : 60px;;
 }
 

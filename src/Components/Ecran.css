@@ -18,17 +18,6 @@
   text-align: center;
   margin-bottom: 118px;
 }
-#commandes #ecranJeu {
-  height: 700px;
-  width: 80%;
-  background-color: black;
-  background-image: url('chargement.gif');
-  background-repeat: no-repeat;
-  background-size: 700px 700px;
-  background-position: center;
-  margin-left: 188px;
-  margin-bottom: 50px;
-}
 
 @media screen and (max-width: 425px) {
   #commandes {
@@ -49,14 +38,6 @@
   #commandes p {
     display: none;
   }
-  #commandes #ecranJeu {
-    height: 400px;
-    width: 90%;
-    margin-top: 100px;
-    margin-left: 5%;
-    text-align: center;
-    font-size: 50px;
-  }
 }
 
 @media screen and (max-width: 375px) {
@@ -65,9 +46,5 @@
   }
   #titleMobile {
     font-size: 3.5vh;
-  }
-  #commandes #ecranJeu {
-    margin-top: 80px;
-    height: 300px;
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './Ecran.css';
 
+
 class Ecran extends Component {
   render() {
     return (
@@ -11,7 +12,6 @@ class Ecran extends Component {
         <p>ZSQD/Flèches directionnelles: Bouger le personnage <br /><br />
           Barre Espace: Valider<br /><br />
           Touches Ctrl + S: Sauvegarder</p>
-        <div id="ecranJeu"></div>
       </div>
     );
   }
