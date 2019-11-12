@@ -3,7 +3,8 @@ import React from 'react'
 
 // Import CSS
 import './Map.css'
-import Axios from 'axios'
+
+
 
 class Map1 extends React.Component {
     state = {
@@ -27,11 +28,23 @@ class Map1 extends React.Component {
             quote: "j'ai mal aux dents"
         }
     }
+    // le dés de rencontre
+    dice = 0
 
     // Call the function that changes the player direction, animation and position
     componentDidMount() {
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
+    }
+
+    // active les combats
+    componentDidUpdate(){
+        if (this.dice === 1){
+            this.props.keepMap(1)
+            this.props.newLeft(this.state.left)
+            this.props.newTop(this.state.top)
+            this.props.newMap(10)
+        }
     }
 
     // Move the character, change its direction & animation
@@ -42,40 +55,44 @@ class Map1 extends React.Component {
                 if (this.state.position !== 'top 72px right 416px' && !this.state.lockMovement) {
                     this.setState({ position: 'top 72px right 416px'})
                 }
-                else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
-                    this.setState({ top: this.state.top - 1})
-                }
+                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
+                     this.setState({ top: this.state.top - 1})
+                    //  this.dice = Math.floor(Math.random()*5)
+                 }
                 break
             case 83:
             case 40:
                 if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
                     this.setState({ position: 'top 288px right 416px'})
                 }
-                else if (this.state.top < 9 && this.state.map[this.state.top][this.state.left - 1] === 0 ){
-                    const down = this.state.top + 1
-                    this.setState({ position: 'top 288px right 416px', top: down })
-                }
+                 else if (this.state.top < 9 && this.state.map[this.state.top][this.state.left - 1] === 0 ){
+                     const down = this.state.top + 1
+                     this.setState({ position: 'top 288px right 416px', top: down })
+                    //  this.dice = Math.floor(Math.random()*5)
+                 }
                 break
             case 81:
             case 37:
                 if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
                     this.setState({ position: 'top 216px right 416px'})}
-                else if (this.state.left >= 0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
-                    const left = this.state.left - 1
-                    this.setState({ position: 'top 216px right 416px', left: left})
-                }
+                 else if (this.state.left >= 0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
+                     const left = this.state.left - 1
+                     this.setState({ position: 'top 216px right 416px', left: left})
+                    //  this.dice = Math.floor(Math.random()*5)
+                 }
                 break
             case 68:
             case 39:
                 if (this.state.position !== 'top 144px right 416px' && !this.state.lockMovement) {
                     this.setState({ position: 'top 144px right 416px',})
                 }
-                else if (this.state.left < 14 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left] === 0) {
-                    const right = this.state.left + 1
-                    this.setState({ position: 'top 144px right 416px', left: right })
-                }
+                 else if (this.state.left < 14 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left] === 0) {
+                     const right = this.state.left + 1
+                     this.setState({ position: 'top 144px right 416px', left: right })
+                    //  this.dice = Math.floor(Math.random()*5)
+                 }
                 if (this.state.left > 13) {
-                    this.props.newTop(this.state.top + 1)
+                    this.props.newTop(this.state.top)
                     this.props.newLeft(1)
                     this.props.newMap(2)
                 }
@@ -112,7 +129,6 @@ class Map1 extends React.Component {
     }
 
     render() {
-        console.log(this.state.left)
         return (
             <div className="map_background" style={{
                 backgroundImage: `url(${this.props.designMap1.url})`,

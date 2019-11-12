@@ -1,3 +1,4 @@
+
 // Import librairies
 import React from 'react'
 import Axios from 'axios'
@@ -12,6 +13,8 @@ export default class App extends React.Component {
   state = {
     textureDatas1:'',
     textureDatas2:'',
+    textureDatas3 : '',
+    textureDatas4:'',
     itemsDatas: '',
     soundsDatas: '',
     charactersDatas: ''
@@ -46,23 +49,20 @@ export default class App extends React.Component {
     .then(response => response.data)
     // Give the texture object to the state
     .then(data => {
-      this.setState({ textureDatas1: data[0] })
+      this.setState({
+        textureDatas1: data[0],
+        textureDatas2: data[1],
+        textureDatas3 : data[3],
+        textureDatas4: data[4]
+      })
     })
 
-    // Texture API
-    Axios.get('./Database/map.json')
-    // Change JSON into JS object
-    .then(response => response.data)
-    // Give the texture object to the state
-    .then(data => {
-      this.setState({ textureDatas2: data[1] })
-    })
   }
 
   render() {
     return (
       <div className="App">
-         <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} />
+         <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} />
       </div>
     );
   }

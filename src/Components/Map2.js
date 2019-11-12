@@ -18,11 +18,11 @@ class Map2 extends React.Component {
         position: 'top 288px right 416px',
         map: [
 
-            [1, 1, 1, 1, 1, 0, 1, 2, 1, 1, 0, 1, 1],
+            [1, 1, 1, 1, 1, 0, 1, 2, 1, 1, 0, 0, 0],
             [0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
             [1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
             [1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
-            [1, 0, 1, 1, 1, 0, 0, 0, 2, 0, 0, 1, 1],
+            [1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1],
             [0, 0, 1, 1, 1, 1, 2, 0, 0, 0, 1, 1, 1],
             [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1]
         ]
@@ -32,15 +32,17 @@ class Map2 extends React.Component {
     componentDidMount() {
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
-
-        Axios.get('./Database/map.json')
-            // Change JSON into JS object
-            .then(response => response.data)
-            // Give the texture object to the state
-            .then(data => {
-                this.setState({ textureDatas: data[1] })
-            })
     }
+
+        // active les combats
+        componentDidUpdate(){
+            if (this.dice === 1){
+                this.props.keepMap(2)
+                this.props.newLeft(this.state.left)
+                this.props.newTop(this.state.top)
+                this.props.newMap(10)
+            }
+        }
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
@@ -53,6 +55,7 @@ class Map2 extends React.Component {
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
                     const top = this.state.top - 1
                     this.setState({ top: top })
+                    // this.dice = Math.floor(Math.random()*5)
                 }
                 break
             case 83:
@@ -60,25 +63,27 @@ class Map2 extends React.Component {
                 if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px' })
                 }
-                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
-                    const down = this.state.top + 1
-                    this.setState({ top: down })
-                }
-                break
+                 else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
+                     const down = this.state.top + 1
+                     this.setState({ top: down })
+                    //  this.dice = Math.floor(Math.random()*5)
+                 }
+                 break
             case 81:
             case 37:
                 if (this.state.left === 1) {
                     this.props.newLeft(13)
-                    this.props.newTop(this.state.top - 1)
+                    this.props.newTop(this.state.top)
                     this.props.newMap(1)
                 } else{
                 if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
                 }
-                else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
-                    const left = this.state.left - 1
-                    this.setState({ left: left })
-                }
+                 else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
+                     const left = this.state.left - 1
+                     this.setState({ left: left })
+                    //  this.dice = Math.floor(Math.random()*5)
+                 }
 }
                 break
             case 68:
@@ -86,9 +91,15 @@ class Map2 extends React.Component {
                 if (this.state.position !== 'top 144px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px' })
                 }
-                else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
-                    const right = this.state.left + 1
-                    this.setState({ left: right })
+                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
+                     const right = this.state.left + 1
+                     this.setState({ left: right })
+                    //  this.dice = Math.floor(Math.random()*5)
+                 }
+                if (this.state.left > 13) {
+                    this.props.newTop(this.state.top)
+                    this.props.newLeft(1)
+                    this.props.newMap(3)
                 }
                 break
             case 88:
@@ -125,7 +136,7 @@ class Map2 extends React.Component {
         console.log(this.state.textureDatas.url)
         return (
             <div className="map_background" style={{
-                backgroundImage: `url(${this.state.textureDatas.url})`,
+                backgroundImage: `url(${this.props.designMap2.url})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
