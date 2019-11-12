@@ -63,7 +63,7 @@ class Map2 extends React.Component {
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
                     const top = this.state.top - 1
                     this.setState({ top: top })
-                    this.dice = Math.floor(Math.random()*5)
+                    this.dice = Math.floor(Math.random()*10)
                 }
                 break
             case 83:
@@ -74,14 +74,14 @@ class Map2 extends React.Component {
                 else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
                     const down = this.state.top + 1
                     this.setState({ top: down })
-                    this.dice = Math.floor(Math.random()*5)
+                    this.dice = Math.floor(Math.random()*10)
                 }
                 break
             case 81:
             case 37:
                 if (this.state.left === 1) {
                     this.props.newLeft(13)
-                    this.props.newTop(this.state.top - 1)
+                    this.props.newTop(this.state.top)
                     this.props.newMap(1)
                 } else{
                 if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
@@ -90,7 +90,7 @@ class Map2 extends React.Component {
                 else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
                     const left = this.state.left - 1
                     this.setState({ left: left })
-                    this.dice = Math.floor(Math.random()*5)
+                    this.dice = Math.floor(Math.random()*10)
                 }
 }
                 break
@@ -102,7 +102,7 @@ class Map2 extends React.Component {
                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
                     this.setState({ left: right })
-                    this.dice = Math.floor(Math.random()*5)
+                    this.dice = Math.floor(Math.random()*10)
                 }
                 break
             case 88:

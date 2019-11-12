@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-import Options from './Options'
-
 import './StartMenu.css';
+import {Link} from 'react-router-dom'
 
 class StartMenu extends Component {
   // state = {
@@ -20,7 +19,7 @@ class StartMenu extends Component {
     return (
       <div id='startMenu'>
         <section>
-          <div>Start a new game</div>
+          <div><Link to="/game">Start a new game</Link></div>
           <div>Load a game</div>
           <div id='options' onClick={this.handleClick}> Options
           </div>
