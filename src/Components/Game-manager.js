@@ -3,6 +3,7 @@ import React from 'react'
 import "./Game-manager.css"
 import Map1 from "./Map1"
 import Map2 from "./Map2"
+import Battlescreen from "../components/Battlescreen"
 
 class GameManager extends React.Component {
     state = {
@@ -28,7 +29,6 @@ class GameManager extends React.Component {
     render() {
         switch (this.state.currentMap) {
             case 1:
-                console.log(this.props.designMap1)
                 return (
                     <div className="Game-area">
                         <Map1 designMap1={this.props.designMap1} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} ></Map1>
@@ -39,6 +39,12 @@ class GameManager extends React.Component {
                     <div className="Game-area">
                         <Map2 newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft}></Map2>
                     </div>
+                )
+            case 10:
+                return (
+                    <div className="Game-area">
+                    <Battlescreen/>
+                </div> 
                 )
             default:
                 console.log("oups")
