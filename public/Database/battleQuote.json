@@ -1,0 +1,60 @@
+[
+    {
+        "id": 1,
+        "battlequote": "A wild meta appears"
+    },
+
+    {
+        "id": 2,
+        "battlequote": "What do you want to do ?"
+    },
+
+    {
+        "id": 3,
+        "battlequote": "Ennemy Debugged"
+    },
+
+    {
+        "id" : 4,
+        "battlequote" : "Player uses One Punch Frame",
+        "battlequote2" : "It's super effective",
+        "battlequote3" : "You've found a moskito, that doesn't effect the ennemy"
+    },
+
+    {
+        "id" : 5,
+        "battlequote" : "Player uses Omni/"
+    },
+
+    {
+        "id" : 6,
+        "battlequote" : "Player uses HackDoken"
+    },
+
+    {
+        "id" : 7,
+        "escapequote" : "You ignored all changes and escaped the batlle."
+    },
+
+    {
+        "id" : 8,
+        "ennemyquote" : "Meta attacks you"
+    },
+
+    {
+        "id" : 9,
+        "ennemyquote" : "You take x damage"
+    },
+
+    {
+        "id" : 10,
+        "battlequote" : "Choose an item"
+
+    }, 
+
+    {
+        "id" : 12,
+        "itemquote" : "Player uses coffee, very strong coffee, Player gained 50hp"
+
+    }
+]

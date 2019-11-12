@@ -1,5 +1,6 @@
-import React from 'react';
 
+import React from 'react';
+import Axios from 'axios'
 import './App.css';
 import GameSynopsis from './Components/GameSynopsis'
 
@@ -16,7 +17,12 @@ import Options from './Components/Options';
 
 class App extends React.Component {
   state = {
-    startScreen: true
+    startScreen: true,
+    textureDatas1:'',
+    textureDatas2:'',
+    itemsDatas: '',
+    soundsDatas: '',
+    charactersDatas: ''
   }
 
   componentDidMount() {
@@ -27,6 +33,48 @@ class App extends React.Component {
     if (event.keyCode === 13) {
       this.setState({startScreen: false})
     } 
+
+
+  // Use Axios to consume APIs
+  componentDidMount() {
+    
+ 
+      
+      // Item API
+      Axios.get('./database/items.json')
+      // Change JSON into JS object
+      .then(response => response.data)
+      // Give the texture object to the state
+      .then(data => {
+        this.setState({ itemsDatas: data })
+      })
+      
+      // Sound API
+      Axios.get('./database/characters.json')
+      // Change JSON into JS object
+      .then(response => response.data)
+      // Give the texture object to the state
+      .then(data => {
+        this.setState({ soundsDatas: data })
+      })
+      
+      // Texture API
+    Axios.get('./Database/map.json')
+    // Change JSON into JS object
+    .then(response => response.data)
+    // Give the texture object to the state
+    .then(data => {
+      this.setState({ textureDatas1: data[0] })
+    })
+
+    // Texture API
+    Axios.get('./Database/map.json')
+    // Change JSON into JS object
+    .then(response => response.data)
+    // Give the texture object to the state
+    .then(data => {
+      this.setState({ textureDatas2: data[1] })
+    })
   }
 
   render() {

@@ -1,0 +1,104 @@
+[
+    {
+        "id" : 1,
+        "name" : "avatar",
+        "Type" : "human",
+        "Quote" : "",
+        "Age" : "14",
+        "image" :"",
+        "battle-sprite" : {
+            "alive" :"./assets/avatar_animated.gif",
+            "damaged" : "./assets/avatar_damage.gif",
+            "dead" : "./assets/avatar_dead.gif" }
+        
+    },
+    {
+        "id" : 2,
+        "name": "Garry Coder",
+        "Type": "PNJ",
+        "Quote": "You are a coder, Garry",
+        "Age": "20"
+    },
+    {
+        "id" : 3,
+        "name": "Ness Coffee",
+        "Type": "PNJ",
+        "Quote": "Psst, hey kids, wanna buy some coffee ?",
+        "Age": "9"
+    },
+    {
+        "id" : 4,
+        "name": "ToolsMaster",
+        "Type": "PNJ",
+        "Quote": "I have a lot of stuff to trade !",
+        "Age": "38"
+    },
+    {
+        "id" : 5,
+        "name": "Professor Shell",
+        "Type": "PNJ",
+        "Quote": "Hello nerdz kido, it's dangerous to code alone, Allow me to give you this tools. 'KeyBoardBlade obtenaid'.",
+        "Quote2": "Don't git ignore my advices.",
+        "Age": "67",
+        "image" :"./assets/profshell.png"
+    },
+    {
+        "id" : 6,
+        "name": "Abdoumen",
+        "Type": "PNJ",
+        "Quote": "Chicken ? Where's my CHICKENS!!! Hey you kido, did you saw my CHICKENS ? Can you help me ? Found them and i'll give you rewards",
+        "Quote2": "Btw, please suscribe to my y*utube channel Chicken C*de Sch**l",
+        "Age": "42",
+        "image" : "./assets/abdou.png"
+    },
+    {
+        "id" : 7,
+        "name": "Goat'Lanta",
+        "Type": "Bêêêêêh",
+        "Quote": "... Bêêêêh ... (hum, this dude is weird, maybe i should leave ??)",
+        "Quote2": "GOAT ATTACK!!!!!!!!!!!!",
+        "Age": "Bêêêêêêêh ...",
+        "image" : "./assets/goatmaster.png"
+    },
+    {
+        "id" : 8,
+        "name": "Meta",
+        "Type": "ennemy",
+        "Quote": "<div><p> Hê//ø Wør/d ! </p></div>",
+        "Age": "",
+        "image" :"",
+        "battle-sprite" : {
+            "alive" : "./assets/meta1_animate.gif",
+            "dead" : "./assets/meta_dead.png" }
+    },
+    {
+        "id" : 9,
+        "name" : "Nuage",
+        "Type" : "PNJ",
+        "Quote" : "<h1>It's rAiNiNg ToDaY, HaVe YoU aN uMbReLlA fOr Me ? No ? Ok.</h1>",
+        "Age" : "",
+        "image" : ""
+    },
+    {
+        "id" : 10,
+        "name" : "Our lord and savior Jenny",
+        "Type" : "PNJ",
+        "Quote" : "Dailies must be short and efficient. By the way, there is a checkpoint on friday.",
+        "Age" : "Do you want to go to hell ? THAT'S how you go to hell kiddo",
+        "image" : "./assets/jenny.png"
+    },
+    {
+        "id" : 11,
+        "name" : "Browser",
+        "Type" : "ennemy",
+        "Quote" : "Begone, thot.",
+        "Age" : "Google it",
+        "image" :"browser_map.png",
+        "battle-sprite" : {
+            "alive" :"./assets/browser.gif",
+            "alive2":"./assets/browser_atk.gif",
+            "damaged" : "./assets/browser_damaged.gif",
+            "dead" : "" }
+
+    }
+]
