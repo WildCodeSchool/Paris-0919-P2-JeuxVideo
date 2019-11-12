@@ -6,7 +6,10 @@
         "Quote" : "",
         "Age" : "14",
         "image" :"",
-        "battle-sprite" : "./assets/avatar_animated.gif"
+        "battle-sprite" : {
+            "alive" :"./assets/avatar_animated.gif",
+            "damaged" : "./assets/avatar_damage.gif",
+            "dead" : "./assets/avatar_dead.gif" }
         
     },
     {
@@ -85,5 +88,18 @@
         "Quote" : "Dailies must be short and efficient. By the way, there is a checkpoint on friday.",
         "Age" : "Do you want to go to hell ? THAT'S how you go to hell kiddo",
         "image" : "./assets/jenny.png"
+    },
+    {
+        "id" : 11,
+        "name" : "Browser",
+        "Type" : "ennemy",
+        "Quote" : "Begone, thot.",
+        "Age" : "Google it",
+        "image" :"browser_map.png",
+        "battle-sprite" : {
+            "alive" :"./assets/browser.gif",
+            "alive2":"./assets/browser_atk.gif",
+            "damaged" : "./assets/browser_damaged.gif",
+            "dead" : "" }
     }
 ]

@@ -7,7 +7,7 @@
     {
         "name":"map2",
         "type":"map",
-        "url":"./assets/map2.jpg"
+        "url":"./assets/map2v2.jpg"
     },
     {
         "name":"glitched-tree",
@@ -15,18 +15,27 @@
         "url":"work-in-process-lol"
     },
     {
-        "name":"cliff",
-        "type":"inaccessible",
-        "url":"./Textures/cliff.png"
+        "name":"map3",
+        "type":"map",
+        "url":"./assets/map3.jpg"
     },
     {
-        "name":"stone-wall",
-        "type":"inaccessible",
-        "url":"./Textures/stone-wall.png"
+        "name":"map4",
+        "type":"map",
+        "url":"./assets/map4.jpg"
     },
     {
-        "name":"wooden-door",
-        "type":"entrance",
-        "url":"./Textures/wooden-door.png"
+        "name":"treasure-open",
+        "type":"tile",
+        "url": {
+            "open" : "./assets/treasure_open",
+            "closed" : "./assets/treasure_closed" 
+        }
+    },
+    {
+        "name":"treasure-closed",
+        "type":"tile",
+        "url":"./assets/treasure_closed"
     }
+
 ]
