@@ -4,59 +4,65 @@ import Axios from 'axios'
 
 import './App.css'
 
+import GameManager from './Components/Game-manager'
+
 export default class App extends React.Component {
 
   // Initialize states
   state = {
-    textureDatas:'',
+    textureDatas1:'',
+    textureDatas2:'',
     itemsDatas: '',
     soundsDatas: '',
     charactersDatas: ''
   }
-
+  
   // Use Axios to consume APIs
   componentDidMount() {
-
-    // Texture API
-    Axios.get('./database/textures.json')
+    
+  
+      
+      // Item API
+      Axios.get('./database/items.json')
       // Change JSON into JS object
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
-        this.setState({ textureDatas: data })
+        this.setState({ itemsDatas: data })
       })
-
-    // Item API
-    Axios.get('./database/items.json')
+      
+      // Sound API
+      Axios.get('./database/characters.json')
+      // Change JSON into JS object
+      .then(response => response.data)
+      // Give the texture object to the state
+      .then(data => {
+        this.setState({ soundsDatas: data })
+      })
+      
+      // Texture API
+    Axios.get('./Database/map.json')
     // Change JSON into JS object
     .then(response => response.data)
     // Give the texture object to the state
     .then(data => {
-      this.setState({ itemsDatas: data })
+      this.setState({ textureDatas1: data[0] })
     })
 
-    // Sound API
-    Axios.get('./database/characters.json')
+    // Texture API
+    Axios.get('./Database/map.json')
     // Change JSON into JS object
     .then(response => response.data)
     // Give the texture object to the state
     .then(data => {
-      this.setState({ soundsDatas: data })
-    })
-
-    // Characters API
-    Axios.get('./database/sounds.json')
-    // Change JSON into JS object
-    .then(response => response.data)
-    // Give the texture object to the state
-    .then(data => {
-      this.setState({ charactersDatas: data })
+      this.setState({ textureDatas2: data[1] })
     })
   }
 
   render() {
     return (
       <div className="App">
+         <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} />
       </div>
     );
   }

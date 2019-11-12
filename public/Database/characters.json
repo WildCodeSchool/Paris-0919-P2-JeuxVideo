@@ -70,8 +70,6 @@
         "battle-sprite" : {
             "alive" : "./assets/meta1_animate.gif",
             "dead" : "./assets/meta_dead.png" }
-
-
     },
     {
         "id" : 9,
@@ -101,5 +99,6 @@
             "alive2":"./assets/browser_atk.gif",
             "damaged" : "./assets/browser_damaged.gif",
             "dead" : "" }
+
     }
 ]
