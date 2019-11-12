@@ -8,6 +8,10 @@
   background-color: #47bac0ff;
   padding-top: 10%;
 }
+#startMenu .link {
+  text-decoration: none;
+  color: #47bac0ff;
+}
 #startMenu div {
   background-color: #0c0032ff;
   width: 40%;
@@ -19,8 +23,9 @@
   padding: 2%;
   color: #47bac0ff;
   cursor: pointer;
+  text-decoration: none;
 }
-#startMenu div:hover {
+#startMenu .link:hover, #startMenu div:hover {
   color: #e100ffff;
 }
 #startMenu #startMenuPub {

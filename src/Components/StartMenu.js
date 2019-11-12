@@ -19,7 +19,7 @@ class StartMenu extends Component {
     return (
       <div id='startMenu'>
         <section>
-          <div><Link to="/game">Start a new game</Link></div>
+          <div><Link to="/game" className='link'>Start a new game</Link></div>
           <div>Load a game</div>
           <div id='options' onClick={this.handleClick}> Options
           </div>
