@@ -13,13 +13,13 @@
   grid-template-columns: repeat(2, 100%);
   scroll-behavior: smooth;
   margin-bottom: 200px;
-  height: 500px;
+  height: 525px;
 }
 
 #slider section {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 22%);
+  grid-template-columns: repeat(4, 23%);
   position: relative;
   margin: 20px 0;
   transition: 250ms transform;
@@ -48,6 +48,10 @@
   height: 320px;
 }
 
+#bruno, #flo, #mel, #barbara {
+  margin-top: 28px;
+}
+
 .avatars {
   transition: 250ms all;
   margin-left: 32%;
@@ -72,12 +76,18 @@
 }
 
 .avatars .sentences {
-  font-size: 1.83vh;
+  font-size: 1.5vh;
+  line-height: 25px;
+}
+
+#five .sentences {
+  margin-left: -115px;
+  width: 500px;
 }
 
 .avatars .names {
   margin-top: 30px;
-  font-size: 3.5vh;
+  font-size: 2vh;
   margin-left: 27%;
   width: 160px;
 }
@@ -87,7 +97,7 @@
 }
 
 #rightOne {
-  right: 2%;
+  right: -1%;
 }
 
 #leftTwo {
@@ -95,11 +105,12 @@
 }
 
 #rightTwo {
-  right: 1%;
+  right: -1%;
 }
 
 #four .sentences {
-  width: 550px;
+  width: 540px;
+  margin-left: -84px;
 }
 
 @media screen and (max-width: 425px) {
