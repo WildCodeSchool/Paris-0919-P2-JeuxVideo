@@ -1,5 +1,10 @@
 
-
+* {
+  margin: 0;
+  padding:0;
+  background-color: #0C0032;
+  scroll-behavior: smooth;
+}
 
 h2 {
   text-align: center;
@@ -91,3 +96,4 @@ p {
   color: #09d3ac;
 
 } */
+
