@@ -1,25 +1,28 @@
 .popup-area {
     width: 20%;
-    height: 200px;
+    height: 220px;
     background-color: gray;
     opacity: 0.8;
     overflow: hidden;
     border: 2px solid black;
     margin-top: 10px;
-    
-
+    margin-right: 501px;
 }
 
 
 .popup-area ul {
-    margin-top: 50px;
-    margin-right: 20px;
-    text-decoration: none;
+    margin-top: 68px;
+    background-color: transparent;
+    width: 93%;
+    margin-left: 11px;
+    list-style: none;
 }
 
 .popup-area ul li {
-    margin-top: 20px;
+    margin-top: 25px;
     text-decoration: none;
+    background-color: transparent;
+    width: 100%;
 }
 
 

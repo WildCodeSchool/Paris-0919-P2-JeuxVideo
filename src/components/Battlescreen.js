@@ -8,7 +8,7 @@ import Commands from './Commands'
 import Dialog from './Dialog'
 import Popup from './Popup';
 
-
+import './Battlescreen.css'
 
 
 class Battlescreen extends React.Component {

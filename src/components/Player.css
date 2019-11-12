@@ -5,6 +5,12 @@
     opacity: 0.8;
     overflow: hidden;
     border: 2px solid black;
-    
+}
 
+.player-area h2 {
+  padding-top: 20px;
+}
+
+.player-area p {
+  margin-top: 20px;
 }
