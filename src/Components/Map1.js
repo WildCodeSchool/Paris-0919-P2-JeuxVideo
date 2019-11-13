@@ -12,13 +12,15 @@ class Map1 extends React.Component {
         textureDatas: '',
         lockMovement: false,
         shell: './Database/assets/profshell.png',
+        chestClose: './Database/assets/treasure_closed.png',
+        chestOpen: './Database/assets/treasure_open.png',
         top: this.props.top,
         left: this.props.left,
         animation: 'none',
         position: 'top 288px right 416px',
         map: [
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [1, 0, 0, 0, 0, 0, 2, 0, 0, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
             [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -28,10 +30,18 @@ class Map1 extends React.Component {
         npc: {
             name: "James Alodan",
             quote: "j'ai mal aux dents"
-        }
+        },
+        chestQuote: {
+            chestIsOpening: "Vous obtain un cup of café",
+            chestIsAlreadyOpened: "There is rien into the coffre",
+
+        },
+        isClose: true
     }
     // le dés de rencontre
     dice = 0
+
+
 
     // Call the function that changes the player direction, animation and position
     componentDidMount() {
@@ -114,6 +124,10 @@ class Map1 extends React.Component {
             case 69:
                 if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
                     this.interactWithNPC()
+                } else if
+                    ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 3 || this.state.map[this.state.top - 1][this.state.left - 2] === 3 || this.state.map[this.state.top][this.state.left - 1] === 3 || this.state.map[this.state.top - 2][this.state.left - 1] === 3) {
+                    this.interactWithChest()
+
                 }
                 break
             default:
@@ -141,6 +155,25 @@ class Map1 extends React.Component {
         }, 2500)
     }
 
+    interactWithChest = () => {
+        if (this.state.isClose) {
+            this.setState({ lockMovement: true })
+            this.setState({ isClose: false })
+            document.querySelector('.quoteContainer').style.display = 'block'
+            document.querySelector('.quoteContainer').innerHTML = `<h5>${this.state.chestQuote.chestIsOpening}</h5>`
+            document.querySelector('.chest').style.backgroundImage = `url(${this.state.chestOpen})`
+
+            setTimeout(() => {
+                this.setState({ lockMovement: false })
+                document.querySelector('.quoteContainer').style.display = 'none'
+                document.querySelector('.quoteContainer').innerHTML = ``
+            }, 2500)
+        } else {
+            document.querySelector('.quoteContainer').style.display = 'block'
+            document.querySelector('.quoteContainer').innerHTML = `<h5>${this.state.chestQuote.chestIsAlreadyOpened}</h5>`
+        }
+    }
+
     render() {
         return (
             <div className="map_background" style={{
@@ -149,13 +182,20 @@ class Map1 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-                <img className="profshell" src="./Database/assets/profshell.png"/>
+                <div className="profshell" style={{ backgroundImage: `url(${this.state.shell})` }}></div>
                 <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
+                <div className="chest" style={{ backgroundImage: `url(${this.state.chestClose})` }}>
 
+                </div>
             </div>
+
+
+
         )
     }
 }
 
 export default Map1
+
+

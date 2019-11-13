@@ -19,6 +19,12 @@
     z-index: 1;
 }
 
+.chest {
+    grid-column: 2/2;
+    grid-row: 2/2;
+    z-index: 1;
+}
+
 .profshell {
     grid-column: 7/8;
     grid-row: 3/4;
