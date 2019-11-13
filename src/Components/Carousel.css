@@ -13,7 +13,7 @@
   grid-template-columns: repeat(2, 100%);
   scroll-behavior: smooth;
   margin-bottom: 200px;
-  height: 525px;
+  height: 600px;
 }
 
 #slider section {
@@ -23,9 +23,10 @@
   position: relative;
   margin: 20px 0;
   transition: 250ms transform;
+  padding-top: 50px;
 }
 
-#slider section a {
+#slider section .arrows {
   position: absolute;
   color: #45BAC0;
   text-decoration: none;
@@ -67,6 +68,10 @@
   transform: scale(1.2);
 }
 
+#bruno:hover, #mel:hover, #barbara:hover {
+  margin-top: 70px;
+}
+
 .avatars p {
   color: #45BAC0;
   text-align: center;
@@ -86,7 +91,7 @@
 }
 
 .avatars .names {
-  margin-top: 30px;
+  margin-top: 50px;
   font-size: 2vh;
   margin-left: 27%;
   width: 160px;
@@ -101,7 +106,7 @@
 }
 
 #leftTwo {
-  left: -1.4%;
+  left: -1%;
 }
 
 #rightTwo {
