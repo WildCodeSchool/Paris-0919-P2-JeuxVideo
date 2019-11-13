@@ -32,7 +32,7 @@ class App extends React.Component {
     textureDatas4:'',
     itemsDatas: '',
     soundsDatas: '',
-    charactersDatas: ''
+    charactersDatas: '',
     startScreen: true,
 
     
@@ -98,8 +98,8 @@ class App extends React.Component {
             {this.state.startScreen ? <StartScreen /> : <StartMenu />}
             </Route>
             <Route path="/game">
-              //<GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.charactersDatas} />
-              <GameManager></GameManager>
+              <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.charactersDatas} />
+              
             </Route>
           </Switch>
         </Router>
