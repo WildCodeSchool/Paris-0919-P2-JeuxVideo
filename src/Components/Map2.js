@@ -20,7 +20,8 @@ class Map2 extends React.Component {
             [1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1],
             [0, 0, 1, 1, 1, 1, 2, 0, 0, 0, 1, 1, 1],
             [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1]
-        ]
+        ],
+        npcsPositions: ['7', '8', '9']
     }
 
     // Call the function that changes the player direction, animation and position

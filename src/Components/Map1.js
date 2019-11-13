@@ -142,6 +142,7 @@ class Map1 extends React.Component {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
         document.querySelector('.quoteContainer').innerHTML = `<h5>${this.state.npc.name} :</h5><p>${this.state.npc.quote}</p>`
+        console.log(document.querySelector('.profshell').style.gridArea)
         setTimeout(() => {
             this.setState({ lockMovement: false })
             document.querySelector('.quoteContainer').style.display = 'none'
