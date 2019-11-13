@@ -1,16 +1,31 @@
 
-// Import librairies
-import React from 'react'
+import React from 'react';
 import Axios from 'axios'
+import './App.css';
+import GameSynopsis from './Components/GameSynopsis'
+import GameManager from "./Components/Game-manager"
 
-import './App.css'
+import Header from './Components/Header'
+import Ecran from './Components/Ecran'
+import ContactForm from './Components/ContactForm'
+import Kickstarter from './Components/Kickstarter'
+import AboutTeam from './Components/AboutTeam'
+import Carousel from './Components/Carousel'
+import Footer from './Components/Footer'
+import StartScreen from './Components/StartScreen';
+import StartMenu from './Components/StartMenu';
 
-import GameManager from './Components/Game-manager'
+// importer Router
+import {
+  BrowserRouter as Router,
+  Switch,
+  Link,
+  Route
+} from 'react-router-dom'
 
-export default class App extends React.Component {
-
-  // Initialize states
+class App extends React.Component {
   state = {
+
     textureDatas1:'',
     textureDatas2:'',
     textureDatas3 : '',
@@ -18,31 +33,41 @@ export default class App extends React.Component {
     itemsDatas: '',
     soundsDatas: '',
     charactersDatas: ''
+    startScreen: true,
+
     
   }
-  
+
+  handleKeyPress = (event) => {
+    if (event.keyCode === 13) {
+      this.setState({ startScreen: false })
+    }
+  }
+
+
   // Use Axios to consume APIs
-  componentDidMount() {
-    
-  
-      
+  componentDidMount() {      
       // Item API
       Axios.get('./Database/items.json')
-      // Change JSON into JS object
+         // Change JSON into JS object
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
         this.setState({ itemsDatas: data })
       })
-      
+
+    document.onkeypress = this.handleKeyPress
+    // Item API
+       
       // NPC API
       Axios.get('./Database/characters.json')
-      // Change JSON into JS object
+    // Change JSON into JS object
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
         this.setState({ charactersDatas: data})
       })
+
       
       // Texture API
     Axios.get('./Database/map.json')
@@ -58,13 +83,37 @@ export default class App extends React.Component {
       })
     })
 
+
   }
 
   render() {
     return (
       <div className="App">
-         <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.charactersDatas} />
+        <Header />
+        <GameSynopsis />
+        <Ecran />
+        <Router>
+          <Switch>
+            <Route exact path="/">
+            {this.state.startScreen ? <StartScreen /> : <StartMenu />}
+            </Route>
+            <Route path="/game">
+              //<GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.charactersDatas} />
+              <GameManager></GameManager>
+            </Route>
+          </Switch>
+        </Router>
+        <Kickstarter />
+        <AboutTeam />
+        <Carousel />
+        <ContactForm />
+        <Footer />
+
       </div>
-    );
+    )
   }
 }
+
+
+
+export default App;
