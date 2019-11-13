@@ -33,6 +33,7 @@ class App extends React.Component {
     itemsDatas: '',
     soundsDatas: '',
     characterBoss: '',
+    characterProfShell : '',
     startScreen: true,
 
     
@@ -65,7 +66,10 @@ class App extends React.Component {
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
-        this.setState({ characterBoss: data[10]})
+        this.setState({ 
+          characterBoss: data[10],
+          characterProfShell : data[4]
+        })
       })
 
       
@@ -103,7 +107,8 @@ class App extends React.Component {
                 designMap2={this.state.textureDatas2} 
                 designMap3={this.state.textureDatas3} 
                 designMap4={this.state.textureDatas4} 
-                Boss={this.state.characterBoss} />
+                Boss={this.state.characterBoss}
+                ProfShell = {this.state.characterProfShell} />
               
             </Route>
           </Switch>

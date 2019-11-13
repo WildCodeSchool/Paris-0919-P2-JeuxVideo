@@ -157,8 +157,8 @@ class Map1 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-                <img className="profshell" src="./Database/assets/profshell.png"/>
-                <img className="browser" src= "./Database/assets/browser_map.png" />
+                {/* <img className="profshell" src="./Database/assets/profshell.png"/> */}
+                <div className="profshell" style={{ backgroundImage : `url(${this.props.ProfShell.image})`}}></div> 
                 <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
 
