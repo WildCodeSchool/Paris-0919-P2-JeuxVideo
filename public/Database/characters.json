@@ -92,7 +92,7 @@
         "Type" : "ennemy",
         "Quote" : "Begone, thot.",
         "Age" : "Google it",
-        "image" :"browser_map.png",
+        "image" :"./Database/assets/browser_map.png",
         "battle-sprite" : {
             "alive" :"./Database/assets/browser.gif",
             "alive2":"./Database/assets/browser_atk.gif",

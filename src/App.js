@@ -32,7 +32,7 @@ class App extends React.Component {
     textureDatas4:'',
     itemsDatas: '',
     soundsDatas: '',
-    charactersDatas: '',
+    characterBoss: '',
     startScreen: true,
 
     
@@ -65,7 +65,7 @@ class App extends React.Component {
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
-        this.setState({ charactersDatas: data})
+        this.setState({ characterBoss: data[10]})
       })
 
       
@@ -98,7 +98,12 @@ class App extends React.Component {
             {this.state.startScreen ? <StartScreen /> : <StartMenu />}
             </Route>
             <Route path="/game">
-              <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.charactersDatas} />
+              <GameManager 
+                designMap1={this.state.textureDatas1} 
+                designMap2={this.state.textureDatas2} 
+                designMap3={this.state.textureDatas3} 
+                designMap4={this.state.textureDatas4} 
+                Boss={this.state.characterBoss} />
               
             </Route>
           </Switch>

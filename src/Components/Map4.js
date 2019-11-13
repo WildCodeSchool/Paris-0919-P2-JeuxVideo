@@ -12,6 +12,7 @@ class Map4 extends React.Component {
         left: this.props.left,
         animation: 'none',
         position: 'top 288px right 416px',
+        // browser : this.props.chara.find(item => item.id === 11),
         map: [
 
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -24,6 +25,7 @@ class Map4 extends React.Component {
         ]
     }
 
+   
     // Call the function that changes the player direction, animation and position
     componentDidMount() {
         document.onkeydown = this.onKeyDown
@@ -124,7 +126,10 @@ class Map4 extends React.Component {
     }
 
     render() {
-        console.log(this.state.textureDatas.url)
+        // console.log(this.props.chara.find(item => item.id === 11))
+        //console.log(this.props.chara.map((item,index)=> item[index].image))
+        console.log(this.props.bossSprite.image)
+        console.log()
         return (
             <div className="map_background" style={{
                 backgroundImage: `url(${this.props.designMap4.url})`,
@@ -132,7 +137,11 @@ class Map4 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
+                
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
+                <div className="browser" style={{ backgroundImage : `url(${this.props.bossSprite.image})`}}></div> 
+                
+                
                 
                 
             </div>

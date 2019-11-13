@@ -158,6 +158,7 @@ class Map1 extends React.Component {
                 backgroundRepeat: 'no-repeat'
             }}>
                 <img className="profshell" src="./Database/assets/profshell.png"/>
+                <img className="browser" src= "./Database/assets/browser_map.png" />
                 <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
 
