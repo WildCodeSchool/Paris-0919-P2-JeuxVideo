@@ -1,103 +1,111 @@
 [
     {
-        "id" : 1,
-        "name" : "avatar",
-        "Type" : "human",
-        "Quote" : "",
-        "Age" : "14",
-        "image" :"",
-        "battle-sprite" : {
-            "alive" :"./Database/assets/avatar_animated.gif",
-            "damaged" : "./Database/assets/avatar_damage.gif",
-            "dead" : "./Database/assets/avatar_dead.gif" }
-        
+        "id": 1,
+        "name": "avatar",
+        "type": "human",
+        "quote": "",
+        "age": "14",
+        "image": "",
+        "battle-sprite": {
+            "alive": "./Database/assets/avatar_animated.gif",
+            "damaged": "./Database/assets/avatar_damage.gif",
+            "dead": "./Database/assets/avatar_dead.gif"
+        }
     },
     {
-        "id" : 2,
+        "id": 2,
         "name": "Garry Coder",
-        "Type": "PNJ",
-        "Quote": "You are a coder, Garry",
-        "Age": "20"
+        "type": "PNJ",
+        "quote": "You are a coder, Garry",
+        "age": "20"
     },
     {
-        "id" : 3,
+        "id": 3,
         "name": "Ness Coffee",
-        "Type": "PNJ",
-        "Quote": "Psst, hey kids, wanna buy some coffee ?",
-        "Age": "9"
+        "type": "PNJ",
+        "quote": "Psst, hey kids, wanna buy some coffee ?",
+        "age": "9"
     },
     {
-        "id" : 4,
+        "id": 4,
         "name": "ToolsMaster",
-        "Type": "PNJ",
-        "Quote": "I have a lot of stuff to trade !",
-        "Age": "38"
+        "type": "PNJ",
+        "quote": "I have a lot of stuff to trade !",
+        "age": "38"
     },
     {
-        "id" : 5,
+        "id": 5,
         "name": "Professor Shell",
-        "Type": "PNJ",
-        "Quote": "Hello nerdz kido, it's dangerous to code alone, Allow me to give you this tools. 'KeyBoardBlade obtenaid'.",
-        "Quote2": "Don't git ignore my advices.",
-        "Age": "67",
-        "image" :"./Database/assets/profshell.png"
+        "type": "PNJ",
+        "quote": [
+            "Hello nerdz kido, it's dangerous to code alone, Allow me to give you this tools. 'KeyBoardBlade obtenaid'.",
+            "Don't git ignore my advices."
+        ],
+        "age": "67",
+        "image": "./Database/assets/profshell.png"
     },
     {
-        "id" : 6,
+        "id": 6,
         "name": "Abdoumen",
-        "Type": "PNJ",
-        "Quotes": ["Chicken ? Where's my CHICKEN !!! Hey you kido, did you saw my CHICKEN ? Can you help me ? Found them and i'll give you rewards", "Btw, please suscribe to my y*utube channel Chicken C*de Sch**l"],
-        "Age": "42",
-        "image" : "./Database/assets/abdou.png"
+        "type": "PNJ",
+        "quote": [
+            "Chicken ? Where's my CHICKEN !!! Hey you kido, did you saw my CHICKEN ? Can you help me ? Found them and i'll give you rewards",
+            "Btw, please suscribe to my y*utube channel Chicken C*de Sch**l"
+        ],
+        "age": "42",
+        "image": "./Database/assets/abdou.png"
     },
     {
-        "id" : 7,
+        "id": 7,
         "name": "Goat'Lanta",
-        "Type": "Bêêêêêh",
-        "Quote": "... Bêêêêh ... (hum, this dude is weird, maybe i should leave ??)",
-        "Quote2": "GOAT ATTACK!!!!!!!!!!!!",
-        "Age": "Bêêêêêêêh ...",
-        "image" : "./Database/assets/goatmaster.png"
+        "type": "Bêêêêêh",
+        "quote": [
+            "... Bêêêêh ... (hum, this dude is weird, maybe i should leave ??)",
+            "GOAT ATTACK!!!!!!!!!!!!"
+        ],
+        "age": "Bêêêêêêêh ...",
+        "image": "./Database/assets/goatmaster.png"
     },
     {
-        "id" : 8,
+        "id": 8,
         "name": "Meta",
-        "Type": "ennemy",
-        "Quote": "<div><p> Hê//ø Wør/d ! </p></div>",
-        "Age": "",
-        "image" :"",
-        "battle-sprite" : {
-            "alive" : "./Database/assets/meta1_animate.gif",
-            "dead" : "./Database/assets/meta_dead.png" }
+        "type": "ennemy",
+        "quote": "<div><p> Hê//ø Wør/d ! </p></div>",
+        "age": "",
+        "image": "",
+        "battle-sprite": {
+            "alive": "./Database/assets/meta1_animate.gif",
+            "dead": "./Database/assets/meta_dead.png"
+        }
     },
     {
-        "id" : 9,
-        "name" : "Nuage",
-        "Type" : "PNJ",
-        "Quote" : "<h1>It's rAiNiNg ToDaY, HaVe YoU aN uMbReLlA fOr Me ? No ? Ok.</h1>",
-        "Age" : "",
-        "image" : ""
+        "id": 9,
+        "name": "Nuage",
+        "type": "PNJ",
+        "quote": "<h1>It's rAiNiNg ToDaY, HaVe YoU aN uMbReLlA fOr Me ? No ? Ok.</h1>",
+        "age": "",
+        "image": ""
     },
     {
-        "id" : 10,
-        "name" : "Our lord and savior Jenny",
-        "Type" : "PNJ",
-        "Quote" : "Dailies must be short and efficient. By the way, there is a checkpoint on friday.",
-        "Age" : "Do you want to go to hell ? THAT'S how you go to hell kiddo",
-        "image" : "./Database/assets/jenny.png"
+        "id": 10,
+        "name": "Our lord and savior Jenny",
+        "type": "PNJ",
+        "quote": "Dailies must be short and efficient. By the way, there is a checkpoint on friday.",
+        "age": "Do you want to go to hell ? THAT'S how you go to hell kiddo",
+        "image": "./Database/assets/jenny.png"
     },
     {
-        "id" : 11,
-        "name" : "Browser",
-        "Type" : "ennemy",
-        "Quote" : "Begone, thot.",
-        "Age" : "Google it",
-        "image" :"./Database/assets/browser_map.png",
-        "battle-sprite" : {
-            "alive" :"./Database/assets/browser.gif",
-            "alive2":"./Database/assets/browser_atk.gif",
-            "damaged" : "./Database/assets/browser_damaged.gif",
-            "dead" : "" }
-
+        "id": 11,
+        "name": "Browser",
+        "type": "ennemy",
+        "quote": "Begone, thot.",
+        "age": "Google it",
+        "image": "./Database/assets/browser_map.png",
+        "battle-sprite": {
+            "alive": "./Database/assets/browser.gif",
+            "alive2": "./Database/assets/browser_atk.gif",
+            "damaged": "./Database/assets/browser_damaged.gif",
+            "dead": ""
+        }
     }
 ]

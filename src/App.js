@@ -32,12 +32,9 @@ class App extends React.Component {
     textureDatas4:'',
     itemsDatas: '',
     soundsDatas: '',
-    characterBoss: '',
-    characterProfShell : '',
-    characterInfos : [],
+    characters: '',
     startScreen: true,
-
-    
+    isReady: false 
   }
 
   handleKeyPress = (event) => {
@@ -67,12 +64,7 @@ class App extends React.Component {
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
-        this.setState({ 
-          characterBoss: data[10],
-          characterProfShell : data[4],
-          characterAbdou : data[5]
-          
-        })
+        this.setState({ characters: data })
       })
 
       
@@ -105,16 +97,7 @@ class App extends React.Component {
             {this.state.startScreen ? <StartScreen /> : <StartMenu />}
             </Route>
             <Route path="/game">
-              <GameManager 
-                designMap1={this.state.textureDatas1} 
-                designMap2={this.state.textureDatas2} 
-                designMap3={this.state.textureDatas3} 
-                designMap4={this.state.textureDatas4} 
-                Boss={this.state.characterBoss}
-                ProfShell = {this.state.characterProfShell}
-                abdou = {this.state.characterAbdou}
-                bigchara = {this.state.characterInfos} />
-              
+              <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.characters} />
             </Route>
           </Switch>
         </Router>
