@@ -11,7 +11,6 @@ class Map1 extends React.Component {
     state = {
         textureDatas: '',
         lockMovement: false,
-        shell: './Database/assets/profshell.png',
         chestClose: './Database/assets/treasure_closed.png',
         chestOpen: './Database/assets/treasure_open.png',
         top: this.props.top,
@@ -27,7 +26,6 @@ class Map1 extends React.Component {
             [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1],
             [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]
         ],
-        pshell: this.props.characters[4],
         chestQuote: {
             chestIsOpening: "Vous obtain un cup of café",
             chestIsAlreadyOpened: "There is rien into the coffre",
@@ -69,6 +67,7 @@ class Map1 extends React.Component {
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
+        e.preventDefault()
         switch (e.keyCode) {
             case 90:
             case 38:
@@ -87,8 +86,7 @@ class Map1 extends React.Component {
                 if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
                     this.setState({ position: 'top 288px right 416px' })
                 }
-
-                else if (this.state.top < 9&& !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
+                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
                     const down = this.state.top + 1
                     this.setState({ position: 'top 288px right 416px', top: down })
                     this.dice = Math.floor(Math.random() * 10)
@@ -129,15 +127,15 @@ class Map1 extends React.Component {
             // interaction avec l'envirronement
             case 88:
             case 69:
-                //pour sortir d'une boite de dialogue
                 if (this.state.lockMovement === true) {
                     this.stopTalking()
+                    this.stopChesting()
                 }
                 //interraction pnj
                 else if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
-                    this.interactWithNPC(this.state.pshell)
-                }// interaction coffres
-                 else if
+                    this.interactWithNPC(this.props.characters[4])
+                }
+                else if
                     ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 3 || this.state.map[this.state.top - 1][this.state.left - 2] === 3 || this.state.map[this.state.top][this.state.left - 1] === 3 || this.state.map[this.state.top - 2][this.state.left - 1] === 3) {
                     this.interactWithChest()
                 }
@@ -159,9 +157,9 @@ class Map1 extends React.Component {
     interactWithNPC = (character) => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.Quote}</span>`
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote[0]}</span>`
     }
-    //pour arrêter de parler
+
     stopTalking = () => {
         this.setState({ lockMovement: false })
         document.querySelector('.quoteContainer').style.display = 'none'
@@ -176,37 +174,32 @@ class Map1 extends React.Component {
             document.querySelector('.quoteContainer').innerHTML = `<span>${this.state.chestQuote.chestIsOpening}</span>`
             document.querySelector('.chest').style.backgroundImage = `url(${this.state.chestOpen})`
 
-            setTimeout(() => {
-                this.setState({ lockMovement: false })
-                document.querySelector('.quoteContainer').style.display = 'none'
-                document.querySelector('.quoteContainer').innerHTML = ``
-            }, 2500)
         } else {
+            this.setState({ lockMovement: true })
             document.querySelector('.quoteContainer').style.display = 'block'
             document.querySelector('.quoteContainer').innerHTML = `<span>${this.state.chestQuote.chestIsAlreadyOpened}</span>`
-
-            setTimeout(() => {
-                this.setState({ lockMovement: false })
-                document.querySelector('.quoteContainer').style.display = 'none'
-                document.querySelector('.quoteContainer').innerHTML = ``
-            }, 2500)
         }
     }
 
+    stopChesting = () => {
+        this.setState({ lockMovement: false })
+        document.querySelector('.quoteContainer').style.display = 'none'
+        document.querySelector('.quoteContainer').innerHTML = ''
+    }
+
     render() {
+
         return (
             <div className="map_background" style={{
-                backgroundImage: `url(${this.state.textureDatas.url})`,
+                backgroundImage: `url(${ this.state.textureDatas.url })`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-                <div className="profshell" id="4" value="Professor Shell" style={{ backgroundImage: `url(${this.state.pshell.image})` }}></div>
                 <div className="quoteContainer"></div>
+                <div className="profshell" style={{ backgroundImage: this.props.characters.length > 0 ? `url(${ this.props.characters[4].image })` : "" }}></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
-                <div className="chest" style={{ backgroundImage: `url(${this.state.chestClose})` }}> </div>
-
-
+                <div className="chest" style={{ backgroundImage: `url(${ this.state.chestClose })` }}></div>
             </div>
 
 

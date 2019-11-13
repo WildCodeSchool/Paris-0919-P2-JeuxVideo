@@ -12,6 +12,7 @@ class Map4 extends React.Component {
         left: this.props.left,
         animation: 'none',
         position: 'top 288px right 416px',
+        // browser : this.props.chara.find(item => item.id === 11),
         map: [
 
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -23,6 +24,7 @@ class Map4 extends React.Component {
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         ]
     }
+
 
     // Call the function that changes the player direction, animation and position
     componentDidMount() {
@@ -52,9 +54,10 @@ class Map4 extends React.Component {
             case 83:
             case 40:
                 if (this.state.top > 6) {
-                     this.props.newTop( 1 )
-                     this.props.newLeft(this.state.left)
-                     this.props.newMap(3) }
+                    this.props.newTop(1)
+                    this.props.newLeft(this.state.left)
+                    this.props.newMap(3)
+                }
                 if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px' })
                 }
@@ -67,15 +70,15 @@ class Map4 extends React.Component {
             case 81:
             case 37:
                 {
-                if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
-                    this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
+                    if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
+                        this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
+                    }
+                    else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
+                        const left = this.state.left - 1
+                        this.setState({ left: left })
+                        // this.dice = Math.floor(Math.random()*5)
+                    }
                 }
-                else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
-                    const left = this.state.left - 1
-                    this.setState({ left: left })
-                    // this.dice = Math.floor(Math.random()*5)
-                }
-}
                 break
             case 68:
             case 39:
@@ -88,7 +91,7 @@ class Map4 extends React.Component {
                     // this.dice = Math.floor(Math.random()*5)
                 }
                 if (this.state.left > 13) {
-                    this.props.newTop(this.state.top )
+                    this.props.newTop(this.state.top)
                     this.props.newLeft(1)
                     this.props.newMap(3)
                 }
@@ -130,7 +133,7 @@ class Map4 extends React.Component {
     }
 
     render() {
-        console.log(this.state.textureDatas.url)
+        console.log()
         return (
             <div className="map_background" style={{
                 backgroundImage: `url(${this.props.designMap4.url})`,
@@ -138,6 +141,7 @@ class Map4 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
+
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
                 
                 

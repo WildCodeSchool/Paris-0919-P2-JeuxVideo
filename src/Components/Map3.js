@@ -50,7 +50,7 @@ class Map3 extends React.Component {
             case 38:
                 if (this.state.top <= 1) {
                     this.props.newTop(7)
-                    this.props.newLeft(this.state.left)
+                    this.props.newLeft(this.state.left - 1)
                     this.props.newMap(4)
                 }
                 else {

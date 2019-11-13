@@ -9,7 +9,7 @@ import Battlescreen from "../components/Battlescreen"
 
 class GameManager extends React.Component {
     state = {
-        currentMap: 2,
+        currentMap: 1,
         keepMap: 0,
         top: 3,
         left: 6
@@ -46,20 +46,20 @@ class GameManager extends React.Component {
             case 2:
                 return (
                     <div className="Game-area">
-                        <Map2 characters={this.props.characters} keepMap={this.keepMyMap} designMap2={this.props.designMap2} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} />
+                        <Map2 keepMap={this.keepMyMap} designMap2={this.props.designMap2} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
                     </div>
                 )
 
             case 3:
                 return (
                     <div className="Game-area">
-                        <Map3 keepMap={this.keepMyMap} designMap3={this.props.designMap3} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} />
+                        <Map3 keepMap={this.keepMyMap} designMap3={this.props.designMap3} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
                     </div>
                 )
             case 4:
                 return (
                     <div className="Game-area">
-                        <Map4 keepMap={this.keepMyMap} designMap4={this.props.designMap4} npc2={this.props.npc} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} /> 
+                        <Map4 keepMap={this.keepMyMap} designMap4={this.props.designMap4} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} /> 
                     </div>
                 )
             case 10:

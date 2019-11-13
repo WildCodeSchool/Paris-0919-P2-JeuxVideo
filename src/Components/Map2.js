@@ -20,7 +20,8 @@ class Map2 extends React.Component {
             [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1],
             [0, 0, 1, 1, 1, 1, 2, 0, 0, 0, 1, 1, 1],
             [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1]
-        ]
+        ],
+        npcsPositions: ['7', '8', '9']
     }
 
     // Call the function that changes the player direction, animation and position
@@ -152,7 +153,7 @@ class Map2 extends React.Component {
                 backgroundRepeat: 'no-repeat'
             }}>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
-                <div className="abdou" style={{ backgroundImage: `url(${this.props.characters})` }}></div>
+                
             </div>
         )
     }
