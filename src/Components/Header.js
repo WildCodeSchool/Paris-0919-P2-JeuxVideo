@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Logo from './LogoFinalV2.png'
-import Logo2 from './LogoJeu.png'
+import Logo2 from './kdq.jpg'
 
 import './Header.css';
 

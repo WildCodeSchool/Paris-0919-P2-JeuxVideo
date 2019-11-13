@@ -20,7 +20,7 @@
   background: none;
 }
 #logoJeu {
-  height: 90%;
+  height: 70%;
   width: 25%;
   align-self: center;
   background: none;
@@ -33,6 +33,7 @@ h1 {
   color: #45BAC0;
   align-self: center;
   background: none;
+  margin-top: 2%;
 }
 
 @media screen and (max-width: 425px) {
