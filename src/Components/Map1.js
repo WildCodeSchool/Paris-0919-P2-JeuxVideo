@@ -64,6 +64,7 @@ class Map1 extends React.Component {
             this.props.newTop(this.state.top)
             this.props.newMap(10)
         }
+        console.log(this.state.lockMovement)
     }
 
     // Move the character, change its direction & animation
@@ -134,6 +135,9 @@ class Map1 extends React.Component {
                     this.interactWithChest()
 
                 }
+                if (this.state.lockMovement === true){
+                    this.setState({lockMovement: false})
+                }
                 break
             default:
                 break
@@ -153,11 +157,9 @@ class Map1 extends React.Component {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
         document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.Quote}</span>`
-        setTimeout(() => {
-            this.setState({ lockMovement: false })
+        if (this.state.lockMovement === false){
             document.querySelector('.quoteContainer').style.display = 'none'
-            document.querySelector('.quoteContainer').innerHTML = ``
-        }, 2500)
+            document.querySelector('.quoteContainer').innerHTML = ``}
     }
 
     interactWithChest = () => {

@@ -108,6 +108,9 @@ class Map2 extends React.Component {
                 if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
                     this.interactWithNPC()
                 }
+                if (this.state.lockMovement === true){
+                    this.setState({lockMovement: false})
+                }
                 break
             default:
                 break
@@ -126,12 +129,12 @@ class Map2 extends React.Component {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
         document.querySelector('.quoteContainer').innerHTML = `<h5>${this.state.npc.name} :</h5><p>${this.state.npc.quote}</p>`
-        setTimeout(() => {
+        if (this.state.lockMovement === false){
             this.setState({ lockMovement: false })
             document.querySelector('.quoteContainer').style.display = 'none'
-            document.querySelector('.quoteContainer').innerHTML = ``
-        }, 2500)
-    }
+            document.querySelector('.quoteContainer').innerHTML = ``}
+        }
+    
 
     render() {
 
