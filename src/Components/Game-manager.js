@@ -40,7 +40,7 @@ class GameManager extends React.Component {
             case 1:
                 return (
                     <div className="Game-area">
-                        <Map1 keepMap={this.keepMyMap} designMap1={this.props.designMap1} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} />
+                        <Map1 keepMap={this.keepMyMap} designMap1={this.props.designMap1} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters}/>
                     </div>
                 )
             case 2:
