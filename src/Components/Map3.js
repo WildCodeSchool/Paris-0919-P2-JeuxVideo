@@ -4,8 +4,12 @@ import React from 'react'
 // Import CSS
 import './Map.css'
 
-class Map2 extends React.Component {
+class Map3 extends React.Component {
     state = {
+        textureDatas: '',
+        abdou: './Database/assets/abdou.png',
+        jenny: './Database/assets/jenny.png',
+        goat: './Database/assets/goatmaster.png',
         lockMovement: false,
         top: this.props.top,
         left: this.props.left,
@@ -13,13 +17,13 @@ class Map2 extends React.Component {
         position: 'top 288px right 416px',
         map: [
 
-            [1, 1, 1, 1, 1, 0, 1, 2, 1, 1, 0, 0, 0],
-            [0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
-            [1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
-            [1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
-            [1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1],
-            [0, 0, 1, 1, 1, 1, 2, 0, 0, 0, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1]
+            [0, 0, 0, 1, 1, 1, 0, 2, 0, 1, 1, 1, 0],
+            [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+            [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+            [1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1],
+            [1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+            [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
         ]
     }
 
@@ -44,15 +48,22 @@ class Map2 extends React.Component {
         switch (e.keyCode) {
             case 90:
             case 38:
-                if (this.state.position !== 'top 72px right 416px' && !this.state.lockMovement) {
-                    this.setState({ animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px' })
+                if (this.state.top <= 1) {
+                    this.props.newTop(7)
+                    this.props.newLeft(this.state.left)
+                    this.props.newMap(4)
                 }
-                else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
-                    const top = this.state.top - 1
-                    this.setState({ top: top })
-                    this.dice = Math.floor(Math.random()*10)
+                else {
+                    if (this.state.position !== 'top 72px right 416px' && !this.state.lockMovement) {
+                        this.setState({ animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px' })
+                    }
+                    else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
+                        const top = this.state.top - 1
+                        this.setState({ top: top })
+                        // this.dice = Math.floor(Math.random()*5)
+                    }
+                }
 
-                }
                 break
             case 83:
             case 40:
@@ -62,8 +73,7 @@ class Map2 extends React.Component {
                 else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
                     const down = this.state.top + 1
                     this.setState({ top: down })
-                    this.dice = Math.floor(Math.random()*10)
-
+                    // this.dice = Math.floor(Math.random()*5)
                 }
                 break
             case 81:
@@ -71,8 +81,7 @@ class Map2 extends React.Component {
                 if (this.state.left === 1) {
                     this.props.newLeft(13)
                     this.props.newTop(this.state.top)
-                    this.props.newMap(1)
-
+                    this.props.newMap(2)
                 } else {
                     if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
                         this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
@@ -80,9 +89,8 @@ class Map2 extends React.Component {
                     else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
                         const left = this.state.left - 1
                         this.setState({ left: left })
-                        this.dice = Math.floor(Math.random()*10)
+                        // this.dice = Math.floor(Math.random()*5)
                     }
-
                 }
                 break
             case 68:
@@ -93,14 +101,12 @@ class Map2 extends React.Component {
                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
                     this.setState({ left: right })
-
-                    this.dice = Math.floor(Math.random()*10)
+                    // this.dice = Math.floor(Math.random()*5)
                 }
                 if (this.state.left > 13) {
                     this.props.newTop(this.state.top)
                     this.props.newLeft(1)
                     this.props.newMap(3)
-
                 }
                 break
             case 88:
@@ -134,19 +140,21 @@ class Map2 extends React.Component {
     }
 
     render() {
-
+        console.log(this.state.textureDatas.url)
         return (
             <div className="map_background" style={{
-                backgroundImage: `url(${this.props.designMap2.url})`,
+                backgroundImage: `url(${this.props.designMap3.url})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
-                <div className="abdou" style={{ backgroundImage: `url(${this.props.characters})` }}></div>
+                <div className="abdou" style={{ backgroundImage: `url(${this.state.abdou})` }}></div>
+                <div className="jenny" style={{ backgroundImage: `url(${this.state.jenny})` }}></div>
+                <div className="goat" style={{ backgroundImage: `url(${this.state.goat})` }}></div>
             </div>
         )
     }
 }
 
-export default Map2
+export default Map3
