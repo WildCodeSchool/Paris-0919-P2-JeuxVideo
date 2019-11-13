@@ -75,6 +75,7 @@
     margin-top : 3%;
     box-sizing: border-box;
     margin-left : 70%;
+    border-color: #E100FF;
 }
 
 @media (max-width: 800px) {

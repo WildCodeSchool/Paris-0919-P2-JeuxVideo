@@ -19,7 +19,6 @@ import StartMenu from './Components/StartMenu';
 import {
   BrowserRouter as Router,
   Switch,
-  Link,
   Route
 } from 'react-router-dom'
 
