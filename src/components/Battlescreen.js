@@ -19,64 +19,79 @@ class Battlescreen extends React.Component {
     isDead: false,
     showPopup: false,
     HpPlayer: 200,
+    avatarIsDead: false,
+    avatarisAlive: "./Database/assets/avatar_animated.gif",
+    avatarDamaged: "./Database/assets/avatar_damage.gif",
+    avatarDead : "./Database/assets/avatar_dead.gif",
     previousMap: this.props.previousMap,
-    escape:false
+    escape:false,
   }
 
+ // méthode pour récupérer les HP de l'ennemi
   newHPClickedChild = neoClickedHP => {
     this.setState({
       HP: neoClickedHP,
     })
   };
 
- 
 
-
-
-  // Ici, notre méthode pour actualiser la boite de dialogue et les HP.
+  //méthode pour actualiser la boite de dialogue et les HP de l'ennemy quand il est mort et revenir à la map à la fin du combat.
   handleDamage = () => {
     if (this.state.HP < 0) {
       this.setState({
         HP: 0,
         dialog: 'Ennemy defeated',
         isDead: true,
-        showPopup: true
+        showPopup: false
       })
       setTimeout( ()=>
       this.props.newMap(this.state.previousMap), 1000)
     } 
   }
 
+
+ // méthode qui gère quand l'ennemy attaque
+  enemyAttack = () => {
+    const newhpPlayer = this.state.HpPlayer- (Math.floor(Math.random() * 50));
+    this.setState({        
+      HpPlayer: newhpPlayer,
+      dialog: "The meta attacked you"
+    }) 
+}
+
+// méthode pour faire apparaitre la popup
+handlePop = (isHere) =>{
+  this.setState({showPopup: isHere})
+}
+
+
   //pour fuir
   escape=()=>{
     this.setState({escape: true})
   }
 
-
+// update les HP du player quand il est attaqué et gère le git.ignore
   componentDidUpdate(prevProps, prevState) {
     if (prevState.HP !== this.state.HP) {
       setTimeout( () =>
         this.enemyAttack(),        
         2000
       )
-    }
+    } 
     if (this.state.escape=== true){
       this.setState({escape: false})
       this.props.newMap(this.state.previousMap)
     }
-  }
+    if (this.state.HpPlayer < 0) {
+      this.setState({
+        HpPlayer: 0,
+        dialog: 'Player defeated',
+        avatarIsDead:true,
+        showPopup: false
+      })
+  }}
   
-  enemyAttack = () => {
-      const newhpPlayer = this.state.HpPlayer- (Math.floor(Math.random() * 50));
-      this.setState({        
-        HpPlayer: newhpPlayer,
-        dialog: "The meta attacked you"
-      }) 
-  }
 
-  handlePop = (isHere) =>{
-    this.setState({showPopup: isHere})
-  }
 
   render() {
     return (
@@ -93,7 +108,7 @@ class Battlescreen extends React.Component {
           </div>
           <div className='playerstatus-area'>
             <div className='avatar-area'>
-              <img className='avatar' src={Avatar} alt='Avatar'></img>
+              <img className='avatar'  src={this.state.avatarIsDead ? this.state.avatarDead : this.state.avatarisAlive} alt='Avatar'></img>
               <Player  HpPlayer={this.state.HpPlayer} />
             </div>
             <div className='dialog-area'>
