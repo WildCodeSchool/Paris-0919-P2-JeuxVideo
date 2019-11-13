@@ -27,10 +27,7 @@ class Map1 extends React.Component {
             [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1],
             [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]
         ],
-        npc: {
-            name: "Professeur Shell",
-            quote: "J'ai mal aux dents"
-        },
+        pshell: this.props.characters[4],
         chestQuote: {
             chestIsOpening: "Vous obtain un cup of café",
             chestIsAlreadyOpened: "There is rien into the coffre",
@@ -131,7 +128,7 @@ class Map1 extends React.Component {
             case 88:
             case 69:
                 if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
-                    this.interactWithNPC()
+                    this.interactWithNPC(this.state.pshell)
                 } else if
                     ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 3 || this.state.map[this.state.top - 1][this.state.left - 2] === 3 || this.state.map[this.state.top][this.state.left - 1] === 3 || this.state.map[this.state.top - 2][this.state.left - 1] === 3) {
                     this.interactWithChest()
@@ -152,10 +149,10 @@ class Map1 extends React.Component {
     }
 
     // Display a quote when interacting with the npc
-    interactWithNPC = () => {
+    interactWithNPC = (character) => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h3>${this.state.npc.name}</h3> <br> <span>${this.state.npc.quote}</span>`
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.Quote}</span>`
         setTimeout(() => {
             this.setState({ lockMovement: false })
             document.querySelector('.quoteContainer').style.display = 'none'
@@ -196,7 +193,7 @@ class Map1 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-                <div className="profshell" style={{ backgroundImage: `url(${this.state.shell})` }}></div>
+                <div className="profshell" id="4" value="Professor Shell" style={{ backgroundImage: `url(${this.state.pshell.image})` }}></div>
                 <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
                 <div className="chest" style={{ backgroundImage: `url(${this.state.chestClose})` }}> </div>
