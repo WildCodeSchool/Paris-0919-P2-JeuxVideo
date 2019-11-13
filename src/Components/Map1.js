@@ -88,7 +88,7 @@ class Map1 extends React.Component {
                     this.setState({ position: 'top 288px right 416px' })
                 }
 
-                else if (this.state.top < 9 && this.state.map[this.state.top][this.state.left - 1] === 0) {
+                else if (this.state.top < 9&& !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
                     const down = this.state.top + 1
                     this.setState({ position: 'top 288px right 416px', top: down })
                     this.dice = Math.floor(Math.random() * 10)
