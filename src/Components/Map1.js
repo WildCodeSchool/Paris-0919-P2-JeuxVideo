@@ -28,8 +28,8 @@ class Map1 extends React.Component {
             [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]
         ],
         npc: {
-            name: "James Alodan",
-            quote: "j'ai mal aux dents"
+            name: "Professeur Shell",
+            quote: "J'ai mal aux dents"
         },
         chestQuote: {
             chestIsOpening: "Vous obtain un cup of café",
@@ -147,7 +147,7 @@ class Map1 extends React.Component {
     interactWithNPC = () => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h5>${this.state.npc.name} :</h5><p>${this.state.npc.quote}</p>`
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${this.state.npc.name}</h3> <br> <span>${this.state.npc.quote}</span>`
         setTimeout(() => {
             this.setState({ lockMovement: false })
             document.querySelector('.quoteContainer').style.display = 'none'
@@ -160,7 +160,7 @@ class Map1 extends React.Component {
             this.setState({ lockMovement: true })
             this.setState({ isClose: false })
             document.querySelector('.quoteContainer').style.display = 'block'
-            document.querySelector('.quoteContainer').innerHTML = `<h5>${this.state.chestQuote.chestIsOpening}</h5>`
+            document.querySelector('.quoteContainer').innerHTML = `<span>${this.state.chestQuote.chestIsOpening}</span>`
             document.querySelector('.chest').style.backgroundImage = `url(${this.state.chestOpen})`
 
             setTimeout(() => {
@@ -170,7 +170,13 @@ class Map1 extends React.Component {
             }, 2500)
         } else {
             document.querySelector('.quoteContainer').style.display = 'block'
-            document.querySelector('.quoteContainer').innerHTML = `<h5>${this.state.chestQuote.chestIsAlreadyOpened}</h5>`
+            document.querySelector('.quoteContainer').innerHTML = `<span>${this.state.chestQuote.chestIsAlreadyOpened}</span>`
+
+            setTimeout(() => {
+                this.setState({ lockMovement: false })
+                document.querySelector('.quoteContainer').style.display = 'none'
+                document.querySelector('.quoteContainer').innerHTML = ``
+            }, 2500)
         }
     }
 
@@ -185,9 +191,9 @@ class Map1 extends React.Component {
                 <div className="profshell" style={{ backgroundImage: `url(${this.state.shell})` }}></div>
                 <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
-                <div className="chest" style={{ backgroundImage: `url(${this.state.chestClose})` }}>
+                <div className="chest" style={{ backgroundImage: `url(${this.state.chestClose})` }}> </div>
 
-                </div>
+                
             </div>
 
 
