@@ -125,6 +125,7 @@ class Map1 extends React.Component {
             case 69:
                 if (this.state.lockMovement === true) {
                     this.stopTalking()
+                    this.stopChesting()
                 }
                 //interraction pnj
                 else if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
@@ -133,7 +134,6 @@ class Map1 extends React.Component {
                 else if
                     ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 3 || this.state.map[this.state.top - 1][this.state.left - 2] === 3 || this.state.map[this.state.top][this.state.left - 1] === 3 || this.state.map[this.state.top - 2][this.state.left - 1] === 3) {
                     this.interactWithChest()
-
                 }
                 break
             default:
@@ -170,21 +170,17 @@ class Map1 extends React.Component {
             document.querySelector('.quoteContainer').innerHTML = `<span>${this.state.chestQuote.chestIsOpening}</span>`
             document.querySelector('.chest').style.backgroundImage = `url(${this.state.chestOpen})`
 
-            setTimeout(() => {
-                this.setState({ lockMovement: false })
-                document.querySelector('.quoteContainer').style.display = 'none'
-                document.querySelector('.quoteContainer').innerHTML = ''
-            }, 2500)
         } else {
+            this.setState({ lockMovement: true })
             document.querySelector('.quoteContainer').style.display = 'block'
             document.querySelector('.quoteContainer').innerHTML = `<span>${this.state.chestQuote.chestIsAlreadyOpened}</span>`
-
-            setTimeout(() => {
-                this.setState({ lockMovement: false })
-                document.querySelector('.quoteContainer').style.display = 'none'
-                document.querySelector('.quoteContainer').innerHTML = ''
-            }, 2500)
         }
+    }
+
+    stopChesting = () => {
+        this.setState({ lockMovement: false })
+        document.querySelector('.quoteContainer').style.display = 'none'
+        document.querySelector('.quoteContainer').innerHTML = ''
     }
 
     render() {
