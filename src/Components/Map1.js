@@ -44,7 +44,7 @@ class Map1 extends React.Component {
     componentDidMount() {
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
-        
+
         // Texture API
         Axios.get('./Database/map.json')
             // Change JSON into JS object
@@ -53,7 +53,7 @@ class Map1 extends React.Component {
             .then(data => {
                 this.setState({ textureDatas: data[0] })
             })
-            console.log(this.state.textureDatas)
+        console.log(this.state.textureDatas)
     }
 
     // active les combats
@@ -126,17 +126,20 @@ class Map1 extends React.Component {
                     this.props.newMap(2)
                 }
                 break
+            // interaction avec l'envirronement
             case 88:
             case 69:
-                if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
+                //pour sortir d'une boite de dialogue
+                if (this.state.lockMovement === true) {
+                    this.stopTalking()
+                }
+                //interraction pnj
+                else if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
                     this.interactWithNPC(this.state.pshell)
-                } else if
+                }// interaction coffres
+                 else if
                     ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 3 || this.state.map[this.state.top - 1][this.state.left - 2] === 3 || this.state.map[this.state.top][this.state.left - 1] === 3 || this.state.map[this.state.top - 2][this.state.left - 1] === 3) {
                     this.interactWithChest()
-
-                }
-                if (this.state.lockMovement === true){
-                    this.setState({lockMovement: false})
                 }
                 break
             default:
@@ -157,9 +160,11 @@ class Map1 extends React.Component {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
         document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.Quote}</span>`
-        if (this.state.lockMovement === false){
-            document.querySelector('.quoteContainer').style.display = 'none'
-            document.querySelector('.quoteContainer').innerHTML = ``}
+    }
+    stopTalking = () => {
+        this.setState({ lockMovement: false })
+        document.querySelector('.quoteContainer').style.display = 'none'
+        document.querySelector('.quoteContainer').innerHTML = ``
     }
 
     interactWithChest = () => {
@@ -200,7 +205,7 @@ class Map1 extends React.Component {
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
                 <div className="chest" style={{ backgroundImage: `url(${this.state.chestClose})` }}> </div>
 
-                
+
             </div>
 
 
