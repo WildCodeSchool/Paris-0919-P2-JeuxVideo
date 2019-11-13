@@ -111,7 +111,11 @@ class Map3 extends React.Component {
                 break
             case 88:
             case 69:
-                if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
+                //pour sortir d'une boite de dialogue
+                if (this.state.lockMovement === true) {
+                    this.stopTalking()
+                }
+                else if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
                     this.interactWithNPC()
                 }
                 break
@@ -128,15 +132,17 @@ class Map3 extends React.Component {
     }
 
     // Display a quote when interacting with the npc
-    interactWithNPC = () => {
+    interactWithNPC = (character) => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h5>${this.state.npc.name} :</h5><p>${this.state.npc.quote}</p>`
-        setTimeout(() => {
-            this.setState({ lockMovement: false })
-            document.querySelector('.quoteContainer').style.display = 'none'
-            document.querySelector('.quoteContainer').innerHTML = ``
-        }, 2500)
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.Quote}</span>`
+    }
+
+    //pour arrêter de parler
+    stopTalking = () => {
+        this.setState({ lockMovement: false })
+        document.querySelector('.quoteContainer').style.display = 'none'
+        document.querySelector('.quoteContainer').innerHTML = ``
     }
 
     render() {
