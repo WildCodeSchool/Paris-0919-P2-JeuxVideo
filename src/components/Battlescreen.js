@@ -2,8 +2,6 @@ import React from 'react';
 import Axios from 'axios'
 import Player from './Player'
 import Enemy from './Enemy'
-import Meta from './meta1_animated.gif'
-import MetaDead from './meta_dead.png'
 import Commands from './Commands'
 import Dialog from './Dialog'
 import Popup from './Popup';
@@ -25,33 +23,27 @@ class Battlescreen extends React.Component {
     avatarNormal: this.props.avatarData.alive,
     avatarDamaged: this.props.avatarData.damaged,
     avatarDead: this.props.avatarData.dead,
+
+    metaNormal: this.props.metaData.alive,
+    metaAlive:this.props.metaData.alive,
+    metaDamaged: this.props.metaData.damaged,
+    metaDead: this.props.metaData.dead,
     previousMap: this.props.previousMap,
     escape:false,
   }
 
-//   componentDidMount() {  
-//  // NPC API
-//  Axios.get('./Database/characters.json')
-//  // Change JSON into JS object
-//    .then(response => response.data)
-//    // Give the texture object to the state
-//    .then(data => {
-//      this.setState({ avatarData: data[0]})
-//    })}
-
-
-  //  AvatarTest = () => {
-  //    const avatarIsAlive = this.state.avatarData.alive
-  //    this.setState({
-  //      avatarIsAlive 
-  //    })
-  //  }
-
- // méthode pour récupérer les HP de l'ennemi
+ // méthode pour récupérer les HP de l'ennemy et changer animation du l'ennemy
   newHPClickedChild = neoClickedHP => {
     this.setState({
       HP: neoClickedHP,
+      dialog: 'You attacked the Meta',
+      metaNormal: this.state.metaDamaged,
     })
+    if (this.state.HP > 0) {setTimeout( () =>
+      this.setState({  
+    metaNormal: this.state.metaAlive}),      
+    1000
+    )}
   };
 
 
@@ -60,7 +52,7 @@ class Battlescreen extends React.Component {
     if (this.state.HP < 0) {
       this.setState({
         HP: 0,
-        dialog: 'Ennemy defeated',
+        dialog: 'Ennemy Debugged',
         isDead: true,
         showPopup: false
       })
@@ -70,12 +62,12 @@ class Battlescreen extends React.Component {
   }
 
 
- // méthode qui gère quand l'ennemy attaque
+ // méthode qui gère quand l'ennemy attaque et l'animation de l'avatar
   enemyAttack = () => {
     const newhpPlayer = this.state.HpPlayer- (Math.floor(Math.random() * 50));
     this.setState({        
       HpPlayer: newhpPlayer,
-      dialog: "The meta attacked you",
+      dialog: "The Meta attacked you",
       avatarNormal: this.state.avatarDamaged,
       
 })
@@ -101,12 +93,14 @@ handlePop = (isHere) =>{
     if (prevState.HP !== this.state.HP) {
       setTimeout( () =>
         this.enemyAttack(),        
-        2000
+        1000
       )
     } 
     if (this.state.escape=== true){
-      this.setState({escape: false})
-      this.props.newMap(this.state.previousMap)
+      this.setState({escape: false,
+                      dialog: 'You ignored all changes'})
+      setTimeout( ()=>
+      this.props.newMap(this.state.previousMap), 1300)
     }
     if (this.state.HpPlayer < 0) {
       this.setState({
@@ -129,7 +123,7 @@ handlePop = (isHere) =>{
             {this.state.showPopup ? (<Popup newHPClicked={this.newHPClickedChild} />) : (console.log('nothing'))}
             <div className="meta-area">
               <Enemy name={'Meta'} HP={this.state.HP} onChange={this.handleDamage()} />
-              <img className='Meta' src={this.state.isDead ? MetaDead : Meta} alt='Meta'/>
+              <img className='Meta' src={this.state.isDead ? this.state.metaDead : this.state.metaNormal} alt='Meta'/>
             </div>
           </div>
           <div className='playerstatus-area'>

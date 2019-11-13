@@ -65,7 +65,7 @@
         "Quote": "<div><p> Hê//ø Wør/d ! </p></div>",
         "Age": "",
         "image" :"",   
-        "alive" : "./Database/assets/meta1_animate.gif",
+        "alive" : "./Database/assets/meta_alive.gif",
         "dead" : "./Database/assets/meta_dead.png",
         "damaged" : "./Database/assets/meta_damaged.gif"
     },

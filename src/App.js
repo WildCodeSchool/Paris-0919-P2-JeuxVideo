@@ -65,7 +65,8 @@ class App extends React.Component {
       // Give the texture object to the state
       .then(data => {
         this.setState({ charactersDatas: data,
-        avatarData : data[0]})
+        avatarData : data[0],
+        metaData : data[7]})
       })
 
       
@@ -98,7 +99,7 @@ class App extends React.Component {
             {this.state.startScreen ? <StartScreen /> : <StartMenu />}
             </Route>
             <Route path="/game">
-              <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.charactersDatas} avatarData = {this.state.avatarData} />
+              <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.charactersDatas} avatarData = {this.state.avatarData} metaData = {this.state.metaData} />
               
             </Route>
           </Switch>
