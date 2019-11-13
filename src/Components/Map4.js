@@ -133,7 +133,7 @@ class Map4 extends React.Component {
                 backgroundRepeat: 'no-repeat'
             }}>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
-                <div className="browzer" style={{backgroundImage: `url(${this.props.npc2.url})`}}></div>
+                
                 
             </div>
         )
