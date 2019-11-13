@@ -161,6 +161,7 @@ class Map1 extends React.Component {
         document.querySelector('.quoteContainer').style.display = 'block'
         document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.Quote}</span>`
     }
+    //pour arrêter de parler
     stopTalking = () => {
         this.setState({ lockMovement: false })
         document.querySelector('.quoteContainer').style.display = 'none'
