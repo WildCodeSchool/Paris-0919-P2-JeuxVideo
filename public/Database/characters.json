@@ -6,12 +6,11 @@
         "Quote" : "",
         "Age" : "14",
         "image" :"",
-        "battle-sprite" : {
-            "alive" :"./Database/assets/avatar_animated.gif",
-            "damaged" : "./Database/assets/avatar_damage.gif",
-            "dead" : "./Database/assets/avatar_dead.gif" }
+        "alive" :"./Database/assets/avatar_animated.gif",
+        "damaged" : "./Database/assets/avatar_damage.gif",
+        "dead" : "./Database/assets/avatar_dead.gif" }
         
-    },
+    ,
     {
         "id" : 2,
         "name": "Garry Coder",

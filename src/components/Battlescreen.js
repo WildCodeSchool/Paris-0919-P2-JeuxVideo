@@ -1,9 +1,10 @@
 import React from 'react';
+import Axios from 'axios'
 import Player from './Player'
 import Enemy from './Enemy'
 import Meta from './meta1_animated.gif'
 import MetaDead from './meta_dead.png'
-import Avatar from './avatar_animated.gif'
+// import Avatar from './avatar_animated.gif'
 import Commands from './Commands'
 import Dialog from './Dialog'
 import Popup from './Popup';
@@ -19,13 +20,33 @@ class Battlescreen extends React.Component {
     isDead: false,
     showPopup: false,
     HpPlayer: 200,
+    avatarData: '',
     avatarIsDead: false,
-    avatarisAlive: "./Database/assets/avatar_animated.gif",
+    avatarAlive: "./Database/assets/avatar_animated.gif",
+    avatarNormal: "./Database/assets/avatar_animated.gif",
     avatarDamaged: "./Database/assets/avatar_damage.gif",
-    avatarDead : "./Database/assets/avatar_dead.gif",
+    avatarDead: "./Database/assets/avatar_dead.gif",
     previousMap: this.props.previousMap,
     escape:false,
   }
+
+//   componentDidMount() {  
+//  // NPC API
+//  Axios.get('./Database/characters.json')
+//  // Change JSON into JS object
+//    .then(response => response.data)
+//    // Give the texture object to the state
+//    .then(data => {
+//      this.setState({ avatarData: data[0]})
+//    })}
+
+
+  //  AvatarTest = () => {
+  //    const avatarIsAlive = this.state.avatarData.alive
+  //    this.setState({
+  //      avatarIsAlive 
+  //    })
+  //  }
 
  // méthode pour récupérer les HP de l'ennemi
   newHPClickedChild = neoClickedHP => {
@@ -55,9 +76,15 @@ class Battlescreen extends React.Component {
     const newhpPlayer = this.state.HpPlayer- (Math.floor(Math.random() * 50));
     this.setState({        
       HpPlayer: newhpPlayer,
-      dialog: "The meta attacked you"
-    }) 
-}
+      dialog: "The meta attacked you",
+      avatarNormal: this.state.avatarDamaged,
+      
+})
+if (this.state.HpPlayer > 0) {setTimeout( () =>
+  this.setState({  
+avatarNormal: this.state.avatarAlive}),      
+1000
+)}}
 
 // méthode pour faire apparaitre la popup
 handlePop = (isHere) =>{
@@ -108,7 +135,7 @@ handlePop = (isHere) =>{
           </div>
           <div className='playerstatus-area'>
             <div className='avatar-area'>
-              <img className='avatar'  src={this.state.avatarIsDead ? this.state.avatarDead : this.state.avatarisAlive} alt='Avatar'></img>
+              <img className='avatar'  src={this.state.avatarIsDead ? this.state.avatarDead : this.state.avatarNormal} alt='Avatar'></img>
               <Player  HpPlayer={this.state.HpPlayer} />
             </div>
             <div className='dialog-area'>
