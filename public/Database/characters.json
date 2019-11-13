@@ -64,10 +64,10 @@
         "Type": "ennemy",
         "Quote": "<div><p> Hê//ø Wør/d ! </p></div>",
         "Age": "",
-        "image" :"",
-        "battle-sprite" : {
-            "alive" : "./Database/assets/meta1_animate.gif",
-            "dead" : "./Database/assets/meta_dead.png" }
+        "image" :"",   
+        "alive" : "./Database/assets/meta1_animate.gif",
+        "dead" : "./Database/assets/meta_dead.png",
+        "damaged" : "./Database/assets/meta_damaged.gif"
     },
     {
         "id" : 9,
