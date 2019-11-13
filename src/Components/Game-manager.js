@@ -9,7 +9,7 @@ import Battlescreen from "../components/Battlescreen"
 
 class GameManager extends React.Component {
     state = {
-        currentMap: 3,
+        currentMap: 2,
         keepMap: 0,
         top: 3,
         left: 6
@@ -46,7 +46,7 @@ class GameManager extends React.Component {
             case 2:
                 return (
                     <div className="Game-area">
-                        <Map2 keepMap={this.keepMyMap} designMap2={this.props.designMap2} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} />
+                        <Map2 characters={this.props.characters} keepMap={this.keepMyMap} designMap2={this.props.designMap2} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} />
                     </div>
                 )
 
@@ -59,7 +59,7 @@ class GameManager extends React.Component {
             case 4:
                 return (
                     <div className="Game-area">
-                        <Map4 keepMap={this.keepMyMap} designMap4={this.props.designMap4} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} /> 
+                        <Map4 keepMap={this.keepMyMap} designMap4={this.props.designMap4} npc2={this.props.npc} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} /> 
                     </div>
                 )
             case 10:

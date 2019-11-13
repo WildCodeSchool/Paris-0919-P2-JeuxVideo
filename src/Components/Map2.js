@@ -1,16 +1,11 @@
 // Import librairies
 import React from 'react'
-import Axios from 'axios'
 
 // Import CSS
 import './Map.css'
 
 class Map2 extends React.Component {
     state = {
-        textureDatas: '',
-        abdou: './Database/assets/abdou.png',
-        jenny:'./Database/assets/jenny.png',
-        goat: './Database/assets/goatmaster.png',
         lockMovement: false,
         top: this.props.top,
         left: this.props.left,
@@ -34,15 +29,15 @@ class Map2 extends React.Component {
         document.onkeyup = this.onKeyUp
     }
 
-        // active les combats
-        componentDidUpdate(){
-            if (this.dice === 1){
-                this.props.keepMap(2)
-                this.props.newLeft(this.state.left)
-                this.props.newTop(this.state.top)
-                this.props.newMap(10)
-            }
+    // active les combats
+    componentDidUpdate() {
+        if (this.dice === 1) {
+            this.props.keepMap(2)
+            this.props.newLeft(this.state.left)
+            this.props.newTop(this.state.top)
+            this.props.newMap(10)
         }
+    }
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
@@ -63,39 +58,39 @@ class Map2 extends React.Component {
                 if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px' })
                 }
-                 else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
-                     const down = this.state.top + 1
-                     this.setState({ top: down })
+                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
+                    const down = this.state.top + 1
+                    this.setState({ top: down })
                     //  this.dice = Math.floor(Math.random()*5)
-                 }
-                 break
+                }
+                break
             case 81:
             case 37:
                 if (this.state.left === 1) {
                     this.props.newLeft(13)
                     this.props.newTop(this.state.top)
                     this.props.newMap(1)
-                } else{
-                if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
-                    this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
+                } else {
+                    if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
+                        this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
+                    }
+                    else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
+                        const left = this.state.left - 1
+                        this.setState({ left: left })
+                        //  this.dice = Math.floor(Math.random()*5)
+                    }
                 }
-                 else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
-                     const left = this.state.left - 1
-                     this.setState({ left: left })
-                    //  this.dice = Math.floor(Math.random()*5)
-                 }
-}
                 break
             case 68:
             case 39:
                 if (this.state.position !== 'top 144px right 416px' && !this.state.lockMovement) {
                     this.setState({ animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px' })
                 }
-                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
-                     const right = this.state.left + 1
-                     this.setState({ left: right })
+                else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
+                    const right = this.state.left + 1
+                    this.setState({ left: right })
                     //  this.dice = Math.floor(Math.random()*5)
-                 }
+                }
                 if (this.state.left > 13) {
                     this.props.newTop(this.state.top)
                     this.props.newLeft(1)
@@ -133,7 +128,7 @@ class Map2 extends React.Component {
     }
 
     render() {
-        console.log(this.state.textureDatas.url)
+
         return (
             <div className="map_background" style={{
                 backgroundImage: `url(${this.props.designMap2.url})`,
@@ -142,9 +137,7 @@ class Map2 extends React.Component {
                 backgroundRepeat: 'no-repeat'
             }}>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
-                <div className="abdou" style={{backgroundImage: `url(${this.state.abdou})`}}></div>
-                <div className="jenny" style={{backgroundImage: `url(${this.state.jenny})`}}></div>
-                <div className="goat" style={{backgroundImage: `url(${this.state.goat})`}}></div>
+                <div className="abdou" style={{ backgroundImage: `url(${this.props.characters})` }}></div>
             </div>
         )
     }

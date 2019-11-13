@@ -7,9 +7,6 @@ import './Map.css'
 class Map4 extends React.Component {
     state = {
         textureDatas: '',
-        abdou: './Database/assets/abdou.png',
-        jenny:'./Database/assets/jenny.png',
-        goat: './Database/assets/goatmaster.png',
         lockMovement: false,
         top: this.props.top,
         left: this.props.left,
@@ -18,7 +15,7 @@ class Map4 extends React.Component {
         map: [
 
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0],
             [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
             [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
@@ -136,9 +133,8 @@ class Map4 extends React.Component {
                 backgroundRepeat: 'no-repeat'
             }}>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
-                <div className="abdou" style={{backgroundImage: `url(${this.state.abdou})`}}></div>
-                <div className="jenny" style={{backgroundImage: `url(${this.state.jenny})`}}></div>
-                <div className="goat" style={{backgroundImage: `url(${this.state.goat})`}}></div>
+                <div className="browzer" style={{backgroundImage: `url(${this.props.npc2.url})`}}></div>
+                
             </div>
         )
     }

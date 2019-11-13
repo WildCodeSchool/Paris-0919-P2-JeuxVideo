@@ -18,6 +18,7 @@ export default class App extends React.Component {
     itemsDatas: '',
     soundsDatas: '',
     charactersDatas: ''
+    
   }
   
   // Use Axios to consume APIs
@@ -26,7 +27,7 @@ export default class App extends React.Component {
   
       
       // Item API
-      Axios.get('./database/items.json')
+      Axios.get('./Database/items.json')
       // Change JSON into JS object
       .then(response => response.data)
       // Give the texture object to the state
@@ -34,13 +35,13 @@ export default class App extends React.Component {
         this.setState({ itemsDatas: data })
       })
       
-      // Sound API
-      Axios.get('./database/characters.json')
+      // NPC API
+      Axios.get('./Database/characters.json')
       // Change JSON into JS object
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
-        this.setState({ soundsDatas: data })
+        this.setState({ charactersDatas: data})
       })
       
       // Texture API
@@ -62,7 +63,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-         <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} />
+         <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.charactersDatas} />
       </div>
     );
   }

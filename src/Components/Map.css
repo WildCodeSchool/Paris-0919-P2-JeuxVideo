@@ -40,6 +40,12 @@
     z-index: 1;
 }
 
+.browzer {
+    grid-column: 7/8;
+    grid-row: 6/7;
+    z-index: 1;
+}
+
 /* Quote Container */
 .quoteContainer {
     display: none;
