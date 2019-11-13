@@ -4,7 +4,6 @@ import Player from './Player'
 import Enemy from './Enemy'
 import Meta from './meta1_animated.gif'
 import MetaDead from './meta_dead.png'
-// import Avatar from './avatar_animated.gif'
 import Commands from './Commands'
 import Dialog from './Dialog'
 import Popup from './Popup';
@@ -22,10 +21,10 @@ class Battlescreen extends React.Component {
     HpPlayer: 200,
     avatarData: '',
     avatarIsDead: false,
-    avatarAlive: "./Database/assets/avatar_animated.gif",
-    avatarNormal: "./Database/assets/avatar_animated.gif",
-    avatarDamaged: "./Database/assets/avatar_damage.gif",
-    avatarDead: "./Database/assets/avatar_dead.gif",
+    avatarAlive: this.props.avatarData.alive,
+    avatarNormal: this.props.avatarData.alive,
+    avatarDamaged: this.props.avatarData.damaged,
+    avatarDead: this.props.avatarData.dead,
     previousMap: this.props.previousMap,
     escape:false,
   }
