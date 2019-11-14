@@ -10,7 +10,7 @@ import BattlescreenBoss from "../Boss-battle/BattlescreenBoss"
 
 class GameManager extends React.Component {
     state = {
-        currentMap: 1,
+        currentMap: 4,
         keepMap: 0,
         top: 3,
         left: 6
