@@ -29,14 +29,14 @@
         "name":"treasure-open",
         "type":"tile",
         "url": {
-            "open" : "./assets/treasure_open",
-            "closed" : "./assets/treasure_closed" 
+            "open" : "./Database/assets/treasure_open",
+            "closed" : "./Database/assets/treasure_closed" 
         }
     },
     {
         "name":"treasure-closed",
         "type":"tile",
-        "url":"./assets/treasure_closed"
+        "url":"./Database/assets/treasure_closed"
     }
 
 ]
