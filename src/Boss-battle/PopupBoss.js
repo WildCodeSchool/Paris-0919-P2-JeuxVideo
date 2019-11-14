@@ -1,5 +1,5 @@
 import React from 'react';
-import './Popup.css';
+import './PopupBoss.css';
 
 
 class Popup extends React.Component {
@@ -11,7 +11,7 @@ class Popup extends React.Component {
 
     attackEnemy = event => {
             this.battleDice = Math.floor(Math.random()*15)
-            if (this.battleDice > 2){
+            if (this.battleDice > 3){
              const newHP = this.state.HP - (Math.floor(Math.random() * (25-10))+10);
              this.setState({
                  HP: newHP,
@@ -35,13 +35,13 @@ class Popup extends React.Component {
         }
 }
 
-    attackEnemy3 = event => {
-    const newHP = this.state.HP - (Math.floor(Math.random() * 1000));
-    this.setState({
-        HP: newHP,
-    }) 
-    this.props.newHPClicked(newHP)
-}
+//     attackEnemy3 = event => {
+//     const newHP = this.state.HP - (Math.floor(Math.random() * 1000));
+//     this.setState({
+//         HP: newHP,
+//     }) 
+//     this.props.newHPClicked(newHP)
+// }
      
 
  
@@ -51,19 +51,12 @@ class Popup extends React.Component {
              <ul >
                  <li className='help' onClick={this.attackEnemy}>HackDoken</li>
                  <li className='help' onClick={this.attackEnemy2} >Omni/</li>
-                 <li className='help' onClick={this.attackEnemy3}>One punch frame</li>
+                 {/* <li className='help' onClick={this.attackEnemy3}>One punch frame</li> */}
              </ul>
          </div>
      )
  }
  }
-
-
-
-
-
-
-
 
 
 
