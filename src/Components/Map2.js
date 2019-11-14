@@ -14,14 +14,14 @@ class Map2 extends React.Component {
         map: [
 
             [1, 1, 1, 1, 1, 0, 1, 2, 1, 1, 0, 0, 0],
-            [0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
+            [0, 0, 0, 1, 1, 2, 1, 1, 1, 1, 0, 1, 1],
             [1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1],
             [1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1],
             [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1],
             [0, 0, 1, 1, 1, 1, 2, 0, 0, 0, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1]
+            [1, 1, 1, 1, 1, 1, 0, 0, 1, 3, 1, 1, 1]
         ],
-        npcsPositions: ['7', '8', '9']
+        // npcsPositions: ['7', '8', '9']
     }
 
     // Call the function that changes the player direction, animation and position
@@ -42,6 +42,7 @@ class Map2 extends React.Component {
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
+        e.preventDefault()
         switch (e.keyCode) {
             case 90:
             case 38:
@@ -110,11 +111,13 @@ class Map2 extends React.Component {
                 if (this.state.lockMovement === true) {
                     this.stopTalking()
                 }
+                //interraction pnj
                 else if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
-                    this.interactWithNPC()
+                    this.interactWithNPC(this.props.characters[9])
                 }
-                if (this.state.lockMovement === true){
-                    this.setState({lockMovement: false})
+                else if
+                    ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 3 || this.state.map[this.state.top - 1][this.state.left - 2] === 3 || this.state.map[this.state.top][this.state.left - 1] === 3 || this.state.map[this.state.top - 2][this.state.left - 1] === 3) {
+                    this.interactWithNPC(this.props.characters[6])
                 }
                 break
             default:
@@ -133,7 +136,7 @@ class Map2 extends React.Component {
     interactWithNPC = (character) => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.Quote}</span>`
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote}</span>`
     }
     //pour arrêter de parler
     stopTalking = () => {
@@ -152,7 +155,10 @@ class Map2 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
+                 <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
+                <div className="jenny" style={{ backgroundImage: this.props.characters.length > 0 ? `url(${ this.props.characters[9].image })` : "" }}></div>
+                <div className="goat" style={{ backgroundImage: this.props.characters.length > 0 ?`url(${this.props.characters[6].image})` : "" }}></div>
                 
             </div>
         )

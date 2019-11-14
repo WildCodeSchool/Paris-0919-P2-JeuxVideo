@@ -7,9 +7,6 @@ import './Map.css'
 class Map3 extends React.Component {
     state = {
         textureDatas: '',
-        abdou: './Database/assets/abdou.png',
-        jenny: './Database/assets/jenny.png',
-        goat: './Database/assets/goatmaster.png',
         lockMovement: false,
         top: this.props.top,
         left: this.props.left,
@@ -17,8 +14,8 @@ class Map3 extends React.Component {
         position: 'top 288px right 416px',
         map: [
 
-            [0, 0, 0, 1, 1, 1, 0, 2, 0, 1, 1, 1, 0],
-            [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+            [0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0],
+            [1, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 1],
             [1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1],
             [1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1],
             [1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
@@ -45,6 +42,7 @@ class Map3 extends React.Component {
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
+        e.preventDefault()
         switch (e.keyCode) {
             case 90:
             case 38:
@@ -116,7 +114,7 @@ class Map3 extends React.Component {
                     this.stopTalking()
                 }
                 else if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
-                    this.interactWithNPC()
+                    this.interactWithNPC(this.props.characters[5])
                 }
                 break
             default:
@@ -135,10 +133,10 @@ class Map3 extends React.Component {
     interactWithNPC = (character) => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.Quote}</span>`
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote}</span>`
     }
 
-    //pour arrêter de parler
+    //Stop talking
     stopTalking = () => {
         this.setState({ lockMovement: false })
         document.querySelector('.quoteContainer').style.display = 'none'
@@ -154,10 +152,9 @@ class Map3 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
+                 <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
-                <div className="abdou" style={{ backgroundImage: `url(${this.state.abdou})` }}></div>
-                <div className="jenny" style={{ backgroundImage: `url(${this.state.jenny})` }}></div>
-                <div className="goat" style={{ backgroundImage: `url(${this.state.goat})` }}></div>
+                <div className="abdou" style={{ backgroundImage: this.props.characters.length > 0 ?`url(${this.props.characters[5].image})` : "" }}></div>
             </div>
         )
     }

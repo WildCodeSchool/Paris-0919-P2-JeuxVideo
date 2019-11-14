@@ -157,7 +157,7 @@ class Map1 extends React.Component {
     interactWithNPC = (character) => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote[0]}</span>`
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote[0]}</span>` 
     }
 
     stopTalking = () => {
