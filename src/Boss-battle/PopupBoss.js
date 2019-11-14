@@ -2,34 +2,46 @@ import React from 'react';
 import './PopupBoss.css';
 
 
-class PopupBoss extends React.Component {
+class Popup extends React.Component {
     state = {
             HP: 150,
          }
-     
+
+    battleDice = 0
+
     attackEnemy = event => {
-             const newHP = this.state.HP - (Math.floor(Math.random() * 20));
+            this.battleDice = Math.floor(Math.random()*15)
+            if (this.battleDice > 3){
+             const newHP = this.state.HP - (Math.floor(Math.random() * (25-10))+10);
              this.setState({
                  HP: newHP,
              }) 
-             this.props.newHPClicked(newHP)
+             this.props.newHPClicked(newHP)}
+             else {
+                 this.props.dialog("Your attack failed")
+             }
      }
 
      attackEnemy2 = event => {
-        const newHP = this.state.HP - (Math.floor(Math.random() * 50));
+        this.battleDice = Math.floor(Math.random()*8)
+        if (this.battleDice > 2){
+        const newHP = this.state.HP - (Math.floor(Math.random() * (50-30))+30);
         this.setState({
             HP: newHP,
         }) 
-        this.props.newHPClicked(newHP)
+        this.props.newHPClicked(newHP)}
+        else {
+            this.props.dialog("Your attack failed")
+        }
 }
 
-    attackEnemy3 = event => {
-    const newHP = this.state.HP - (Math.floor(Math.random() * 1000));
-    this.setState({
-        HP: newHP,
-    }) 
-    this.props.newHPClicked(newHP)
-}
+//     attackEnemy3 = event => {
+//     const newHP = this.state.HP - (Math.floor(Math.random() * 1000));
+//     this.setState({
+//         HP: newHP,
+//     }) 
+//     this.props.newHPClicked(newHP)
+// }
      
 
  
@@ -56,11 +68,4 @@ class PopupBoss extends React.Component {
 
 
 
-
-
-
-
-
-
-
-export default PopupBoss
+export default Popup

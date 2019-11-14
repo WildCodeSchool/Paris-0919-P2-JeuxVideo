@@ -23,6 +23,7 @@ class BattlescreenBoss extends React.Component {
     avatarDamaged: this.props.avatarData.damaged,
     avatarDead: this.props.avatarData.dead,
 
+    bossPhase: true,
     bossNormal: this.props.bossData.alive,
     bossAlive:this.props.bossData.alive,
     bossFinal: this.props.bossData.alive2,
@@ -30,6 +31,15 @@ class BattlescreenBoss extends React.Component {
     previousMap: this.props.previousMap,
     escape:false,
   }
+
+
+  // remonter le message
+   handleFailure =(text)=>{
+    this.setState({dialog: text})
+  }
+
+
+ennemyDice= 0
 
  // méthode pour récupérer les HP de l'ennemy et changer animation du l'ennemy
   newHPClickedChild = neoClickedHP => {
@@ -63,7 +73,9 @@ class BattlescreenBoss extends React.Component {
 
  // méthode qui gère quand l'ennemy attaque et l'animation de l'avatar
   enemyAttack = () => {
-    const newhpPlayer = this.state.HpPlayer- (Math.floor(Math.random() * 100));
+    this.ennemyDice = Math.floor(Math.random()*10)
+    if (this.ennemyDice >2){
+    const newhpPlayer = this.state.HpPlayer-(Math.floor(Math.random() * (30 - 20))+20);
     this.setState({        
       HpPlayer: newhpPlayer,
       dialog: "Browser attacked you",
@@ -74,7 +86,9 @@ if (this.state.HpPlayer > 0) {setTimeout( () =>
   this.setState({  
 avatarNormal: this.state.avatarAlive}),      
 1000
-)}}
+)}} else {
+  this.setState ({dialog : "the ennemy's attack failed!!"})
+}}
 
 // méthode pour faire apparaitre la popup
 handlePop = (isHere) =>{
@@ -93,15 +107,14 @@ handleGameover = (event) => {alert('Game over')}
 
 // update les HP du player quand il est attaqué et gère le git.ignore
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.HP !== this.state.HP) {
+    if (prevState.HP !== this.state.HP || this.state.dialog === 'Your attack failed') {
       setTimeout( () =>
         this.enemyAttack(),        
         1000
       )
     } 
     if (this.state.escape=== true){
-      this.setState({escape: false,
-                      dialog: 'You cannot escape'})
+      this.setState({escape: false, dialog: 'You cannot escape'})
 
     }
     if (this.state.HpPlayer < 0) {
@@ -115,6 +128,9 @@ handleGameover = (event) => {alert('Game over')}
         this.handleGameover(),200        
        
       )
+      if (this.state.HP <= 30){
+        this.setState({bossPhase: false})
+      }
   }}
   
 
@@ -126,11 +142,12 @@ handleGameover = (event) => {alert('Game over')}
 
           <div className='enemystatus-area'>
             <CommandsBoss escape={this.escape} showPopup={this.handlePop}/>
-            {this.state.showPopup ? (<PopupBoss newHPClicked={this.newHPClickedChild} />) : (console.log('nothing'))}
+            {this.state.showPopup ? (<PopupBoss dialog = {this.handleFailure} newHPClicked={this.newHPClickedChild} />) : (console.log('nothing'))}
             <div className="meta-area">
               <EnemyBoss name={'Browser'} HP={this.state.HP} onChange={this.handleDamage()} />
-              <img className='Browser' src={this.state.bossNormal} alt='Browser'/>
-            </div>
+              {this.state.bossPhase? <img className='Browser' src={this.state.bossNormal} alt='Browser'/>
+             : <img className='Browser' src={this.state.bossFinal} alt='Browser'/>}
+            </div> 
           </div>
           <div className='playerstatus-area'>
             <div className='avatar-area'>
