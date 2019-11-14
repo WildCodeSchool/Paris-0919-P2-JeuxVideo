@@ -99,11 +99,10 @@
         "quote": "Begone, thot.",
         "age": "Google it",
         "image": "./Database/assets/browser_map.png",
-        "battle-sprite": {
-            "alive": "./Database/assets/browser.gif",
-            "alive2": "./Database/assets/browser_atk.gif",
-            "damaged": "./Database/assets/browser_damaged.gif",
-            "dead": ""
-        }
+        "alive": "./Database/assets/browser.gif",
+        "alive2": "./Database/assets/browser_atk.gif",
+        "damaged": "./Database/assets/browser_damaged.gif",
+        "dead": ""
+        
     }
 ]

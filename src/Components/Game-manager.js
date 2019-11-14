@@ -5,7 +5,7 @@ import Map1 from "./Map1"
 import Map2 from "./Map2"
 import Map3 from "./Map3"
 import Map4 from "./Map4"
-import Battlescreen from "../components/Battlescreen"
+import BattlescreenBoss from "../Boss-battle/BattlescreenBoss"
 
 class GameManager extends React.Component {
     state = {
@@ -66,7 +66,7 @@ class GameManager extends React.Component {
                 console.log(this.state.keepMap)
                 return (
                     <div className="Game-area">
-                        <Battlescreen avatarData = {this.props.avatarData} metaData = {this.props.metaData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
+                        <BattlescreenBoss avatarData = {this.props.avatarData} metaData = {this.props.metaData} bossData = {this.props.bossData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
                     </div>
                 )
             default:
