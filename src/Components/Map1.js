@@ -238,5 +238,3 @@ class Map1 extends React.Component {
 }
 
 export default Map1
-
-
