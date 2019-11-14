@@ -2,12 +2,12 @@
     {
         "name":"map1",
         "type":"map",
-        "url":"./Database/assets/map1.jpg"
+        "url":"./Database/assets/map1_glitched.gif"
     },
     {
         "name":"map2",
         "type":"map",
-        "url":"./Database/assets/map2v2.jpg"
+        "url":"./Database/assets/map2_glitched.gif"
 
     },
     {
@@ -18,12 +18,12 @@
     {
         "name":"map3",
         "type":"map",
-        "url":"./Database/assets/map3.jpg"
+        "url":"./Database/assets/map3_glitched.gif"
     },
     {
         "name":"map4",
         "type":"map",
-        "url":"./Database/assets/map4.jpg"
+        "url":"./Database/assets/map4_glitched.gif"
     },
     {
         "name":"treasure-open",
