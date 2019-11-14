@@ -8,15 +8,21 @@
     list-style: none;
     font-family: 'Press Start 2P';
     margin-top: 10px;
+    margin-left: 10px;
+}
+.commands-area h2 {
+  padding: 10px;
 }
 .commands-area ul {
-    margin-top: 50px;
+    margin-top: 20px;
     margin-right: 20px;
     text-decoration: none;
+    background-color: transparent;
 }
 
 .commands-area ul li {
-    margin-top: 20px;
+    margin-top: 25px;
+    background-color: transparent;
 }
 
 #fight:hover {

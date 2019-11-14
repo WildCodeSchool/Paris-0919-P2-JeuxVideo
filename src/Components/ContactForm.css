@@ -1,0 +1,118 @@
+.contactParent {
+    margin : 0px;
+    padding : 0px;
+    box-sizing: border-box;
+    background-color : #45BAC0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top : 80px;
+    padding-bottom : 80px;
+}
+
+.contactTitle {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 4vh;
+    color: #0C0032;
+    background-color : #45BAC0;
+    margin-bottom : 60px;
+}
+
+.contactForm {
+    background-color : #45BAC0;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.test {
+    display : flex;
+    flex-direction: column;
+    align-items : center;
+    background-color : #45BAC0;
+}
+
+.inputFieldMail {
+    display : flex;       
+    font-size : 3vh;
+    color: gray ;
+    margin-top: 30px;
+    padding : 10px;
+    width : 700px;
+    border: 2px solid #F9F9F9;    
+}
+
+.inputFieldInquiry {
+    display : flex;       
+    font-size : 3vh;
+    color: gray ;
+    margin-top: 30px;
+    padding : 10px;
+    width : 700px;
+    border: 2px solid #F9F9F9;  
+}
+
+.inputFieldMessage {
+    display : flex;       
+    font-size : 3vh;
+    color: gray ;
+    margin-top: 30px;
+    padding : 10px;
+    height : 200px;   
+    width : 700px;
+    border: 2px solid #F9F9F9; 
+    flex-wrap: wrap;
+}
+
+.formButton {
+    background-color : #E100FF;
+    text-align: center;
+    color : #F9F9F9;
+    padding : 20px;
+    border-radius:  55px;
+    font-size: 2.5vh;
+    width : 25%;
+    margin-top : 3%;
+    box-sizing: border-box;
+    margin-left : 70%;
+    border-color: #E100FF;
+}
+
+@media (max-width: 800px) {
+  .inputFieldMail , .inputFieldInquiry , .inputFieldMessage  {
+    width : 90%;
+  }
+  .formButton {
+    font-size : 4vw;
+    margin-top: 25px;
+    margin-left : 0;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .contactParent {
+    padding-bottom : 50px;
+  }
+  .contactTitle {
+    font-size: 3.5vh;
+  }
+  .inputFieldInquiry {
+    font-size: 2.5vh;
+  }
+  .formButton {
+    font-size: 2.5vh;
+  }
+}
+@media screen and (max-width: 375px) {
+  .contactParent {
+    margin-left: 1px;
+    width: 100%;
+  }
+  .contactTitle {
+    margin-bottom : 40px;
+  }
+  .formButton {
+    font-size : 4vw;
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,61 @@
+#team {
+  background-color: #45BAC0;
+  height: 600px;
+  margin-top: 296px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+#team h2 {
+  color: #0C0032;
+  background-color: #45BAC0;
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  font-size: 4vh
+}
+
+#team p {
+  color: black;
+  font-family: Roboto;
+  font-size: 3vh;
+  height: 50%;
+  width: 35%;
+  text-align: center;
+  background-color: #45BAC0;
+  margin: auto;
+}
+
+@media screen and (max-width: 425px) {
+  #team {
+    height: 380px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+  #team h2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    line-height: 45px;
+    height: 0px;
+    font-size: 2.4vh;
+  }
+  #team p {
+    font-size: 2.5vh;
+    height: 50%;
+    width: 74%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #team h2 {
+    font-size: 2.8vh;
+  }
+  #team p {
+    font-size: 3vh;
+    height: 50%;
+    width: 72%;
+    margin-top: 50px;
+  }
+}

@@ -1,0 +1,70 @@
+.footerTest {
+    margin : 0;
+    box-sizing: border-box;
+    background-color :#E100FF;
+    display: flex ;
+    justify-content: space-between;
+    padding : 20px 50px;
+}
+
+.listeFooter {
+    height : 30px;
+    background-color :#E100FF;
+}
+
+.elmtSns {
+    display: inline-block;
+    background-color :#E100FF;
+    padding-right: 20px;
+}
+
+.mailStudio {
+    font-size : 2vh;
+    color: black;
+    background-color :#E100FF;
+    align-self: center;
+}
+
+.snsImg {
+    font-size: 3vh;
+    background-color :#E100FF;
+}
+
+.snsImg:hover {
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .footerTest {
+    justify-content: unset;
+  }
+  .mailStudio {
+    margin-left: -12%;
+    font-size: 2.5vh;
+    align-self: center;
+  }
+  .snsImg {
+    font-size: 4vh;
+  }
+  .listeFooter {
+    position: relative;
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footerTest {
+    justify-content: unset;
+    height: 80px;
+  }
+  .mailStudio {
+    font-size: 2.8vh;
+  }
+  .listeFooter {
+    top: 20%;
+  }
+  .snsImg {
+    font-size: 4.3vh;
+  }
+}
