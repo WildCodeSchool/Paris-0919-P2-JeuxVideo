@@ -61,7 +61,6 @@ class Map1 extends React.Component {
     // active les combats
     componentDidUpdate() {
         this.spawnBattle()
-        console.log(this.state.lockMovement)
     }
 
     spawnBattle = () => {
