@@ -91,7 +91,7 @@
 .Avatar {
     height: 72px;
     width: 52px;
-    background-image: url('./img/Tileset.png');
+    /* background-image: url('.Database/assets/Tileset.png');  */
     top: 300px;
     left: 630px;
     z-index: 2;

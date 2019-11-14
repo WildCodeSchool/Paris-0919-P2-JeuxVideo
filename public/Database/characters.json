@@ -5,7 +5,7 @@
         "type" : "human",
         "quote" : "",
         "age" : "14",
-        "image" :"",
+        "image" :"character_sprite.png",
         "alive" :"./Database/assets/avatar_animated.gif",
         "damaged" : "./Database/assets/avatar_damage.gif",
         "dead" : "./Database/assets/avatar_dead.gif" }

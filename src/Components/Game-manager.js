@@ -40,26 +40,26 @@ class GameManager extends React.Component {
             case 1:
                 return (
                     <div className="Game-area">
-                        <Map1 keepMap={this.keepMyMap} designMap1={this.props.designMap1} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters}/>
+                        <Map1 avatarData = {this.props.avatarData} keepMap={this.keepMyMap} designMap1={this.props.designMap1} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters}/>
                     </div>
                 )
             case 2:
                 return (
                     <div className="Game-area">
-                        <Map2 keepMap={this.keepMyMap} designMap2={this.props.designMap2} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
+                        <Map2 avatarData = {this.props.avatarData} keepMap={this.keepMyMap} designMap2={this.props.designMap2} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
                     </div>
                 )
 
             case 3:
                 return (
                     <div className="Game-area">
-                        <Map3 keepMap={this.keepMyMap} designMap3={this.props.designMap3} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
+                        <Map3 avatarData = {this.props.avatarData} keepMap={this.keepMyMap} designMap3={this.props.designMap3} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
                     </div>
                 )
             case 4:
                 return (
                     <div className="Game-area">
-                        <Map4 keepMap={this.keepMyMap} designMap4={this.props.designMap4} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} /> 
+                        <Map4 avatarData = {this.props.avatarData} keepMap={this.keepMyMap} designMap4={this.props.designMap4} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} /> 
                     </div>
                 )
             case 10:

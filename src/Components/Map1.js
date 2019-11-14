@@ -31,7 +31,8 @@ class Map1 extends React.Component {
             chestIsAlreadyOpened: "There is rien into the coffre",
 
         },
-        isClose: true
+        isClose: true,
+        bruh : this.props.avatarData.alive
     }
     // le dés de rencontre
     dice = 0
@@ -198,7 +199,7 @@ class Map1 extends React.Component {
             }}>
                 <div className="quoteContainer"></div>
                 <div className="profshell" style={{ backgroundImage: this.props.characters.length > 0 ? `url(${ this.props.characters[4].image })` : "" }}></div>
-                <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
+                <div className="Avatar" style={{ animation: this.state.animation,backgroundImage: this.state.bruh, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
                 <div className="chest" style={{ backgroundImage: `url(${ this.state.chestClose })` }}></div>
             </div>
 
