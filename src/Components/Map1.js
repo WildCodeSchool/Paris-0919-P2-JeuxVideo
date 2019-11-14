@@ -1,11 +1,10 @@
 // Import librairies
 import React from 'react'
 import Axios from 'axios'
+import Sound from 'react-sound'
 
-// Import CSS
+// Import styles & audio
 import './Map.css'
-
-
 
 class Map1 extends React.Component {
     state = {
@@ -32,7 +31,7 @@ class Map1 extends React.Component {
 
         },
         isClose: true,
-        
+        sounds: []
     }
     // le dés de rencontre
     dice = 0
@@ -51,6 +50,11 @@ class Map1 extends React.Component {
             // Give the texture object to the state
             .then(data => {
                 this.setState({ textureDatas: data[0] })
+            })
+        Axios.get('./Database/sounds.json')
+            .then(response => response.data)
+            .then(data => {
+                this.setState({ sounds: data })
             })
     }
 
@@ -95,6 +99,9 @@ class Map1 extends React.Component {
                     }
                     if (this.blockCombat === 4){
                     this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
 
                 break
@@ -111,6 +118,9 @@ class Map1 extends React.Component {
                     }
                     if (this.blockCombat === 4){
                     this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
 
                 break
@@ -128,6 +138,10 @@ class Map1 extends React.Component {
                     }
                     if (this.blockCombat === 4){
                     this.dice = Math.floor(Math.random() * 10)}
+                    document.querySelector('#sonDeLaPitite').pause()
+                    if (this.state.sounds.length > 0 && document.querySelector('#sonDeLaPitite').paused) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
 
                 break
@@ -145,6 +159,9 @@ class Map1 extends React.Component {
                     }
                     if (this.blockCombat === 4){
                     this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
 
                 if (this.state.left > 13) {
@@ -225,6 +242,7 @@ class Map1 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
+                {this.state.sounds.length > 0 ? <audio id="sonDeLaPitite" src={this.state.sounds[0].url} /> : ''}
                 <div className="quoteContainer"></div>
                 <div className="profshell" style={{ backgroundImage: this.props.characters.length > 0 ? `url(${ this.props.characters[4].image })` : "" }}></div>
                 <div className="Avatar" style={{ animation: this.state.animation,backgroundImage: this.state.bruh, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
