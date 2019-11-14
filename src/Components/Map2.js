@@ -53,7 +53,7 @@ class Map2 extends React.Component {
                 }
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
                     this.setState({ position: 'top 100px right 400px', top: this.state.top - 1 })
-                    this.setState({ top: top })
+                    this.setState({ top: this.state.top - 1 })
                     if (this.blockCombat < 4){
                         this.blockCombat += 1
                     }
