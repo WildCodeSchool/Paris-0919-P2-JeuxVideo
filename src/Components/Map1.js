@@ -56,13 +56,23 @@ class Map1 extends React.Component {
 
     // active les combats
     componentDidUpdate() {
-        if (this.dice === 1) {
-            this.props.keepMap(1)
-            this.props.newLeft(this.state.left)
-            this.props.newTop(this.state.top)
-            this.props.newMap(10)
-        }
+        this.spawnBattle()
         console.log(this.state.lockMovement)
+    }
+
+    spawnBattle = () => {
+        if (this.dice === 1) {
+            document.querySelector('.map_background').style.backgroundImage = ''
+            document.querySelector('.map_background').style.animation = "flash 0.65s"
+            document.querySelector('.profshell').style.display = 'none'
+            document.querySelector('.chest').style.display = 'none'
+            setTimeout(() => {  
+                this.props.keepMap(1)
+                this.props.newLeft(this.state.left)
+                this.props.newTop(this.state.top)
+                this.props.newMap(10)
+            }, 650)
+        };
     }
 
     // Move the character, change its direction & animation

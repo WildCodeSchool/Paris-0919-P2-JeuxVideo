@@ -80,13 +80,6 @@
     top: 50%;
 }
 
-.quoteContainer span {
-    font-family: 'Press Start 2P';
-    position: relative;
-    top: 50%;
-}
-
-
 /* // tout ce qui concerne l'avatar */
 
 .Avatar {
@@ -165,5 +158,21 @@
     }
     100% {
         background-position: top 72px right 364px;
+    }
+}
+
+/* Create background animation */
+@keyframes flash {
+    0% {
+        background-color: transparent;
+    }
+    40% {
+        background-color: white;
+    }
+    42% {
+        background-color: transparent;
+    }
+    75% {
+        background-color: white;
     }
 }
