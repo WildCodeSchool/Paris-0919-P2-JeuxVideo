@@ -143,6 +143,7 @@ class Map4 extends React.Component {
             }}>
 
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
+                <div className="browser" style={{backgroundImage: this.props.characters.length > 0 ?`url(${this.props.characters[10].image})` : "" }}></div>
                 
                 
             </div>
