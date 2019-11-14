@@ -55,15 +55,27 @@ class Map1 extends React.Component {
 
     // active les combats
     componentDidUpdate() {
+        this.spawnBattle()
+        console.log(this.state.lockMovement)
+    }
+
+    spawnBattle = () => {
         if (this.dice === 1) {
-            this.props.keepMap(1)
-            this.props.newLeft(this.state.left)
-            this.props.newTop(this.state.top)
-            this.props.newMap(10)
-        }
+            document.querySelector('.map_background').style.backgroundImage = ''
+            document.querySelector('.map_background').style.animation = "flash 0.65s"
+            document.querySelector('.profshell').style.display = 'none'
+            document.querySelector('.chest').style.display = 'none'
+            setTimeout(() => {  
+                this.props.keepMap(1)
+                this.props.newLeft(this.state.left)
+                this.props.newTop(this.state.top)
+                this.props.newMap(10)
+            }, 650)
+        };
     }
 
     blockCombat = 0
+
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
@@ -173,7 +185,7 @@ class Map1 extends React.Component {
     interactWithNPC = (character) => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote[0]}</span>`
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote[0]}</span>` 
     }
 
     stopTalking = () => {
