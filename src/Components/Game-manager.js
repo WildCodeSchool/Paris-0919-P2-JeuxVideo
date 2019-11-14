@@ -66,9 +66,16 @@ class GameManager extends React.Component {
                 console.log(this.state.keepMap)
                 return (
                     <div className="Game-area">
-                        <BattlescreenBoss avatarData = {this.props.avatarData} metaData = {this.props.metaData} bossData = {this.props.bossData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
+                        <Battlescreen avatarData = {this.props.avatarData} metaData = {this.props.metaData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
                     </div>
                 )
+             case 11:
+                    console.log(this.state.keepMap)
+                    return (
+                        <div className="Game-area">
+                            <BattlescreenBoss avatarData = {this.props.avatarData} bossData = {this.props.bossData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
+                        </div>
+                    )
             default:
                 console.log("oups")
         }

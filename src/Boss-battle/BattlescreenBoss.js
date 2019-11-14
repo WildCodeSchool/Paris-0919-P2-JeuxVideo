@@ -156,9 +156,9 @@ class BattlescreenBoss extends React.Component {
       )
     }
     if (this.state.HP < 50 && this.state.bossPhase === true){
-      this.setState({ bossPhase: false })
-      console.log(this.state.bossPhase)}
-  }
+      this.setState({ bossPhase: false,
+                      dialog: 'Browser is getting angry' })
+  }}
 
 
 
