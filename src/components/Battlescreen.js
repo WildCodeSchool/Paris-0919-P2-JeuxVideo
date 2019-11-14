@@ -31,6 +31,13 @@ class Battlescreen extends React.Component {
     escape:false,
   }
 
+  // remonter le message
+  handleFailure =(text)=>{
+    this.setState({dialog: text})
+  }
+
+
+ennemyDice= 0
  // méthode pour récupérer les HP de l'ennemy et changer animation du l'ennemy
   newHPClickedChild = neoClickedHP => {
     this.setState({
@@ -63,7 +70,9 @@ class Battlescreen extends React.Component {
 
  // méthode qui gère quand l'ennemy attaque et l'animation de l'avatar
   enemyAttack = () => {
-    const newhpPlayer = this.state.HpPlayer- (Math.floor(Math.random() * 50));
+    this.ennemyDice = Math.floor(Math.random()*10)
+    if (this.ennemyDice >3){
+    const newhpPlayer = this.state.HpPlayer- (Math.floor(Math.random() * (30 - 20))+20);
     this.setState({        
       HpPlayer: newhpPlayer,
       dialog: "The Meta attacked you",
@@ -74,7 +83,9 @@ if (this.state.HpPlayer > 0) {setTimeout( () =>
   this.setState({  
 avatarNormal: this.state.avatarAlive}),      
 1000
-)}}
+)}} else {
+  this.setState ({dialog : "the ennemy's attack failed!!"})
+}}
 
 // méthode pour faire apparaitre la popup
 handlePop = (isHere) =>{
@@ -89,12 +100,13 @@ handlePop = (isHere) =>{
 
 // update les HP du player quand il est attaqué et gère le git.ignore
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.HP !== this.state.HP) {
+    if (prevState.HP !== this.state.HP || this.state.dialog ==="Your attack failed") {
       setTimeout( () =>
         this.enemyAttack(),        
         1000
       )
-    } 
+    }
+    
     if (this.state.escape=== true){
       this.setState({escape: false,
                       dialog: 'You ignored all changes'})
@@ -119,7 +131,7 @@ handlePop = (isHere) =>{
 
           <div className='enemystatus-area'>
             <Commands escape={this.escape} showPopup={this.handlePop}/>
-            {this.state.showPopup ? (<Popup newHPClicked={this.newHPClickedChild} />) : (console.log('nothing'))}
+            {this.state.showPopup ? (<Popup dialog={this.handleFailure} newHPClicked={this.newHPClickedChild} />) : (console.log('nothing'))}
             <div className="meta-area">
               <Enemy name={'Meta'} HP={this.state.HP} onChange={this.handleDamage()} />
               <img className='Meta' src={this.state.isDead ? this.state.metaDead : this.state.metaNormal} alt='Meta'/>
