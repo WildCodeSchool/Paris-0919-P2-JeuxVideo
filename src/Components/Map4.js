@@ -42,7 +42,6 @@ class Map4 extends React.Component {
                 }
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
                     this.setState({position : 'top 100px right 400px', top : this.state.top-1})
-                    // this.dice = Math.floor(Math.random()*5) because no fights except for the boss
                 }
                 
                 break
@@ -59,7 +58,6 @@ class Map4 extends React.Component {
                 else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
                     const down = this.state.top + 1
                     this.setState({ position: 'top 400px right 300px', top: down })
-                    // this.dice = Math.floor(Math.random()*5)
                 }
                 break
             case 81: //left
@@ -71,7 +69,6 @@ class Map4 extends React.Component {
                     else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
                         const left = this.state.left - 1
                         this.setState({ position: 'top 300px right 400px', left: left })
-                        // this.dice = Math.floor(Math.random()*5)
                     }
                 }
                 break
@@ -83,7 +80,6 @@ class Map4 extends React.Component {
                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
                     this.setState({ position: 'top 200px right 400px', left: right })
-                    // this.dice = Math.floor(Math.random()*5)
                 }
                 
                 break

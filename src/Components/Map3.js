@@ -60,20 +60,20 @@ class Map3 extends React.Component {
                     else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
                         this.setState({position : 'top 100px right 400px', top : this.state.top-1})
                         
-                        //this.dice = Math.floor(Math.random() * 10)
+                        this.dice = Math.floor(Math.random() * 10)
                     }
                 }
 
                 break
             case 83: //down
             case 40:
-                if (this.state.position !== 'top 400px right 400px' && !this.state.lockMovement) {//top 288px right 416px //down + left
+                if (this.state.position !== 'top 400px right 400px' && !this.state.lockMovement) {
                     this.setState({ position: 'top 400px right 400px' })
                 }
-                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) { //down +right
+                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) { 
                     const down = this.state.top + 1
                     this.setState({ position: 'top 400px right 300px', top: down })
-                    //this.dice = Math.floor(Math.random() * 10)
+                    this.dice = Math.floor(Math.random() * 10)
                 }
                 break
             case 81: // left
@@ -83,13 +83,13 @@ class Map3 extends React.Component {
                     this.props.newTop(this.state.top)
                     this.props.newMap(2)
                 } else {
-                    if (this.state.position !== 'top 300px right 300px' && !this.state.lockMovement) { //top 216px right 416px
+                    if (this.state.position !== 'top 300px right 300px' && !this.state.lockMovement) { 
                         this.setState({ position: 'top 300px right 300px' })
                     }
                     else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
                         const left = this.state.left - 1
                         this.setState({ position: 'top 300px right 400px', left: left })
-                        // this.dice = Math.floor(Math.random()*5)
+                        this.dice = Math.floor(Math.random()*5)
                     }
                 }
                 break
@@ -101,7 +101,7 @@ class Map3 extends React.Component {
                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
                     this.setState({ left: right })
-                    // this.dice = Math.floor(Math.random()*5)
+                    this.dice = Math.floor(Math.random()*5)
                 }
                 
                 break
