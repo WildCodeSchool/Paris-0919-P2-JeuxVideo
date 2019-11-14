@@ -39,6 +39,8 @@ class Map2 extends React.Component {
             this.props.newMap(10)
         }
     }
+    
+    blockCombat = 0
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
@@ -51,8 +53,11 @@ class Map2 extends React.Component {
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
                     const top = this.state.top - 1
                     this.setState({ top: top })
-                    this.dice = Math.floor(Math.random()*10)
-
+                    if (this.blockCombat < 4){
+                        this.blockCombat += 1
+                    }
+                    if (this.blockCombat === 4){
+                    this.dice = Math.floor(Math.random() * 10)}
                 }
                 break
             case 83:
@@ -63,8 +68,11 @@ class Map2 extends React.Component {
                 else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
                     const down = this.state.top + 1
                     this.setState({ top: down })
-                    this.dice = Math.floor(Math.random()*10)
-
+                    if (this.blockCombat < 4){
+                        this.blockCombat += 1
+                    }
+                    if (this.blockCombat === 4){
+                    this.dice = Math.floor(Math.random() * 10)}
                 }
                 break
             case 81:
@@ -81,7 +89,11 @@ class Map2 extends React.Component {
                     else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
                         const left = this.state.left - 1
                         this.setState({ left: left })
-                        this.dice = Math.floor(Math.random()*10)
+                        if (this.blockCombat < 4){
+                            this.blockCombat += 1
+                        }
+                        if (this.blockCombat === 4){
+                        this.dice = Math.floor(Math.random() * 10)}
                     }
 
                 }
@@ -94,8 +106,11 @@ class Map2 extends React.Component {
                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
                     this.setState({ left: right })
-
-                    this.dice = Math.floor(Math.random()*10)
+                    if (this.blockCombat < 4){
+                        this.blockCombat += 1
+                    }
+                    if (this.blockCombat === 4){
+                    this.dice = Math.floor(Math.random() * 10)}
                 }
                 if (this.state.left > 13) {
                     this.props.newTop(this.state.top)
