@@ -36,7 +36,7 @@ class Map3 extends React.Component {
     // active les combats
     componentDidUpdate() {
         if (this.dice === 1) {
-            this.props.keepMap(2)
+            this.props.keepMap(3)
             this.props.newLeft(this.state.left)
             this.props.newTop(this.state.top)
             this.props.newMap(10)
