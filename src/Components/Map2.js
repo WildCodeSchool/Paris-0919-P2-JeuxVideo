@@ -10,7 +10,7 @@ class Map2 extends React.Component {
         top: this.props.top,
         left: this.props.left,
         animation: 'none',
-        position: 'top 288px right 416px',
+        position: 'top 200px right 300px',
         map: [
 
             [1, 1, 1, 1, 1, 0, 1, 2, 1, 1, 0, 0, 0],
@@ -46,13 +46,13 @@ class Map2 extends React.Component {
     onKeyDown = (e) => {
         e.preventDefault()
         switch (e.keyCode) {
-            case 90:
+            case 90: //up
             case 38:
-                if (this.state.position !== 'top 72px right 416px' && !this.state.lockMovement) {
-                    this.setState({ animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px' })
+                if (this.state.position !== 'top 100px right 300px' && !this.state.lockMovement) { 
+                    this.setState({ position: 'top 100px right 300px' })
                 }
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
-                    const top = this.state.top - 1
+                    this.setState({ position: 'top 100px right 400px', top: this.state.top - 1 })
                     this.setState({ top: top })
                     if (this.blockCombat < 4){
                         this.blockCombat += 1
@@ -61,14 +61,14 @@ class Map2 extends React.Component {
                     this.dice = Math.floor(Math.random() * 10)}
                 }
                 break
-            case 83:
+            case 83: // down
             case 40:
-                if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
-                    this.setState({ animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px' })
+                if (this.state.position !== 'top 400px right 400px' && !this.state.lockMovement) {
+                    this.setState({ position: 'top 400px right 400px' })
                 }
-                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
+                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) { 
                     const down = this.state.top + 1
-                    this.setState({ top: down })
+                    this.setState({ position: 'top 400px right 300px', top: down })
                     if (this.blockCombat < 4){
                         this.blockCombat += 1
                     }
@@ -76,7 +76,7 @@ class Map2 extends React.Component {
                     this.dice = Math.floor(Math.random() * 10)}
                 }
                 break
-            case 81:
+            case 81: //left
             case 37:
                 if (this.state.left === 1) {
                     this.props.newLeft(13)
@@ -84,12 +84,13 @@ class Map2 extends React.Component {
                     this.props.newMap(1)
 
                 } else {
-                    if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
-                        this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
+                    if (this.state.position !== 'top 300px right 300px' && !this.state.lockMovement) { 
+
+                        this.setState({ position: 'top 300px right 300px' })
                     }
-                    else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
+                    else if (this.state.left >= 0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
                         const left = this.state.left - 1
-                        this.setState({ left: left })
+                        this.setState({ position: 'top 300px right 400px', left: left })
                         if (this.blockCombat < 4){
                             this.blockCombat += 1
                         }
@@ -99,14 +100,14 @@ class Map2 extends React.Component {
 
                 }
                 break
-            case 68:
+            case 68: //right
             case 39:
-                if (this.state.position !== 'top 144px right 416px' && !this.state.lockMovement) {
-                    this.setState({ animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px' })
+                if (this.state.position !== 'top 200px right 300px' && !this.state.lockMovement) { 
+                this.setState({ position: 'top 200px right 300px', })
                 }
                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
-                    this.setState({ left: right })
+                    this.setState({ position: 'top 200px right 400px', left: right })
                     if (this.blockCombat < 4){
                         this.blockCombat += 1
                     }
@@ -133,6 +134,11 @@ class Map2 extends React.Component {
                 else if
                     ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 3 || this.state.map[this.state.top - 1][this.state.left - 2] === 3 || this.state.map[this.state.top][this.state.left - 1] === 3 || this.state.map[this.state.top - 2][this.state.left - 1] === 3) {
                     this.interactWithNPC(this.props.characters[6])
+                    
+                /*version sur glitch avatar sprite*/    
+                // if (this.state.lockMovement === true) {
+                //     this.setState({ lockMovement: false })
+
                 }
                 break
             default:
@@ -159,7 +165,7 @@ class Map2 extends React.Component {
         document.querySelector('.quoteContainer').style.display = 'none'
         document.querySelector('.quoteContainer').innerHTML = ``
     }
-    
+
 
     render() {
 
