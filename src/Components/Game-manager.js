@@ -9,7 +9,7 @@ import Battlescreen from "../components/Battlescreen"
 
 class GameManager extends React.Component {
     state = {
-        currentMap: 2,
+        currentMap: 4,
         keepMap: 0,
         top: 3,
         left: 6

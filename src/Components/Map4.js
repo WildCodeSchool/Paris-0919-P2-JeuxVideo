@@ -11,7 +11,7 @@ class Map4 extends React.Component {
         top: this.props.top,
         left: this.props.left,
         animation: 'none',
-        position: 'top 288px right 416px',
+        position: 'top 100px right 300px',
         // browser : this.props.chara.find(item => item.id === 11),
         map: [
 
@@ -37,8 +37,8 @@ class Map4 extends React.Component {
         switch (e.keyCode) {
             case 90:
             case 38:
-                if (this.state.position !== 'top 72px right 416px' && !this.state.lockMovement) {
-                    this.setState({ animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 72px right 416px' })
+                if (this.state.position !== 'top 100px right 300px' && !this.state.lockMovement) {
+                    this.setState({ animation: 'upSideMove 1s infinite steps(1, start)', position: 'top 100px right 300px' })
                 }
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
                     const top = this.state.top - 1
@@ -58,8 +58,8 @@ class Map4 extends React.Component {
                     this.props.newLeft(this.state.left)
                     this.props.newMap(3)
                 }
-                if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
-                    this.setState({ animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 288px right 416px' })
+                if (this.state.position !== 'top 400px right 400px' && !this.state.lockMovement) {
+                    this.setState({ animation: 'downSideMove 1s infinite steps(1, start)', position: 'top 400px right 400px' })
                 }
                 else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
                     const down = this.state.top + 1
@@ -70,8 +70,8 @@ class Map4 extends React.Component {
             case 81:
             case 37:
                 {
-                    if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
-                        this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 216px right 416px' })
+                    if (this.state.position !== 'top 300px right 300px' && !this.state.lockMovement) {
+                        this.setState({ animation: 'leftSideMove 1s infinite steps(1, start)', position: 'top 300px right 300px' })
                     }
                     else if (this.state.left > 1 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left - 2] === 0) {
                         const left = this.state.left - 1
@@ -82,8 +82,8 @@ class Map4 extends React.Component {
                 break
             case 68:
             case 39:
-                if (this.state.position !== 'top 144px right 416px' && !this.state.lockMovement) {
-                    this.setState({ animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 144px right 416px' })
+                if (this.state.position !== 'top 200px right 300px' && !this.state.lockMovement) {
+                    this.setState({ animation: 'rightSideMove 1s infinite steps(1, start)', position: 'top 200px right 300px' })
                 }
                 else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
