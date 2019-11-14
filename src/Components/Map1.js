@@ -51,7 +51,6 @@ class Map1 extends React.Component {
             .then(data => {
                 this.setState({ textureDatas: data[0] })
             })
-        console.log(this.blockCombat)
     }
 
     // active les combats
@@ -62,7 +61,6 @@ class Map1 extends React.Component {
             this.props.newTop(this.state.top)
             this.props.newMap(10)
         }
-        console.log(this.blockCombat)
     }
 
     blockCombat = 0
