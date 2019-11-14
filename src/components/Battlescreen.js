@@ -72,7 +72,7 @@ ennemyDice= 0
  // méthode qui gère quand l'ennemy attaque et l'animation de l'avatar
   enemyAttack = () => {
     this.ennemyDice = Math.floor(Math.random()*10)
-    if (this.ennemyDice >2){
+    if (this.ennemyDice >3){
     const newhpPlayer = this.state.HpPlayer- (Math.floor(Math.random() * (30 - 20))+20);
     this.setState({        
       HpPlayer: newhpPlayer,
@@ -101,18 +101,13 @@ handlePop = (isHere) =>{
 
 // update les HP du player quand il est attaqué et gère le git.ignore
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.HP !== this.state.HP) {
+    if (prevState.HP !== this.state.HP || this.state.dialog ==="Your attack failed") {
       setTimeout( () =>
         this.enemyAttack(),        
         1000
       )
     }
-    else if (this.state.dialog ==="Your attack failed"){
-      setTimeout( () =>
-        this.enemyAttack(),        
-        1000
-      )
-    } 
+    
     if (this.state.escape=== true){
       this.setState({escape: false,
                       dialog: 'You ignored all changes'})
