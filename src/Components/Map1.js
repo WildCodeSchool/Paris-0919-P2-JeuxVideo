@@ -31,11 +31,7 @@ class Map1 extends React.Component {
 
         },
         isClose: true,
-<<<<<<< HEAD
         sounds: []
-=======
-        
->>>>>>> 7f0c8f6a1e5edcb36a4e887a83a6415c76c86422
     }
     // le dés de rencontre
     dice = 0
