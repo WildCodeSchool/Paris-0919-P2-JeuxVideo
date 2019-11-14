@@ -1,0 +1,22 @@
+.enemy-area {
+    width: 100%;
+    height: 30%;
+    border: 2px solid black;
+    background-color: grey;
+    margin-top: 10px;
+    margin-left: -15px;
+
+}
+
+.enemy-area ul {
+    margin-top: 1px;
+    margin-right: 20px;
+}
+
+.enemy-area h2 {
+  padding-top: 10px;
+}
+
+.enemy-area p {
+  margin-top: 20px;
+}

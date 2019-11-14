@@ -1,11 +1,10 @@
 // Import librairies
 import React from 'react'
 import Axios from 'axios'
+import Sound from 'react-sound'
 
-// Import CSS
+// Import styles & audio
 import './Map.css'
-
-
 
 class Map1 extends React.Component {
     state = {
@@ -16,7 +15,7 @@ class Map1 extends React.Component {
         top: this.props.top,
         left: this.props.left,
         animation: 'none',
-        position: 'top 288px right 416px',
+        position: 'top 400px right 200px',
         map: [
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -31,7 +30,8 @@ class Map1 extends React.Component {
             chestIsAlreadyOpened: "There is rien into the coffre",
 
         },
-        isClose: true
+        isClose: true,
+        sounds: []
     }
     // le dés de rencontre
     dice = 0
@@ -51,71 +51,117 @@ class Map1 extends React.Component {
             .then(data => {
                 this.setState({ textureDatas: data[0] })
             })
-        console.log(this.state.textureDatas)
+        Axios.get('./Database/sounds.json')
+            .then(response => response.data)
+            .then(data => {
+                this.setState({ sounds: data })
+            })
     }
 
     // active les combats
     componentDidUpdate() {
-        if (this.dice === 1) {
-            this.props.keepMap(1)
-            this.props.newLeft(this.state.left)
-            this.props.newTop(this.state.top)
-            this.props.newMap(10)
-        }
+        this.spawnBattle()
         console.log(this.state.lockMovement)
     }
+
+    spawnBattle = () => {
+        if (this.dice === 1) {
+            document.querySelector('.map_background').style.backgroundImage = ''
+            document.querySelector('.map_background').style.animation = "flash 0.65s"
+            document.querySelector('.profshell').style.display = 'none'
+            document.querySelector('.chest').style.display = 'none'
+            setTimeout(() => {  
+                this.props.keepMap(1)
+                this.props.newLeft(this.state.left)
+                this.props.newTop(this.state.top)
+                this.props.newMap(10)
+            }, 650)
+        };
+    }
+
+    blockCombat = 0
+
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
         e.preventDefault()
         switch (e.keyCode) {
-            case 90:
+            case 90: //up movement
             case 38:
-                if (this.state.position !== 'top 72px right 416px' && !this.state.lockMovement) {
-                    this.setState({ position: 'top 72px right 416px' })
+                if (this.state.position !== 'top 100px right 300px' && !this.state.lockMovement) { 
+                    this.setState({ position: 'top 100px right 300px' })
                 }
 
                 else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
-                    this.setState({ top: this.state.top - 1 })
-                    this.dice = Math.floor(Math.random() * 10)
+                    this.setState({position : 'top 100px right 400px', top : this.state.top-1})
+                    if (this.blockCombat < 4){
+                        this.blockCombat += 1
+                    }
+                    if (this.blockCombat === 4){
+                    this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
 
                 break
             case 83:
-            case 40:
-                if (this.state.position !== 'top 288px right 416px' && !this.state.lockMovement) {
-                    this.setState({ position: 'top 288px right 416px' })
+            case 40: //down movement !
+                if (this.state.position !== 'top 400px right 400px' && !this.state.lockMovement) {
+                    this.setState({ position: 'top 400px right 400px' })
                 }
-                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) {
+                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) { 
                     const down = this.state.top + 1
-                    this.setState({ position: 'top 288px right 416px', top: down })
-                    this.dice = Math.floor(Math.random() * 10)
+                    this.setState({ position: 'top 400px right 300px', top: down })
+                    if (this.blockCombat < 4){
+                        this.blockCombat += 1
+                    }
+                    if (this.blockCombat === 4){
+                    this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
 
                 break
-            case 81:
+            case 81: //left movement
             case 37:
-                if (this.state.position !== 'top 216px right 416px' && !this.state.lockMovement) {
+                if (this.state.position !== 'top 300px right 300px' && !this.state.lockMovement) { 
 
-                    this.setState({ position: 'top 216px right 416px' })
+                    this.setState({ position: 'top 300px right 300px' })
                 }
                 else if (this.state.left >= 0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
                     const left = this.state.left - 1
-                    this.setState({ position: 'top 216px right 416px', left: left })
-                    this.dice = Math.floor(Math.random() * 10)
+                    this.setState({ position: 'top 300px right 400px', left: left })
+                    if (this.blockCombat < 4){
+                        this.blockCombat += 1
+                    }
+                    if (this.blockCombat === 4){
+                    this.dice = Math.floor(Math.random() * 10)}
+                    document.querySelector('#sonDeLaPitite').pause()
+                    if (this.state.sounds.length > 0 && document.querySelector('#sonDeLaPitite').paused) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
 
                 break
-            case 68:
+            case 68: //right 
             case 39:
-                if (this.state.position !== 'top 144px right 416px' && !this.state.lockMovement) {
-                    this.setState({ position: 'top 144px right 416px', })
+                if (this.state.position !== 'top 200px right 300px' && !this.state.lockMovement) { 
+                    this.setState({ position: 'top 200px right 300px', })
                 }
 
                 else if (this.state.left < 14 && !this.state.lockMovement && this.state.map[this.state.top - 1][this.state.left] === 0) {
                     const right = this.state.left + 1
-                    this.setState({ position: 'top 144px right 416px', left: right })
-                    this.dice = Math.floor(Math.random() * 10)
+                    this.setState({ position: 'top 200px right 400px', left: right })
+                    if (this.blockCombat < 4){
+                        this.blockCombat += 1
+                    }
+                    if (this.blockCombat === 4){
+                    this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
 
                 if (this.state.left > 13) {
@@ -157,7 +203,7 @@ class Map1 extends React.Component {
     interactWithNPC = (character) => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote[0]}</span>`
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote[0]}</span>` 
     }
 
     stopTalking = () => {
@@ -196,9 +242,10 @@ class Map1 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
+                {this.state.sounds.length > 0 ? <audio id="sonDeLaPitite" src={this.state.sounds[0].url} /> : ''}
                 <div className="quoteContainer"></div>
                 <div className="profshell" style={{ backgroundImage: this.props.characters.length > 0 ? `url(${ this.props.characters[4].image })` : "" }}></div>
-                <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
+                <div className="Avatar" style={{ animation: this.state.animation,backgroundImage: this.state.bruh, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
                 <div className="chest" style={{ backgroundImage: `url(${ this.state.chestClose })` }}></div>
             </div>
 
@@ -209,5 +256,3 @@ class Map1 extends React.Component {
 }
 
 export default Map1
-
-
