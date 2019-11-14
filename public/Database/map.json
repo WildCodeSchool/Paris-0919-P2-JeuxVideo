@@ -41,7 +41,7 @@
     {
        "name" : "gameover",
        "type" : "tile",
-       "url": "./Database/assets/ending.gif"
+       "url": "./Database/assets/endingv2.gif"
     }
 
 ]
