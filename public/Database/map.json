@@ -2,12 +2,12 @@
     {
         "name":"map1",
         "type":"map",
-        "url":"./assets/map1.jpg"
+        "url":"./Database/assets/map1.jpg"
     },
     {
         "name":"map2",
         "type":"map",
-        "url":"./assets/map2v2.jpg"
+        "url":"./Database/assets/map2v2.jpg"
 
     },
     {
@@ -18,25 +18,25 @@
     {
         "name":"map3",
         "type":"map",
-        "url":"./assets/map3.jpg"
+        "url":"./Database/assets/map3.jpg"
     },
     {
         "name":"map4",
         "type":"map",
-        "url":"./assets/map4.jpg"
+        "url":"./Database/assets/map4.jpg"
     },
     {
         "name":"treasure-open",
         "type":"tile",
         "url": {
-            "open" : "./assets/treasure_open",
-            "closed" : "./assets/treasure_closed" 
+            "open" : "./Database/assets/treasure_open",
+            "closed" : "./Database/assets/treasure_closed" 
         }
     },
     {
         "name":"treasure-closed",
         "type":"tile",
-        "url":"./assets/treasure_closed"
+        "url":"./Database/assets/treasure_closed"
     }
 
 ]

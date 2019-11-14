@@ -5,11 +5,10 @@
         "Type" : "human",
         "Quote" : "",
         "Age" : "14",
-        "image" :"",
-        "battle-sprite" : {
-            "alive" :"./assets/avatar_animated.gif",
-            "damaged" : "./assets/avatar_damage.gif",
-            "dead" : "./assets/avatar_dead.gif" }
+        "image" :"./Database/assets/character_sprite.png",        
+        "alive" :"./Database/assets/avatar_animated.gif",
+        "damaged" : "./Database/assets/avatar_damage.gif",
+        "dead" : "./Database/assets/avatar_dead.gif" 
         
     },
     {
@@ -40,7 +39,7 @@
         "Quote": "Hello nerdz kido, it's dangerous to code alone, Allow me to give you this tools. 'KeyBoardBlade obtenaid'.",
         "Quote2": "Don't git ignore my advices.",
         "Age": "67",
-        "image" :"./assets/profshell.png"
+        "image" :"./Database/assets/profshell.png"
     },
     {
         "id" : 6,
@@ -49,7 +48,7 @@
         "Quote": "Chicken ? Where's my CHICKENS!!! Hey you kido, did you saw my CHICKENS ? Can you help me ? Found them and i'll give you rewards",
         "Quote2": "Btw, please suscribe to my y*utube channel Chicken C*de Sch**l",
         "Age": "42",
-        "image" : "./assets/abdou.png"
+        "image" : "./Database/assets/abdou.png"
     },
     {
         "id" : 7,
@@ -58,7 +57,7 @@
         "Quote": "... Bêêêêh ... (hum, this dude is weird, maybe i should leave ??)",
         "Quote2": "GOAT ATTACK!!!!!!!!!!!!",
         "Age": "Bêêêêêêêh ...",
-        "image" : "./assets/goatmaster.png"
+        "image" : "./Database/assets/goatmaster.png"
     },
     {
         "id" : 8,
@@ -66,10 +65,10 @@
         "Type": "ennemy",
         "Quote": "<div><p> Hê//ø Wør/d ! </p></div>",
         "Age": "",
-        "image" :"",
-        "battle-sprite" : {
-            "alive" : "./assets/meta1_animate.gif",
-            "dead" : "./assets/meta_dead.png" }
+        "image" :"",        
+        "alive" : "./Database/assets/meta_alive.gif",
+        "dead" : "./Database/assets/meta_dead.png" ,
+        "damaged" : "./Database/assets/meta_damaged.gif"
     },
     {
         "id" : 9,
@@ -85,7 +84,7 @@
         "Type" : "PNJ",
         "Quote" : "Dailies must be short and efficient. By the way, there is a checkpoint on friday.",
         "Age" : "Do you want to go to hell ? THAT'S how you go to hell kiddo",
-        "image" : "./assets/jenny.png"
+        "image" : "./Database/assets/jenny.png"
     },
     {
         "id" : 11,
@@ -93,12 +92,11 @@
         "Type" : "ennemy",
         "Quote" : "Begone, thot.",
         "Age" : "Google it",
-        "image" :"browser_map.png",
-        "battle-sprite" : {
-            "alive" :"./assets/browser.gif",
-            "alive2":"./assets/browser_atk.gif",
-            "damaged" : "./assets/browser_damaged.gif",
-            "dead" : "" }
+        "image" :"browser_map.png",        
+        "alive" :"./Database/assets/browser.gif",
+        "alive2":"./Database/assets/browser_atk.gif",
+        "damaged" : "./Database/assets/browser_damaged.gif",
+        "dead" : "" 
 
     }
 ]
