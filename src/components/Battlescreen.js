@@ -23,7 +23,6 @@ class Battlescreen extends React.Component {
     avatarNormal: this.props.avatarData.alive,
     avatarDamaged: this.props.avatarData.damaged,
     avatarDead: this.props.avatarData.dead,
-
     metaNormal: this.props.metaData.alive,
     metaAlive:this.props.metaData.alive,
     metaDamaged: this.props.metaData.damaged,

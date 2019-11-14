@@ -51,7 +51,7 @@ class Map1 extends React.Component {
             .then(data => {
                 this.setState({ textureDatas: data[0] })
             })
-        console.log(this.state.textureDatas)
+     
     }
 
     // active les combats
@@ -62,7 +62,6 @@ class Map1 extends React.Component {
             this.props.newTop(this.state.top)
             this.props.newMap(10)
         }
-        console.log(this.state.lockMovement)
     }
 
     // Move the character, change its direction & animation
