@@ -7,10 +7,11 @@ import Map3 from "./Map3"
 import Map4 from "./Map4"
 import Battlescreen from "../components/Battlescreen"
 import BattlescreenBoss from "../Boss-battle/BattlescreenBoss"
+import GameOver from './GameOver'
 
 class GameManager extends React.Component {
     state = {
-        currentMap: 1,
+        currentMap: 12,
         keepMap: 0,
         top: 3,
         left: 6
@@ -75,6 +76,12 @@ class GameManager extends React.Component {
                     return (
                         <div className="Game-area">
                             <BattlescreenBoss avatarData = {this.props.avatarData} bossData = {this.props.bossData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
+                        </div>
+                    )
+            case 12: 
+                    return (
+                        <div className="Game-area">
+                            <GameOver newMap={this.newDisplay} previousMap={this.state.keepMap} gameoverIcon ={this.props.gameoverIcon} />
                         </div>
                     )
             default:
