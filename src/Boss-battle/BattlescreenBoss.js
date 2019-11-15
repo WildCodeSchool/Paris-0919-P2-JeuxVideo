@@ -13,7 +13,7 @@ import './BattlescreenBoss.css'
 class BattlescreenBoss extends React.Component {
 
   state = {
-    HP: 300,
+    HP: 666,
     dialog: 'The Boss is here !!',
     isDead: false,
     showPopup: false,
@@ -82,7 +82,7 @@ class BattlescreenBoss extends React.Component {
   handleDamage = () => {
     if (this.state.HP < 0) {
       this.setState({
-        HP: 300,
+        HP: 0,
         dialog: 'Ennemy Debugged',
         isDead: true,
         showPopup: false
@@ -156,11 +156,11 @@ class BattlescreenBoss extends React.Component {
       })
       setTimeout(() =>
         //this.handleGameover(), 200
-        this.endingScreen(),2000
+        this.endingScreen(),2300
 
       )
     }
-    if (this.state.HP < 200 && this.state.bossPhase === true){
+    if (this.state.HP < 550 && this.state.bossPhase === true){
       this.setState({ bossPhase: false,
                       dialog: 'Browser is getting angry' })
   }}
