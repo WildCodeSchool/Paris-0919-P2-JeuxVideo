@@ -109,7 +109,7 @@ render() {
             {this.state.startScreen ? <StartScreen /> : <StartMenu />}
           </Route>
           <Route path="/game">
-            <GameManager sounds={this.state.sounds} designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.characters} avatarData={this.state.avatarData} metaData={this.state.metaData} bossData={this.state.bossData} />
+            <GameManager sounds={this.state.sounds} designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.characters} avatarData={this.state.avatarData} metaData={this.state.metaData} bossData={this.state.bossData} gameoverIcon ={this.state.gameoverIcon} />
 
           </Route>
         </Switch>
