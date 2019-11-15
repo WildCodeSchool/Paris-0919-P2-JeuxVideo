@@ -97,7 +97,8 @@ class BattlescreenBoss extends React.Component {
   enemyAttack = () => {
     this.ennemyDice = Math.floor(Math.random() * 10)
     if (this.ennemyDice > 2) {
-      const newhpPlayer = this.state.HpPlayer - (Math.floor(Math.random() * (60 - 40)) + 40)
+      let newhpPlayer = 0
+      {this.state.bossPhase? newhpPlayer = this.state.HpPlayer - (Math.floor(Math.random() * (40 - 20)) + 20) : newhpPlayer = this.state.HpPlayer - 7000  }
       this.setState({
         HpPlayer: newhpPlayer,
         dialog: "Browser attacked you",
@@ -126,7 +127,10 @@ class BattlescreenBoss extends React.Component {
   // méthode pour mettre un pop up game over
  //handleGameover = (event) => { <GameOver />}
  endingScreen = () => {
+  this.props.newTop (3)
+  this.props.newLeft (6)
   this.props.newMap(12)
+
 }
 
 
