@@ -34,6 +34,7 @@ class Map4 extends React.Component {
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
+        e.preventDefault()
         switch (e.keyCode) {
             case 90: //up
             case 38:
@@ -90,7 +91,7 @@ class Map4 extends React.Component {
                     this.stopTalking()
                 }
                 else if ((this.state.left < 16) && this.state.map[this.state.top - 1][this.state.left] === 2 || this.state.map[this.state.top - 1][this.state.left - 2] === 2 || this.state.map[this.state.top][this.state.left - 1] === 2 || this.state.map[this.state.top - 2][this.state.left - 1] === 2) {
-                    this.interactWithNPC()
+                    this.interactWithNPC(this.props.characters[10])
                 }
                 break
             default:
@@ -109,7 +110,7 @@ class Map4 extends React.Component {
     interactWithNPC = (character) => {
         this.setState({ lockMovement: true })
         document.querySelector('.quoteContainer').style.display = 'block'
-        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.Quote}</span>`
+        document.querySelector('.quoteContainer').innerHTML = `<h3>${character.name}</h3> <br> <span>${character.quote}</span>`
     }
 
     //pour arrêter de parler
@@ -117,6 +118,7 @@ class Map4 extends React.Component {
         this.setState({ lockMovement: false })
         document.querySelector('.quoteContainer').style.display = 'none'
         document.querySelector('.quoteContainer').innerHTML = ``
+        this.props.newMap(11)
     }
 
     render() {
@@ -128,7 +130,7 @@ class Map4 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-
+                <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
                 <div className="browser" style={{backgroundImage: this.props.characters.length > 0 ?`url(${this.props.characters[10].image})` : "" }}></div>
                 

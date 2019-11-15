@@ -1,5 +1,7 @@
 // Import librairies
 import React from 'react'
+import Axios from 'axios'
+import Sound from 'react-sound'
 
 // Import CSS
 import './Map.css'
@@ -21,6 +23,7 @@ class Map2 extends React.Component {
             [0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
             [1, 1, 1, 1, 1, 1, 0, 0, 1, 3, 1, 1, 1]
         ],
+        sounds: []
         // npcsPositions: ['7', '8', '9']
     }
 
@@ -28,19 +31,37 @@ class Map2 extends React.Component {
     componentDidMount() {
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
+
+        Axios.get('./Database/sounds.json')
+            .then(response => response.data)
+            .then(data => {
+                this.setState({ sounds: data })
+            })
     }
 
     // active les combats
     componentDidUpdate() {
-        if (this.dice === 1) {
-            this.props.keepMap(2)
-            this.props.newLeft(this.state.left)
-            this.props.newTop(this.state.top)
-            this.props.newMap(10)
-        }
+        this.spawnBattle()
     }
-    
+    spawnBattle = () => {
+        if (this.dice === 1) {
+            this.blockDeplacement = 1
+            document.querySelector('.map_background').style.backgroundImage = ''
+            document.querySelector('.map_background').style.animation = "flash 0.65s"
+            document.querySelector('.jenny').style.display = 'none'
+            document.querySelector('.goat').style.display = 'none'
+            setTimeout(() => {  
+                this.props.keepMap(2)
+                this.props.newLeft(this.state.left)
+                this.props.newTop(this.state.top)
+                this.props.newMap(10)
+            }, 650)
+        };
+    }
+
+
     blockCombat = 0
+    blockDeplacement = 0
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
@@ -48,25 +69,27 @@ class Map2 extends React.Component {
         switch (e.keyCode) {
             case 90: //up
             case 38:
-                if (this.state.position !== 'top 100px right 300px' && !this.state.lockMovement) { 
+                if (this.state.position !== 'top 100px right 300px' && this.blockDeplacement===0 && !this.state.lockMovement) { 
                     this.setState({ position: 'top 100px right 300px' })
                 }
-                else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
-                    this.setState({ position: 'top 100px right 400px', top: this.state.top  }) //erased the this.state.top - 1 because the avatar walked 2 steps
-                    this.setState({ top: this.state.top - 1 })
+                else if (this.state.top > 1 && this.blockDeplacement===0 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
+                    this.setState({position : 'top 100px right 400px', top : this.state.top-1})
                     if (this.blockCombat < 4){
                         this.blockCombat += 1
                     }
                     if (this.blockCombat === 4){
                     this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
                 break
             case 83: // down
             case 40:
-                if (this.state.position !== 'top 400px right 400px' && !this.state.lockMovement) {
+                if (this.state.position !== 'top 400px right 400px' && this.blockDeplacement===0 && !this.state.lockMovement) {
                     this.setState({ position: 'top 400px right 400px' })
                 }
-                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) { 
+                else if (this.state.top < 7 && this.blockDeplacement===0 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) { 
                     const down = this.state.top + 1
                     this.setState({ position: 'top 400px right 300px', top: down })
                     if (this.blockCombat < 4){
@@ -74,6 +97,9 @@ class Map2 extends React.Component {
                     }
                     if (this.blockCombat === 4){
                     this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
                 break
             case 81: //left
@@ -84,11 +110,11 @@ class Map2 extends React.Component {
                     this.props.newMap(1)
 
                 } else {
-                    if (this.state.position !== 'top 300px right 300px' && !this.state.lockMovement) { 
+                    if (this.state.position !== 'top 300px right 300px' && this.blockDeplacement===0 && !this.state.lockMovement) { 
 
                         this.setState({ position: 'top 300px right 300px' })
                     }
-                    else if (this.state.left >= 0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
+                    else if (this.state.left >= 0 && this.blockDeplacement===0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
                         const left = this.state.left - 1
                         this.setState({ position: 'top 300px right 400px', left: left })
                         if (this.blockCombat < 4){
@@ -96,16 +122,19 @@ class Map2 extends React.Component {
                         }
                         if (this.blockCombat === 4){
                         this.dice = Math.floor(Math.random() * 10)}
+                        if (this.state.sounds.length > 0) {
+                            document.querySelector('#sonDeLaPitite').play()
+                        }
                     }
 
                 }
                 break
             case 68: //right
             case 39:
-                if (this.state.position !== 'top 200px right 300px' && !this.state.lockMovement) { 
+                if (this.state.position !== 'top 200px right 300px' && this.blockDeplacement===0 && !this.state.lockMovement) { 
                 this.setState({ position: 'top 200px right 300px', })
                 }
-                else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
+                else if (this.state.left < 14 && this.blockDeplacement===0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
                     this.setState({ position: 'top 200px right 400px', left: right })
                     if (this.blockCombat < 4){
@@ -113,6 +142,9 @@ class Map2 extends React.Component {
                     }
                     if (this.blockCombat === 4){
                     this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
                 if (this.state.left > 13) {
                     this.props.newTop(this.state.top)
@@ -176,7 +208,8 @@ class Map2 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-                 <div className="quoteContainer"></div>
+                {this.state.sounds.length > 0 ? <audio id="sonDeLaPitite" src={this.state.sounds[0].url} /> : ''}
+                <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
                 <div className="jenny" style={{ backgroundImage: this.props.characters.length > 0 ? `url(${ this.props.characters[9].image })` : "" }}></div>
                 <div className="goat" style={{ backgroundImage: this.props.characters.length > 0 ?`url(${this.props.characters[6].image})` : "" }}></div>

@@ -82,7 +82,7 @@ class BattlescreenBoss extends React.Component {
   handleDamage = () => {
     if (this.state.HP < 0) {
       this.setState({
-        HP: 150,
+        HP: 300,
         dialog: 'Ennemy Debugged',
         isDead: true,
         showPopup: false
@@ -156,11 +156,11 @@ class BattlescreenBoss extends React.Component {
       })
       setTimeout(() =>
         //this.handleGameover(), 200
-        this.endingScreen(),200
+        this.endingScreen(),2000
 
       )
     }
-    if (this.state.HP < 50 && this.state.bossPhase === true){
+    if (this.state.HP < 280 && this.state.bossPhase === true){
       this.setState({ bossPhase: false,
                       dialog: 'Browser is getting angry' })
   }}
