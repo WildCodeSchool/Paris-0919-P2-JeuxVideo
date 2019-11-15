@@ -1,0 +1,56 @@
+.GameOver-parent {
+    display : flex;
+    flex-direction: column;
+    align-items : center;
+    background-color : black;
+    height : 700px;
+    width : 1300px;
+}
+
+
+/*Thanks + image */
+.Thanks {
+    display : flex;
+    flex-direction: column;
+    align-items : center;
+    background-color : black;
+    height : 80%;
+    width : 100%;    
+}
+
+.Thanks h2 {
+    margin-top : 5%;
+    font-size : 35px;
+    color : white;
+}
+
+.Thanks img {
+    height : 300px;
+    width : 300px;
+    background : transparent;   
+}
+
+.Thanks p {
+    
+    font-size : 22px;
+    color : white;
+    padding : 3%;
+    
+}
+
+/* Start a new game */
+.newGame {
+    background-color : black;
+    height : 20%;
+    width : 100%;
+    display : flex;
+    flex-direction: column;
+    align-items : center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.newGame p {
+    font-size : 30px;
+    color : #45BAC0
+}

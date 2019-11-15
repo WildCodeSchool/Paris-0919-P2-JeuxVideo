@@ -7,6 +7,7 @@ import Map3 from "./Map3"
 import Map4 from "./Map4"
 import Battlescreen from "../components/Battlescreen"
 import BattlescreenBoss from "../Boss-battle/BattlescreenBoss"
+import GameOver from './GameOver'
 
 class GameManager extends React.Component {
     state = {
@@ -76,9 +77,15 @@ class GameManager extends React.Component {
                 console.log(this.state.keepMap)
                 return (
                     <div className="Game-area">
-                        <BattlescreenBoss sounds={this.props.sounds} avatarData={this.props.avatarData} bossData={this.props.bossData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
+                        <BattlescreenBoss sounds={this.props.sounds} avatarData={this.props.avatarData} bossData={this.props.bossData} newMap={this.newDisplay} previousMap={this.state.keepMap} newTop={this.changeTop} newLeft={this.changeLeft} />
                     </div>
                 )
+            case 12: 
+                    return (
+                        <div className="Game-area">
+                            <GameOver newMap={this.newDisplay} previousMap={this.state.keepMap} gameoverIcon ={this.props.gameoverIcon} newTop={this.changeTop} newLeft={this.changeLeft} />
+                        </div>
+                    )
             default:
                 console.log("oups")
         }

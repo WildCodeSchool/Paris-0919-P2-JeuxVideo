@@ -33,7 +33,8 @@ class App extends React.Component {
     sounds: '',
     characters: '',
     startScreen: true,
-    isReady: false
+    isReady: false,
+    gameoverIcon : ''
   }
 
   handleKeyPress = (event) => {
@@ -84,12 +85,13 @@ class App extends React.Component {
     .then(response => response.data)
     // Give the texture object to the state
     .then(data => {
-    this.setState({
-      textureDatas1: data[0],
-      textureDatas2: data[1],
-      textureDatas3: data[3],
-      textureDatas4: data[4]
-    })
+      this.setState({
+        textureDatas1: data[0],
+        textureDatas2: data[1],
+        textureDatas3 : data[3],
+        textureDatas4: data[4],
+        gameoverIcon : data[7]
+      })
     })
 
 
