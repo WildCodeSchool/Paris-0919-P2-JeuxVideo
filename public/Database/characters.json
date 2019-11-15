@@ -96,7 +96,7 @@
         "id" : 11,
         "name" : "Browser",
         "type" : "ennemy",
-        "quote" : "Begone, thot.",
+        "quote" : "Mwahaha! You're done shipping features now! Prepare to receive some Bug de Qualité!!",
         "age" : "Google it",
         "image" :"./Database/assets/browser_map.png",        
         "alive" :"./Database/assets/browser.gif",
