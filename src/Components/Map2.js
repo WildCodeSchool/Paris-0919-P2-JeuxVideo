@@ -45,6 +45,7 @@ class Map2 extends React.Component {
     }
     spawnBattle = () => {
         if (this.dice === 1) {
+            this.blockDeplacement = 1
             document.querySelector('.map_background').style.backgroundImage = ''
             document.querySelector('.map_background').style.animation = "flash 0.65s"
             document.querySelector('.jenny').style.display = 'none'
@@ -60,6 +61,7 @@ class Map2 extends React.Component {
 
 
     blockCombat = 0
+    blockDeplacement = 0
 
     // Move the character, change its direction & animation
     onKeyDown = (e) => {
@@ -67,10 +69,10 @@ class Map2 extends React.Component {
         switch (e.keyCode) {
             case 90: //up
             case 38:
-                if (this.state.position !== 'top 100px right 300px' && !this.state.lockMovement) { 
+                if (this.state.position !== 'top 100px right 300px' && this.blockDeplacement===0 && !this.state.lockMovement) { 
                     this.setState({ position: 'top 100px right 300px' })
                 }
-                else if (this.state.top > 1 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
+                else if (this.state.top > 1 && this.blockDeplacement===0 && !this.state.lockMovement && this.state.map[this.state.top - 2][this.state.left - 1] === 0) {
                     this.setState({position : 'top 100px right 400px', top : this.state.top-1})
                     if (this.blockCombat < 4){
                         this.blockCombat += 1
@@ -84,10 +86,10 @@ class Map2 extends React.Component {
                 break
             case 83: // down
             case 40:
-                if (this.state.position !== 'top 400px right 400px' && !this.state.lockMovement) {
+                if (this.state.position !== 'top 400px right 400px' && this.blockDeplacement===0 && !this.state.lockMovement) {
                     this.setState({ position: 'top 400px right 400px' })
                 }
-                else if (this.state.top < 7 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) { 
+                else if (this.state.top < 7 && this.blockDeplacement===0 && !this.state.lockMovement && this.state.map[this.state.top][this.state.left - 1] === 0) { 
                     const down = this.state.top + 1
                     this.setState({ position: 'top 400px right 300px', top: down })
                     if (this.blockCombat < 4){
@@ -108,11 +110,11 @@ class Map2 extends React.Component {
                     this.props.newMap(1)
 
                 } else {
-                    if (this.state.position !== 'top 300px right 300px' && !this.state.lockMovement) { 
+                    if (this.state.position !== 'top 300px right 300px' && this.blockDeplacement===0 && !this.state.lockMovement) { 
 
                         this.setState({ position: 'top 300px right 300px' })
                     }
-                    else if (this.state.left >= 0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
+                    else if (this.state.left >= 0 && this.blockDeplacement===0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left - 2] === 0 || this.state.map[this.state.top - 1][this.state.left - 2] === undefined)) {
                         const left = this.state.left - 1
                         this.setState({ position: 'top 300px right 400px', left: left })
                         if (this.blockCombat < 4){
@@ -129,10 +131,10 @@ class Map2 extends React.Component {
                 break
             case 68: //right
             case 39:
-                if (this.state.position !== 'top 200px right 300px' && !this.state.lockMovement) { 
+                if (this.state.position !== 'top 200px right 300px' && this.blockDeplacement===0 && !this.state.lockMovement) { 
                 this.setState({ position: 'top 200px right 300px', })
                 }
-                else if (this.state.left < 14 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
+                else if (this.state.left < 14 && this.blockDeplacement===0 && !this.state.lockMovement && (this.state.map[this.state.top - 1][this.state.left] === 0 || this.state.map[this.state.top - 1][this.state.left] === undefined)) {
                     const right = this.state.left + 1
                     this.setState({ position: 'top 200px right 400px', left: right })
                     if (this.blockCombat < 4){
