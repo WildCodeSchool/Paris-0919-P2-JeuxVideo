@@ -37,50 +37,56 @@ class GameManager extends React.Component {
     }
 
     render() {
+
+
         switch (this.state.currentMap) {
             case 1:
                 return (
                     <div className="Game-area">
-                        <Map1 avatarData = {this.props.avatarData} keepMap={this.keepMyMap} designMap1={this.props.designMap1} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters}/>
+                        <Map1 sounds={this.props.sounds} avatarData={this.props.avatarData} keepMap={this.keepMyMap} designMap1={this.props.designMap1} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
                     </div>
                 )
             case 2:
                 return (
                     <div className="Game-area">
-                        <Map2 avatarData = {this.props.avatarData} keepMap={this.keepMyMap} designMap2={this.props.designMap2} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
+                        <Map2 sounds={this.props.sounds} avatarData={this.props.avatarData} keepMap={this.keepMyMap} designMap2={this.props.designMap2} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
                     </div>
                 )
 
             case 3:
                 return (
                     <div className="Game-area">
-                        <Map3 avatarData = {this.props.avatarData} keepMap={this.keepMyMap} designMap3={this.props.designMap3} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
+                        <Map3 sounds={this.props.sounds} avatarData={this.props.avatarData} keepMap={this.keepMyMap} designMap3={this.props.designMap3} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
                     </div>
                 )
             case 4:
                 return (
                     <div className="Game-area">
-                        <Map4 avatarData = {this.props.avatarData} keepMap={this.keepMyMap} designMap4={this.props.designMap4} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} /> 
+                        <Map4 sounds={this.props.sounds} avatarData={this.props.avatarData} keepMap={this.keepMyMap} designMap4={this.props.designMap4} newMap={this.newDisplay} top={this.state.top} left={this.state.left} newTop={this.changeTop} newLeft={this.changeLeft} characters={this.props.characters} />
                     </div>
                 )
             case 10:
                 console.log(this.state.keepMap)
                 return (
                     <div className="Game-area">
-                        <Battlescreen avatarData = {this.props.avatarData} metaData = {this.props.metaData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
+                        <Battlescreen sounds={this.props.sounds} avatarData={this.props.avatarData} metaData={this.props.metaData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
                     </div>
                 )
-             case 11:
-                    console.log(this.state.keepMap)
-                    return (
-                        <div className="Game-area">
-                            <BattlescreenBoss avatarData = {this.props.avatarData} bossData = {this.props.bossData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
-                        </div>
-                    )
+            case 11:
+                console.log(this.state.keepMap)
+                return (
+                    <div className="Game-area">
+                        <BattlescreenBoss sounds={this.props.sounds} avatarData={this.props.avatarData} bossData={this.props.bossData} newMap={this.newDisplay} previousMap={this.state.keepMap} />
+                    </div>
+                )
             default:
                 console.log("oups")
         }
-
+        return (
+            <div>
+                {this.props.sounds.length > 0 ? <audio canplaythrough loop id="Awakenings" src={this.props.sounds[1].url} /> : ''}
+            </div>
+        )
     }
 }
 
