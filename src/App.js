@@ -25,12 +25,12 @@ import {
 class App extends React.Component {
   state = {
 
-    textureDatas1:'',
-    textureDatas2:'',
-    textureDatas3 : '',
-    textureDatas4:'',
+    textureDatas1: '',
+    textureDatas2: '',
+    textureDatas3: '',
+    textureDatas4: '',
     itemsDatas: '',
-    soundsDatas: '',
+    sounds: '',
     characters: '',
     startScreen: true,
     isReady: false,
@@ -45,10 +45,10 @@ class App extends React.Component {
 
 
   // Use Axios to consume APIs
-  componentDidMount() {      
-      // Item API
-      Axios.get('./Database/items.json')
-         // Change JSON into JS object
+  componentDidMount() {
+    // Item API
+    Axios.get('./Database/items.json')
+      // Change JSON into JS object
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
@@ -57,22 +57,30 @@ class App extends React.Component {
 
     document.onkeypress = this.handleKeyPress
     // Item API
-       
-      // NPC API
-      Axios.get('./Database/characters.json')
-    // Change JSON into JS object
+
+    // NPC API
+    Axios.get('./Database/characters.json')
+      // Change JSON into JS object
       .then(response => response.data)
       // Give the texture object to the state
       .then(data => {
-        this.setState({ characters: data,
-        avatarData : data[0],
-        metaData : data[7],
-        bossData : data[10]})
+        this.setState({
+          characters: data,
+          avatarData: data[0],
+          metaData: data[7],
+          bossData: data[10]
+        })
       })
 
-      
-      // Texture API
-    Axios.get('./Database/map.json')
+    Axios.get('./Database/sounds.json')
+      .then(res => res.data)
+      .then(data => {
+        this.setState({ sounds: data })
+      })
+
+
+  // Texture API
+  Axios.get('./Database/map.json')
     // Change JSON into JS object
     .then(response => response.data)
     // Give the texture object to the state
@@ -89,32 +97,32 @@ class App extends React.Component {
 
   }
 
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <GameSynopsis />
-        <Ecran />
-        <Router>
-          <Switch>
-            <Route exact path="/">
+render() {
+  return (
+    <div className="App">
+      <Header />
+      <GameSynopsis />
+      <Ecran />
+      <Router>
+        <Switch>
+          <Route exact path="/">
             {this.state.startScreen ? <StartScreen /> : <StartMenu />}
-            </Route>
-            <Route path="/game">
-              <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.characters} avatarData = {this.state.avatarData} metaData = {this.state.metaData} bossData = {this.state.bossData} gameoverIcon = {this.state.gameoverIcon}/>
-              
-            </Route>
-          </Switch>
-        </Router>
-        <Kickstarter />
-        <AboutTeam />
-        <Carousel />
-        <ContactForm />
-        <Footer />
+          </Route>
+          <Route path="/game">
+            <GameManager sounds={this.state.sounds} designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.characters} avatarData={this.state.avatarData} metaData={this.state.metaData} bossData={this.state.bossData} />
 
-      </div>
-    )
-  }
+          </Route>
+        </Switch>
+      </Router>
+      <Kickstarter />
+      <AboutTeam />
+      <Carousel />
+      <ContactForm />
+      <Footer />
+
+    </div>
+  )
+}
 }
 
 

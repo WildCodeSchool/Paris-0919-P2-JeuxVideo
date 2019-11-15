@@ -169,11 +169,16 @@ class BattlescreenBoss extends React.Component {
                       dialog: 'Browser is getting angry' })
   }}
 
-
+  componentDidMount() {
+    if (this.props.sounds.length > 0) {
+      document.querySelector('#Boss').play()
+    }
+  }
 
   render() {
     return (
       <div className="App">
+      {this.props.sounds.length > 0 ? <audio id="Boss" src={this.props.sounds[4].url} /> : ''}
         <div className='game-area'>
 
           <div className='enemystatus-area'>
