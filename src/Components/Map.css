@@ -1,0 +1,178 @@
+.map_background{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.chest {
+    grid-column: 2/2;
+    grid-row: 2/2;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.chest {
+    grid-column: 2/2;
+    grid-row: 2/2;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.profshell {
+    grid-column: 7/8;
+    grid-row: 3/4;
+    z-index: 5;
+    background-color: transparent;
+}
+.abdou{
+    grid-column: 10/11;
+    grid-row: 2/3;
+    z-index: 1;
+    background-color: transparent;
+}
+.goat{
+    grid-column: 10/11;
+    grid-row: 7/8;
+    z-index: 1;
+    background-color: transparent;
+}
+.jenny{
+    grid-column: 6/7;
+    grid-row: 2/3;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.browser {
+    grid-column: 7/8;
+    grid-row: 2/3;
+    z-index: 1;
+    background-color: transparent;
+    
+}
+
+/* Quote Container */
+.quoteContainer {
+    display: none;
+    grid-column: 4/11;
+    grid-row: 6/8;
+    background: rgba(0, 0, 0, 0.555);
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+
+.quoteContainer * {
+    background: none;
+}
+
+.quoteContainer h3 {
+    font-size: 120%;
+    margin-top: 20px;
+}
+
+.quoteContainer span {
+    font-family: 'Press Start 2P';
+    position: relative;
+    top: 50%;
+}
+
+/* // tout ce qui concerne l'avatar */
+
+.Avatar {
+    height: 100px;
+    width: 100px;
+    background-image: url('./img/character_sprite.png');  
+    top: 300px;
+    left: 630px;
+    z-index: 2;
+    display: block;
+    margin: auto;
+    animation-duration: 3s;
+    animation-name: downSideMove;
+    background-color: transparent;
+}
+
+
+/* Downside direction */
+@keyframes downSideMove {
+    25% {
+        background-position: top 288px right 416px;
+    }
+    50% {
+        background-position: top 288px right 468px;
+    }
+    75% {
+        background-position: top 288px right 416px;
+    }
+    100% {
+        background-position: top 288px right 364px;
+    }
+}
+
+/* Left side direction */
+@keyframes leftSideMove {
+    25% {
+        background-position: top 216px right 416px;
+    }
+    50% {
+        background-position: top 216px right 468px;
+    }
+    75% {
+        background-position: top 216px right 416px;
+    }
+    100% {
+        background-position: top 216px right 364px;
+    }
+}
+
+/* Right side direction */
+@keyframes rightSideMove {
+    25% {
+        background-position: top 144px right 416px;
+    }
+    50% {
+        background-position: top 144px right 468px;
+    }
+    75% {
+        background-position: top 144px right 416px;
+    }
+    100% {
+        background-position: top 144px right 364px;
+    }
+}
+
+/* Upside direction */
+@keyframes upSideMove {
+    25% {
+        background-position: top 72px right 416px;
+    }
+    50% {
+        background-position: top 72px right 468px;
+    }
+    75% {
+        background-position: top 72px right 416px;
+    }
+    100% {
+        background-position: top 72px right 364px;
+    }
+}
+
+/* Create background animation */
+@keyframes flash {
+    0% {
+        background-color: transparent;
+    }
+    40% {
+        background-color: white;
+    }
+    42% {
+        background-color: transparent;
+    }
+    75% {
+        background-color: white;
+    }
+}

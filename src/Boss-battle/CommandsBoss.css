@@ -1,0 +1,43 @@
+.commands-area {
+    width: 25%;
+    height: 220px;
+    background-color: gray;
+    opacity: 0.8;
+    overflow: hidden;
+    border: 2px solid black;
+    list-style: none;
+    font-family: 'Press Start 2P';
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.commands-area h2 {
+  padding: 10px;
+}
+.commands-area ul {
+    margin-top: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.commands-area ul li {
+    margin-top: 25px;
+    background-color: transparent;
+}
+
+#fight:hover {
+    cursor: pointer;
+    color: white
+}
+
+#item:hover {
+    cursor: pointer;
+    color: white
+}
+
+#escape:hover {
+    cursor: pointer;
+    color: white
+}
+
+

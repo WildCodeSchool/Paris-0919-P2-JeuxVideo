@@ -1,0 +1,48 @@
+#startScreen {
+  background-color: #0c0032ff;
+  height: 700px;
+  width: 1300px;
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 100px;
+  border: 10px solid #47bac0ff;
+}
+#startScreen h2, #startScreen p, #startScreen div {
+  background-color: white;
+  font-family: 'Press Start 2P';
+  text-align: center;
+  background-color: #0c0032ff;
+}
+#startScreen h2 {
+  padding-top: 10%;
+  font-size: 4.5vh;
+  color: #47bac0ff;
+}
+#startScreenText {
+  width: 90%;
+  margin: auto;
+  margin-top: 20%;
+  background-color: #0c0032ff;
+  color: #47bac0ff;
+}
+#startTheGame {
+  font-size: 2.5vh;
+  animation: blink 1s infinite;
+  color: #47bac0ff;
+}
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+#copyright {
+  margin-top: 5%;
+  color: #47bac0ff;
+}
+#startScreenText div {
+  margin-top: 5%;
+  background-color: #e100ffff;
+  padding: 50px;
+  cursor: pointer;
+  color: #0c0032ff;
+}

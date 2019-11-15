@@ -1,0 +1,91 @@
+#header {
+  height: 800px;
+  display: flex;
+  margin-bottom: 300px;
+  background-color: #0c0032ff;
+}
+#logoTeam {
+  height: 18%;
+  width: 8%;
+  margin-top: 60px;
+  margin-left: 60px;
+}
+#header #title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10%;
+  margin-left: -11%;
+  background: none;
+}
+#logoJeu {
+  height: 70%;
+  width: 25%;
+  align-self: center;
+  background: none;
+}
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 5vh;
+  letter-spacing: 5px;
+  font-weight: 0;
+  color: #45BAC0;
+  align-self: center;
+  background: none;
+  margin-top: 2%;
+}
+
+@media screen and (max-width: 425px) {
+  #header {
+    height: 755;
+    margin-bottom: 50px;
+  }
+  #logoTeam {
+    height: 15%;
+    width: 25%;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  #header #title {
+    margin-left: -28%;
+  }
+  #logoJeu {
+    height: 45%;
+    width: 60%;
+  }
+  h1 {
+    letter-spacing: 0;
+    width: 70%;
+    line-height: 45px;
+  }
+  #header #title span {
+    margin-left: 20%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #header {
+    height: 560px;
+    margin-bottom: 15%;
+  }
+  #logoTeam {
+    height: 20%;
+    width: 30%;
+  }
+  #header #title {
+    margin-top: 30%;
+    margin-left: -33%;
+  }
+  #logoJeu {
+    height: 70%;
+    width: 65%;
+  }
+  #header #title span {
+    margin-left: 20%;
+  }
+  h1 {
+    width: 60%;
+    margin-top: -40px;
+  }
+}

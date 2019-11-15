@@ -1,0 +1,108 @@
+[
+    {
+        "id" : 1,
+        "name" : "avatar",
+        "type" : "human",
+        "quote" : "",
+        "age" : "14",
+        "image" :"character_sprite.png",
+        "alive" :"./Database/assets/avatar_animated.gif",
+        "damaged" : "./Database/assets/avatar_damage.gif",
+        "dead" : "./Database/assets/avatar_dead.gif" }
+        
+    ,
+    {
+        "id": 2,
+        "name": "Garry Coder",
+        "type": "PNJ",
+        "quote": "You are a coder, Garry",
+        "age": "20"
+    },
+    {
+        "id": 3,
+        "name": "Ness Coffee",
+        "type": "PNJ",
+        "quote": "Psst, hey kids, wanna buy some coffee ?",
+        "age": "9"
+    },
+    {
+        "id": 4,
+        "name": "ToolsMaster",
+        "type": "PNJ",
+        "quote": "I have a lot of stuff to trade !",
+        "age": "38"
+    },
+    {
+        "id": 5,
+        "name": "Professor Shell",
+        "type": "PNJ",
+        "quote": [
+            "Hello nerdz kido, it's dangerous to code alone, Allow me to give you this tools. 'KeyBoardBlade obtenaid'.",
+            "Don't git ignore my advices."
+        ],
+        "age": "67",
+        "image": "./Database/assets/profshell.png"
+    },
+    {
+        "id": 6,
+        "name": "Abdoumen",
+        "type": "PNJ",
+        "quote": [
+            "Chicken ? Where's my CHICKEN !!! Hey you kido, did you saw my CHICKEN ? Can you help me ? Found them and i'll give you rewards",
+            "Btw, please suscribe to my y*utube channel Chicken C*de Sch**l"
+        ],
+        "age": "42",
+        "image": "./Database/assets/abdou.png"
+    },
+    {
+        "id": 7,
+        "name": "Thomas Goat Chie",
+        "type": "Bêêêêêh",
+        "quote": [
+            "... Bêêêêh ... (hum, this dude is weird, maybe i should leave ??)",
+            "GOAT ATTACK!!!!!!!!!!!!"
+        ],
+        "age": "Bêêêêêêêh ...",
+        "image": "./Database/assets/goatmaster.png"
+    },
+    {
+        "id": 8,
+        "name": "Meta",
+        "type": "ennemy",
+        "quote": "<div><p> Hê//ø Wør/d ! </p></div>",
+        "age": "",
+        "image": "",
+        "alive": "./Database/assets/meta_alive.gif",
+        "dead": "./Database/assets/meta_dead.png",
+        "damaged" : "./Database/assets/meta_damaged.gif"
+    },
+    {
+        "id": 9,
+        "name": "Nuage",
+        "type": "PNJ",
+        "quote": "<h1>It's rAiNiNg ToDaY, HaVe YoU aN uMbReLlA fOr Me ? No ? Ok.</h1>",
+        "age": "",
+        "image": ""
+    },
+    {
+        "id": 10,
+        "name": "Lord JennID",
+        "type": "PNJ",
+        "quote": "Dailies must be short and efficient. By the way, there is a checkpoint on friday.",
+        "age": "Do you want to go to hell ? THAT'S how you go to hell kiddo",
+        "image": "./Database/assets/jenny.png"
+    },
+    {
+        "id" : 11,
+        "name" : "Browser",
+        "type" : "ennemy",
+        "quote" : "Mwahaha! You're done shipping features now! Prepare to receive some Bug de Qualité!!",
+        "age" : "Google it",
+        "image" :"./Database/assets/browser_map.png",        
+        "alive" :"./Database/assets/browser.gif",
+        "alive2":"./Database/assets/browser_atkv4.gif",
+        "damaged" : "./Database/assets/browser_damaged.gif",
+        "dead" : "" 
+
+    }
+]

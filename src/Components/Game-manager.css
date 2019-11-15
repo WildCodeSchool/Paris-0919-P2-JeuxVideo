@@ -1,0 +1,10 @@
+.Game-area{
+    margin: auto;
+    margin-top: 3%;
+    width: 1300px;
+    height: 700px;
+    border: 2px solid black;
+    overflow: hidden;
+    z-index: 4;
+    background-color: transparent;
+}

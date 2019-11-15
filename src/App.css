@@ -1,0 +1,108 @@
+
+* {
+  margin: 0;
+  padding:0;
+  background-color: rgb(12, 0, 50);
+  scroll-behavior: smooth;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Press Start 2P';
+  background-color: transparent;
+}
+
+h3 {
+
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Press Start 2P';
+}
+
+p {
+  font-family: 'Press Start 2P';
+  text-align: center;
+  background-color: transparent;
+}
+
+
+.game-area{
+  
+  border: 2px solid black;
+  width: 1300px;
+  height: 700px;
+  z-index: 1;
+  top: 50px;
+  /* margin-left: 14%; */
+  overflow: hidden;
+  background-image: url('./components/futurestyle.jpg');
+  background-color: transparent;
+}
+
+.enemystatus-area {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  text-align: center;
+  font-family: 'Press Start 2P';
+  height: 280px;
+  justify-content: space-between;
+}
+
+.playerstatus-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+}
+
+.meta-area {
+  display: flex;
+  flex-direction: column;
+  height: 310px;
+  background-color: transparent;
+}
+
+
+.Meta {
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+}
+
+.avatar-area {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+  background-color: transparent;
+}
+
+.dialog-area {
+  background-color: transparent;
+}
+/* .App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+
+} */
+

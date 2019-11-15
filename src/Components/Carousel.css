@@ -1,0 +1,194 @@
+#fighter h2 {
+  color: #45BAC0;
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  text-align: center;
+  font-size: 4vh;
+}
+
+#slider {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 100%);
+  scroll-behavior: smooth;
+  margin-bottom: 200px;
+  height: 600px;
+}
+
+#slider section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 23%);
+  position: relative;
+  margin: 20px 0;
+  transition: 250ms transform;
+  padding-top: 30px;
+}
+
+#slider section .arrows {
+  position: absolute;
+  color: #45BAC0;
+  text-decoration: none;
+  font-size: 4em;
+  width: 80px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+  background: none;
+  align-self: center;
+}
+
+.fas {
+  background: none;
+}
+
+.images {
+  background: none;
+  width: 320px;
+  height: 320px;
+}
+
+#bruno, #flo, #mel, #barbara {
+  margin-top: 28px;
+}
+
+.avatars {
+  transition: 250ms all;
+  margin-left: 32%;
+}
+
+.images {
+  transition: 250ms all;
+  border-radius: 50%;
+}
+
+.images:hover {
+  margin: 40px 0 0 0;
+  transform: scale(1.2);
+}
+
+#bruno:hover, #flo:hover, #mel:hover, #barbara:hover {
+  margin-top: 50px;
+}
+
+.avatars p {
+  color: #45BAC0;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: -16%;
+  width: 400px;
+}
+
+.avatars .sentences {
+  font-size: 1.5vh;
+  line-height: 25px;
+}
+
+#five .sentences {
+  margin-left: -115px;
+  width: 500px;
+}
+
+.avatars .names {
+  margin-top: 50px;
+  font-size: 2vh;
+  margin-left: 27%;
+  width: 160px;
+}
+
+#leftOne {
+  left: -1%;
+}
+
+#rightOne {
+  right: -1%;
+}
+
+#leftTwo {
+  left: -1.4%;
+}
+
+#rightTwo {
+  right: -1%;
+}
+
+#four .sentences {
+  width: 540px;
+  margin-left: -84px;
+}
+
+@media screen and (max-width: 425px) {
+  #fighter h2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 2.1vh;
+    line-height: 45px;
+  }
+  #slider {
+    grid-template-columns: repeat(4, 100%);
+    scroll-behavior: smooth;
+    margin-bottom: 100px;
+  }
+  #slider section {
+    overflow: hidden;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    position: relative;
+    margin: 20px 0;
+    transition: 250ms transform;
+  }
+  #slider section a {
+    font-size: 4em;
+    width: 50px;
+    padding: 20px;
+  }
+  .avatars p {
+    display: none;
+  }
+  .avatars .names {
+    display: block;
+    margin-top: -70px;
+    font-size: 20px;
+    margin-left: -15%;
+    width: 160px;
+  }
+  .images {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 80px;
+  }
+  #slider section a {
+    font-size: 3em;
+    width: 80px;
+  }
+  #leftOne {
+    left: -7%;
+    top: 125px;
+  }
+  #rightOne {
+    left: 75%;
+    top: 125px;
+  }
+  #leftTwo {
+    left: -7%;
+    top: 125px;
+  }
+  #rightTwo {
+    left: 75%;
+    top: 125px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #fighter h2 {
+    font-size: 2.5vh;
+  }
+  #slider {
+    margin-bottom: 50px;
+  }
+  #leftOne, #rightOne, #leftTwo, #rightTwo {
+    top: 150px;
+  }
+}

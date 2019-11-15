@@ -1,0 +1,79 @@
+#kickstarter {
+  background-color: #45BAC0;
+  height: 600px;
+  margin-top: 250px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+#kickstarter h2 {
+  color: #0C0032;
+  background-color: #45BAC0;
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  font-size: 4vh;
+}
+
+#kickstarter p {
+  color: black;
+  font-family: Roboto;
+  font-size: 3vh;
+  height: 50%;
+  width: 40%;
+  text-align: center;
+  background-color: #45BAC0;
+  margin: auto;
+}
+
+#kickstarter button {
+  height: 54px;
+  width: 212px;
+  background-color: #E100FF;
+  color: white;
+  border-radius: 50px;
+  font-size: 2.5vh;
+  border-color: #E100FF;
+  margin-top: 20px;
+  position: relative;
+  left: 60%;
+  bottom: 50px;
+}
+
+@media screen and (max-width: 425px) {
+  #kickstarter {
+    height: 450px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  #kickstarter h2 {
+    font-size: 2.5vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  #kickstarter p {
+    width: 85%;
+    text-align: center;
+  }
+  #kickstarter button {
+    width: 30%;
+    font-size: 17px;
+    margin-top: 80px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #kickstarter {
+    height: 450px;
+    margin-left: 1px;
+  }
+  #kickstarter h2 {
+    font-size: 3vh;
+  }
+  #kickstarter p {
+    font-size: 3vh;
+  }
+}

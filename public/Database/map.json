@@ -1,0 +1,47 @@
+[
+    {
+        "name":"map1",
+        "type":"map",
+        "url":"./Database/assets/map1_glitched.gif"
+    },
+    {
+        "name":"map2",
+        "type":"map",
+        "url":"./Database/assets/map2_glitched.gif"
+
+    },
+    {
+        "name":"glitched-tree",
+        "type":"tile",
+        "url":"work-in-process-lol"
+    },
+    {
+        "name":"map3",
+        "type":"map",
+        "url":"./Database/assets/map3_glitched.gif"
+    },
+    {
+        "name":"map4",
+        "type":"map",
+        "url":"./Database/assets/map4_glitched.gif"
+    },
+    {
+        "name":"treasure-open",
+        "type":"tile",
+        "url": {
+            "open" : "./Database/assets/treasure_open",
+            "closed" : "./Database/assets/treasure_closed" 
+        }
+    },
+    {
+        "name":"treasure-closed",
+        "type":"tile",
+        "url":"./Database/assets/treasure_closed"
+    },
+    {
+       "name" : "gameover",
+       "type" : "tile",
+       "url": "./Database/assets/endingv2.gif"
+    }
+
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "step",
+        "url": "./Database/assets/bruitdepas.mp3"
+    },
+    {
+        "id": "2",
+        "name": "Main",
+        "url": "./Database/assets/Awakenings.mp3"
+    },
+    {
+        "id": "3",
+        "name": "Battle",
+        "url": "./Database/assets/Battle.mp3"
+    },
+    {
+        "id": "4",
+        "name": "Victory",
+        "url": "./Database/assets/Victory.mp3"
+    },
+    {
+        "id": "5",
+        "name": "Boss",
+        "url": "./Database/assets/Boss.mp3"
+    },
+    {
+        "id": "6",
+        "name": "Maint2",
+        "url": "./Database/assets/Awakenings2.mp3"
+    }
+]
