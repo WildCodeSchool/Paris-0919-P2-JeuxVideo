@@ -94,7 +94,7 @@
         "Age" : "Google it",
         "image" :"browser_map.png",        
         "alive" :"./Database/assets/browser.gif",
-        "alive2":"./Database/assets/browser_atk.gif",
+        "alive2":"./Database/assets/browser_atkv4.gif",
         "damaged" : "./Database/assets/browser_damaged.gif",
         "dead" : "" 
 
