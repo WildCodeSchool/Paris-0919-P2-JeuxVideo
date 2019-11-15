@@ -112,7 +112,10 @@ class Battlescreen extends React.Component {
 
   // update les HP du player quand il est attaqué et gère le git.ignore
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.HP !== this.state.HP || this.state.dialog === "Your attack failed") {
+    if (this.state.HP <= 0){
+      return
+    }
+    else if (prevState.HP !== this.state.HP || this.state.dialog === "Your attack failed") {
       setTimeout(() =>
         this.enemyAttack(),
         1000
