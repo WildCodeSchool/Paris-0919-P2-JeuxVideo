@@ -11,7 +11,7 @@ import GameOver from './GameOver'
 
 class GameManager extends React.Component {
     state = {
-        currentMap: 4,
+        currentMap: 1,
         keepMap: 0,
         top: 3,
         left: 6
