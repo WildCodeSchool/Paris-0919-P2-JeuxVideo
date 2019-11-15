@@ -13,7 +13,7 @@ import './BattlescreenBoss.css'
 class BattlescreenBoss extends React.Component {
 
   state = {
-    HP: 150,
+    HP: 300,
     dialog: 'The Boss is here !!',
     isDead: false,
     showPopup: false,
@@ -160,7 +160,7 @@ class BattlescreenBoss extends React.Component {
 
       )
     }
-    if (this.state.HP < 280 && this.state.bossPhase === true){
+    if (this.state.HP < 200 && this.state.bossPhase === true){
       this.setState({ bossPhase: false,
                       dialog: 'Browser is getting angry' })
   }}
