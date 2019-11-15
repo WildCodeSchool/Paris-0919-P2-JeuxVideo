@@ -4,6 +4,7 @@ import EnemyBoss from './Enemyboss'
 import CommandsBoss from './CommandsBoss'
 import DialogBoss from './DialogBoss'
 import PopupBoss from './PopupBoss';
+import GameOver from '../Components/GameOver'
 
 import './BattlescreenBoss.css'
 // import { cpus } from 'os';
@@ -123,7 +124,10 @@ class BattlescreenBoss extends React.Component {
 
 
   // méthode pour mettre un pop up game over
-  handleGameover = (event) => { alert('Game over') }
+ //handleGameover = (event) => { <GameOver />}
+ endingScreen = () => {
+  this.props.newMap(12)
+}
 
 
   //pour fuir
@@ -151,7 +155,8 @@ class BattlescreenBoss extends React.Component {
         showPopup: false,
       })
       setTimeout(() =>
-        this.handleGameover(), 200
+        //this.handleGameover(), 200
+        this.endingScreen(),200
 
       )
     }
