@@ -126,7 +126,10 @@ class BattlescreenBoss extends React.Component {
   // méthode pour mettre un pop up game over
  //handleGameover = (event) => { <GameOver />}
  endingScreen = () => {
+  this.props.newTop (3)
+  this.props.newLeft (6)
   this.props.newMap(12)
+
 }
 
 
