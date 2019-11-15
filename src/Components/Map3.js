@@ -1,5 +1,7 @@
 // Import librairies
 import React from 'react'
+import Axios from 'axios'
+import Sound from 'react-sound'
 
 // Import CSS
 import './Map.css'
@@ -21,23 +23,38 @@ class Map3 extends React.Component {
             [1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
             [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
-        ]
+        ],
+        sounds: []
     }
 
     // Call the function that changes the player direction, animation and position
     componentDidMount() {
         document.onkeydown = this.onKeyDown
         document.onkeyup = this.onKeyUp
-    }
 
+    Axios.get('./Database/sounds.json')
+            .then(response => response.data)
+            .then(data => {
+                this.setState({ sounds: data })
+            })
+        }
     // active les combats
     componentDidUpdate() {
+        this.spawnBattle()
+    }
+
+    spawnBattle = () => {
         if (this.dice === 1) {
-            this.props.keepMap(3)
-            this.props.newLeft(this.state.left)
-            this.props.newTop(this.state.top)
-            this.props.newMap(10)
-        }
+            document.querySelector('.map_background').style.backgroundImage = ''
+            document.querySelector('.map_background').style.animation = "flash 0.65s"
+            document.querySelector('.abdou').style.display = 'none'
+            setTimeout(() => {  
+                this.props.keepMap(3)
+                this.props.newLeft(this.state.left)
+                this.props.newTop(this.state.top)
+                this.props.newMap(10)
+            }, 650)
+        };
     }
 
     blockCombat = 0
@@ -81,6 +98,9 @@ class Map3 extends React.Component {
                     }
                     if (this.blockCombat === 4){
                     this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
                 break
             case 81: // left
@@ -101,6 +121,9 @@ class Map3 extends React.Component {
                         }
                         if (this.blockCombat === 4){
                         this.dice = Math.floor(Math.random() * 10)}
+                        if (this.state.sounds.length > 0) {
+                            document.querySelector('#sonDeLaPitite').play()
+                        }
                     }
                 }
                 break
@@ -117,6 +140,9 @@ class Map3 extends React.Component {
                     }
                     if (this.blockCombat === 4){
                     this.dice = Math.floor(Math.random() * 10)}
+                    if (this.state.sounds.length > 0) {
+                        document.querySelector('#sonDeLaPitite').play()
+                    }
                 }
                 if (this.state.left > 13) {
                     this.props.newTop(this.state.top)
@@ -170,7 +196,8 @@ class Map3 extends React.Component {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-                 <div className="quoteContainer"></div>
+                {this.state.sounds.length > 0 ? <audio id="sonDeLaPitite" src={this.state.sounds[0].url} /> : ''}
+                <div className="quoteContainer"></div>
                 <div className="Avatar" style={{ animation: this.state.animation, backgroundPosition: this.state.position, gridColumn: this.state.left, gridRow: this.state.top, zIndex: 0 }}></div>
                 <div className="abdou" style={{ backgroundImage: this.props.characters.length > 0 ?`url(${this.props.characters[5].image})` : "" }}></div>
             </div>
