@@ -4,7 +4,7 @@ import './PopupBoss.css';
 
 class Popup extends React.Component {
     state = {
-            HP: 150,
+            HP: 666,
          }
 
     battleDice = 0
@@ -12,7 +12,7 @@ class Popup extends React.Component {
     attackEnemy = event => {
             this.battleDice = Math.floor(Math.random()*15)
             if (this.battleDice > 3){
-             const newHP = this.state.HP - (Math.floor(Math.random() * (25-10))+10);
+             const newHP = this.state.HP - 50;
              this.setState({
                  HP: newHP,
              }) 

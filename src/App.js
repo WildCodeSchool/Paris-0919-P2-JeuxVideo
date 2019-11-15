@@ -33,7 +33,8 @@ class App extends React.Component {
     soundsDatas: '',
     characters: '',
     startScreen: true,
-    isReady: false 
+    isReady: false,
+    gameoverIcon : ''
   }
 
   handleKeyPress = (event) => {
@@ -80,7 +81,8 @@ class App extends React.Component {
         textureDatas1: data[0],
         textureDatas2: data[1],
         textureDatas3 : data[3],
-        textureDatas4: data[4]
+        textureDatas4: data[4],
+        gameoverIcon : data[7]
       })
     })
 
@@ -99,7 +101,7 @@ class App extends React.Component {
             {this.state.startScreen ? <StartScreen /> : <StartMenu />}
             </Route>
             <Route path="/game">
-              <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.characters} avatarData = {this.state.avatarData} metaData = {this.state.metaData} bossData = {this.state.bossData} />
+              <GameManager designMap1={this.state.textureDatas1} designMap2={this.state.textureDatas2} designMap3={this.state.textureDatas3} designMap4={this.state.textureDatas4} characters={this.state.characters} avatarData = {this.state.avatarData} metaData = {this.state.metaData} bossData = {this.state.bossData} gameoverIcon = {this.state.gameoverIcon}/>
               
             </Route>
           </Switch>

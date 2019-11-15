@@ -4,6 +4,7 @@ import EnemyBoss from './Enemyboss'
 import CommandsBoss from './CommandsBoss'
 import DialogBoss from './DialogBoss'
 import PopupBoss from './PopupBoss';
+import GameOver from '../Components/GameOver'
 
 import './BattlescreenBoss.css'
 // import { cpus } from 'os';
@@ -12,7 +13,7 @@ import './BattlescreenBoss.css'
 class BattlescreenBoss extends React.Component {
 
   state = {
-    HP: 150,
+    HP: 666,
     dialog: 'The Boss is here !!',
     isDead: false,
     showPopup: false,
@@ -81,7 +82,7 @@ class BattlescreenBoss extends React.Component {
   handleDamage = () => {
     if (this.state.HP < 0) {
       this.setState({
-        HP: 150,
+        HP: 0,
         dialog: 'Ennemy Debugged',
         isDead: true,
         showPopup: false
@@ -123,7 +124,10 @@ class BattlescreenBoss extends React.Component {
 
 
   // méthode pour mettre un pop up game over
-  handleGameover = (event) => { alert('Game over') }
+ //handleGameover = (event) => { <GameOver />}
+ endingScreen = () => {
+  this.props.newMap(12)
+}
 
 
   //pour fuir
@@ -151,11 +155,12 @@ class BattlescreenBoss extends React.Component {
         showPopup: false,
       })
       setTimeout(() =>
-        this.handleGameover(), 200
+        //this.handleGameover(), 200
+        this.endingScreen(),2300
 
       )
     }
-    if (this.state.HP < 50 && this.state.bossPhase === true){
+    if (this.state.HP < 550 && this.state.bossPhase === true){
       this.setState({ bossPhase: false,
                       dialog: 'Browser is getting angry' })
   }}

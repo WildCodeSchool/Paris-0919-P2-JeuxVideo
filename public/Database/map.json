@@ -37,6 +37,11 @@
         "name":"treasure-closed",
         "type":"tile",
         "url":"./Database/assets/treasure_closed"
+    },
+    {
+       "name" : "gameover",
+       "type" : "tile",
+       "url": "./Database/assets/endingv2.gif"
     }
 
 ]

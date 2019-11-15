@@ -93,16 +93,16 @@
         "image": "./Database/assets/jenny.png"
     },
     {
-        "id": 11,
-        "name": "Browser",
-        "type": "ennemy",
-        "quote": "Begone, thot.",
-        "age": "Google it",
-        "image": "./Database/assets/browser_map.png",
-        "alive": "./Database/assets/browser.gif",
-        "alive2": "./Database/assets/browser_atk.gif",
-        "damaged": "./Database/assets/browser_damaged.gif",
-        "dead": ""
-        
+        "id" : 11,
+        "name" : "Browser",
+        "type" : "ennemy",
+        "quote" : "Begone, thot.",
+        "age" : "Google it",
+        "image" :"./Database/assets/browser_map.png",        
+        "alive" :"./Database/assets/browser.gif",
+        "alive2":"./Database/assets/browser_atkv4.gif",
+        "damaged" : "./Database/assets/browser_damaged.gif",
+        "dead" : "" 
+
     }
 ]
