@@ -10,8 +10,8 @@ class Popup extends React.Component {
     battleDice = 0
 
     attackEnemy = event => {
-            this.battleDice = Math.floor(Math.random()*15)
-            if (this.battleDice > 2){
+            this.battleDice = Math.floor(Math.random()*20)
+            if (this.battleDice > 3){
              const newHP = this.state.HP - (Math.floor(Math.random() * (25-10))+10);
              this.setState({
                  HP: newHP,
@@ -23,7 +23,7 @@ class Popup extends React.Component {
      }
 
      attackEnemy2 = event => {
-        this.battleDice = Math.floor(Math.random()*8)
+        this.battleDice = Math.floor(Math.random()*10)
         if (this.battleDice > 2){
         const newHP = this.state.HP - (Math.floor(Math.random() * (50-30))+30);
         this.setState({
@@ -36,7 +36,7 @@ class Popup extends React.Component {
 }
 
     attackEnemy3 = event => {
-    const newHP = this.state.HP - (Math.floor(Math.random() * 1000));
+    const newHP = this.state.HP - (Math.floor(Math.random() * 500));
     this.setState({
         HP: newHP,
     }) 
